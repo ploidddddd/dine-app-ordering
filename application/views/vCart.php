@@ -20,21 +20,22 @@
 		<div class='fourteen wide column'>
 			<form class='ui form'>
 				<div class='ui four centered stackable cards'>
-
+					<?php if(isset($items)) { ?>
+					<?php foreach($items as $prod){ ?>
 			        <div class='ui centered card'>       
 			            <div class='content'>
-			            	<img class='ui fluid image productSmallImage' src='<?php echo base_url("assets/images/sisig.jpg")?>'>
+			            	<img class='ui fluid image productSmallImage' src='<?php echo base_url($prod->product_image)?>'>
 			            	<div class='ui hidden divider'></div>
 			                <div class='header'>
-			                    Pork Sisig
+								<?php echo $prod->product_name; ?>
 			                </div>
 			                <div class='meta'>
-			                    Meal with egg and pork. With drink.
+								<?php echo $prod->product_description; ?>
 			                </div>
 			                <div class='description'>
-	                    		<p>Price (P): 70.00</p>
-	                    		<p>Qty: 3</p>
-			                    <p><strong>Subtotal (P): 210.00</strong></p>
+	                    		<p>Price (P): <?php echo $prod->product_price; ?></p>
+	                    		<p>Qty: <?php echo $prod->order_item_qty; ?></p>
+			                    <p><strong>Subtotal (P): <?php echo $prod->order_item_subtotal; ?></strong></p>
 	                    		<div class='ui hidden divider'></div>
 			                </div>
 			                
@@ -44,17 +45,19 @@
 			            	<div class='row'></div>
 			            	<div class='row'></div>
 			            	<div class='row'>
+								<form class='' method='POST' action='<?php echo site_url()?>/CProduct/updateCart'>
 			            		<div class='sixteen wide center aligned middle aligned column'>
-				                    <button class='ui small brown icon button'>
-				                        <i class=' minus icon '></i>
-				                    </button>
+									<div class='ui small brown icon button minus' id='minus' data-id='<?php echo $prod->product_id; ?>'>
+										<i class=' minus icon '></i>
+									</div>
 				                    <div class='ui disabled input ' style='max-width:50px; padding-right:2px;'>
-				                        <input style='text-align:center; ' value='0'>
+				                        <input style='text-align:center; ' value='<?php echo $prod->order_item_qty; ?>' id='qty<?php echo $prod->product_id; ?>'>
 				                    </div>
-				                    <button class='ui small brown icon button '>
-				                        <i class='plus icon '></i>
-				                    </button>	
+				                    <div class='ui small brown icon button plus' id='plus' data-id='<?php echo $prod->product_id; ?>'>
+			                        	<i class='plus icon '></i>
+			                    	</div>	
 								</div>
+								
 			            	</div>
 			            	<div class='row'>
 			            		<div class='column'></div>
@@ -62,15 +65,16 @@
 									<button class='ui fluid black button'><i class='remove icon'></i>Remove</button>
 			            		</div>
 			            		<div class='seven wide column'>
-			            			<button class='ui fluid brown button'><i class='pencil icon'></i>Update</button>
+			            			<button class='ui fluid brown button' type='submit' ><i class='pencil icon'></i>Update</button>
 			            		</div>
 			            		<div class='column'></div>
 			            	</div>
+							</form>
 			            	<div class='row'></div>
 					    </div>
 			        </div> <!-- meal card -->
-			        
-
+			        <?php } ?>
+					<?php } ?>
 
 			    </div> <!--three cards -->
 			</form>
@@ -98,8 +102,28 @@
 
 
 </div>
-
-
-
 </body>
 </html>
+<script>
+	$(document).ready(function(){
+		var value = 0 ;
+		$(document).on('click','.plus',function() {
+			var id = $(this).data("id");
+			var get = parseInt($('#qty'+id).val());
+      		if (get <= 99) {
+        		get += 1;
+        		$('#qty'+id).val(get); 
+     		}
+		});
+
+		$(document).on('click','.minus',function() {
+			var id = $(this).data("id");
+			if($('#qty'+id).val() >= 1){
+				var get = $('#qty'+id).val();
+				get -= 1;
+				$('#qty'+id).val(get); 
+			} 
+			
+		});
+	});
+</script>
