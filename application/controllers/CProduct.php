@@ -15,6 +15,28 @@
 			
 		}
 
+		function viewProductsInCategory($cat)
+		{
+			$result = $this->MProduct->getProductsByCategory($cat);
+			$data['prod_cat']  = $cat;
+			
+            $array = array();
+			if($result){
+				foreach ($result as $value) {
+						$arrObj = new stdClass;
+						$arrObj->product_id = $value->product_id;
+						$arrObj->product_name = $value->product_name;
+						$arrObj->product_price = $value->product_price;
+						$arrObj->product_image = $value->product_image;
+						$array[] = $arrObj;
+				}
+			$data['products']  = $array;
+			}
+			$this->load->view('imports/vHeader');
+			$this->load->view('vProducts',$data);
+
+		}
+
 		function viewMenu()
 		{
 			$this->load->view('imports/vHeader');
