@@ -22,7 +22,7 @@
 			<div class='ui four stackable cards'>
 				<?php if(isset($products)) { ?>
 				<?php foreach($products as $prod) { ?>
-		        <a class='ui small card' href='<?php echo site_url()?>/CProduct/viewProduct'>
+		        <a class='ui small card' href='<?php echo site_url()?>/CProduct/viewProduct/<?php echo $prod->product_id; ?>'>
 		            
 		            <div class='content'>
 		            	<img class='ui fluid image productSmallImage' id='smolimage' src='<?php echo base_url($prod->product_image)?>'>

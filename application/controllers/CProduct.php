@@ -6,8 +6,10 @@
 		public function __Construct(){
 	      parent::__Construct ();
 	      $this->load->helper('url');
-	      $this->load->database(); // load database
-	      $this->load->model('MProduct');
+		  $this->load->database(); // load database
+		  $this->load->library('session');
+		  $this->load->model('MProduct');
+		  $this->load->model('MCart');
 	  	}
 
 		public function index()
@@ -43,40 +45,34 @@
 			$this->load->view('vMenu');
 		}
 
-		function viewMeals()
+		function viewProduct($id)
 		{
-			$this->load->view('imports/vHeader');
-			$this->load->view('vMeals');
-		}
+			$data['product'] = null;
+			$result = $this->MProduct->getProductDetailsById($id);
+			if($result){
+				$data['product'] = $result;
+			}
 
-		function viewDrinks()
-		{
 			$this->load->view('imports/vHeader');
-			$this->load->view('vDrinks');
-		}
-
-		function viewDesserts()
-		{
-			$this->load->view('imports/vHeader');
-			$this->load->view('vDesserts');
-		}
-
-		function viewExtras()
-		{
-			$this->load->view('imports/vHeader');
-			$this->load->view('vExtras');
-		}
-
-		function viewProduct()
-		{
-			$this->load->view('imports/vHeader');
-			$this->load->view('vProduct');
+			$this->load->view('vProduct',$data);
 		}
 
 		function viewCart()
 		{
+			$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
+			$result = $this->MCart->getAllOrderProducts($order_id);
+			if($result){
+				$data['items'] = $result;
+			}
+
 			$this->load->view('imports/vHeader');
-			$this->load->view('vCart');
+			$this->load->view('vCart',$data);
+		}
+
+		public function updateCart()
+		{
+			print_r('WP');
+			# code...
 		}
 
 		function viewCheckout()

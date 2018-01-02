@@ -20,6 +20,13 @@
 
 		}
 
+		public function getProductDetailsById($id)
+		{
+			$where = array($this::DB_TABLE_PK =>$id);
+			$query = $this->read_where($where);
+			return $query;
+		}
+
 		public function getProductsByCategory($cat){
 			$where = array('product_category' => $cat,
 						   'product_availability' => 'AVAILABLE'
