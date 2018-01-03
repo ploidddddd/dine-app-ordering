@@ -32,8 +32,8 @@
 	</div>
 	<div class='row'>
 		<div class='column'></div>
-		<div class='seven wide column'></div>
-		<div class='seven wide column'>
+		<div class='ten wide computer six wide mobile tablet column'></div>
+		<div class='four wide computer eight wide mobile tablet column'>
 			<a href='<?php echo site_url()?>/CProduct/viewMenu?>'><button class='ui fluid brown button'><i class='check icon'></i>Finish</button></a>
 		</div>
 		<div class='column'></div>
