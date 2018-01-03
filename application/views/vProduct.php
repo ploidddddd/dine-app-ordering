@@ -17,15 +17,14 @@
 	<!--  END OF MENU AND CART -->
 
 	<!-- CONTENT -->
-	<div class='row'>
-		<div class='column'></div> 
-		<div class='fourteen wide column'>
+	<div class='column'></div>
+	<div class='fourteen wide column'>
 		<?php if(isset($product)) { ?>
-		<?php foreach($product as $prod) {} ?>
+			<?php foreach($product as $prod) {} ?>
 			<form class='ui form' method='POST' action='<?php echo site_url()?>/COrderItem/addOrderItem'>
 		        <div class='ui centered small card'>       
 		            <div class='content'>
-		            	<img class='ui fluid image productSmallImage' id='smolimage' src='<?php echo base_url($prod->product_image)?>'>
+		            	<center><img class='ui small image' src='<?php echo base_url($prod->product_image)?>'></center>
 		            	<div class='ui hidden divider'></div>
 		                <div class='header'>
 							<?php echo $prod->product_name; ?>
@@ -55,25 +54,17 @@
 			                    </div>	
 							</div>
 		            	</div>
-						<div class='row'>
-							<div class='sixteen wide center aligned middle aligned column'>
-								<button class='ui fluid brown button' type='submit'>Add to cart</button>
-							</div>
-						</div>
+		            	<div class='row'></div>
 				    </div>
-		        </div> <!-- meal card -->
-
-		        
+				    <button class="ui bottom attached brown button" type="submit">
+				      	<i class="plus icon"></i>
+				      	Add to cart
+				    </button>
+		        </div> <!-- meal card -->  
 		    </form>
 		<?php } ?>
-		</div>
-		<div class='column'></div>
 	</div>
-			
-
-
-
-
+	<div class='column'></div>
 </div>
 
 

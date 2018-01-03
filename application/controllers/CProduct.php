@@ -30,6 +30,7 @@
 						$arrObj->product_name = $value->product_name;
 						$arrObj->product_price = $value->product_price;
 						$arrObj->product_image = $value->product_image;
+						$arrObj->product_category = $value->product_category;
 						$array[] = $arrObj;
 				}
 			$data['products']  = $array;

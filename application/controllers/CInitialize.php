@@ -31,7 +31,7 @@
 					}
 				}
 			}
-			print_r($this->session->userdata('orderingSession'));
+			// print_r($this->session->userdata('orderingSession'));
 			$this->load->view('imports/vHeader');
 			$this->load->view('vMenu');
 		}
@@ -46,7 +46,7 @@
 			}
 		}
 
-
+ 
 		public function deleteSession()
 		{
 			$this->session->unset_userdata('orderingSession');

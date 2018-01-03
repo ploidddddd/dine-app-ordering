@@ -19,7 +19,7 @@
 		<div class='column'></div> 
 		<div class='fourteen wide column'>
 			<form class='ui form'>
-				<div class='ui four centered stackable cards'>
+				<div class='ui four stackable cards'>
 
 			        <div class='ui centered small card'>       
 			            <div class='content'>
@@ -50,25 +50,23 @@
 		</div>
 		<div class='column'></div>
 	</div>
+
 	<div class='row'>
-		<div class='eight wide column'></div>
-		<div class='eight wide center aligned middle aligned column'>
+		<div class='thirteen wide computer eight wide mobile tablet column'></div>
+		<div class='three wide computer eight wide center mobile tablet aligned middle aligned column'>
 			<div class='description'>
 		    	<p>TOTAL (P): 210.00</p>
 		    </div>
 		</div>
-	</div>
-	<div class='row'></div>
+	</div> 
 	<div class='row'>
 		<div class='column'></div>
-		<div class='seven wide column'></div>
-		<div class='seven wide column'>
+		<div class='ten wide computer six wide mobile tablet column'></div>
+		<div class='four wide computer eight wide mobile tablet column'>
 			<a href='<?php echo site_url()?>/CProduct/viewQRCode?>'><button class='ui fluid brown button'><i class='check icon'></i>Order</button></a>
 		</div>
 		<div class='column'></div>
 	</div>
-
-
 
 
 </div>
