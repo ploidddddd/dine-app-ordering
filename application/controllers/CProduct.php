@@ -8,7 +8,9 @@
 	      $this->load->helper('url');
 		  $this->load->database(); // load database
 		  $this->load->library('session');
+		  $this->load->library('ciqrcode');
 		  $this->load->model('MProduct');
+		  $this->load->model('MOrdered');
 		  $this->load->model('MCart');
 	  	}
 
@@ -19,9 +21,11 @@
 
 		function viewProductsInCategory($cat)
 		{
-			$result = $this->MProduct->getProductsByCategory($cat);
+			$cat = urldecode($cat);
+			$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
+			$result = $this->MProduct->getProductsNotInCart($cat,$order_id);
 			$data['prod_cat']  = $cat;
-			
+			// print_r($result);
             $array = array();
 			if($result){
 				foreach ($result as $value) {
@@ -58,34 +62,65 @@
 			$this->load->view('vProduct',$data);
 		}
 
-		function viewCart()
+		public function viewCart()
 		{
 			$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
 			$result = $this->MCart->getAllOrderProducts($order_id);
+			$data['items'] = null;
+			$data['total'] = 0;
 			if($result){
 				$data['items'] = $result;
+				foreach($result as $res){
+					$data['total'] += $res->order_item_subtotal;
+				}
 			}
 
 			$this->load->view('imports/vHeader');
 			$this->load->view('vCart',$data);
 		}
 
-		public function updateCart()
-		{
-			print_r('WP');
-			# code...
-		}
-
 		function viewCheckout()
 		{
-			$this->load->view('imports/vHeader');
-			$this->load->view('vCheckout');
+			$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
+			$result = $this->MCart->getAllOrderProducts($order_id);
+			$data['items'] = null;
+			$data['total'] = 0;
+			if($result){
+				$data['items'] = $result;
+				foreach($result as $res){
+					$data['total'] += $res->order_item_subtotal;
+				}
+				$array = array('ordered_total' => $data['total'] );
+				$result = $this->MOrdered->update($order_id, $array);
+			}
+			if($result){
+				$this->load->view('imports/vHeader');
+				$this->load->view('vCheckout',$data);
+			}	
+			
 		}
 
 		function viewQRCode()
 		{
-			$this->load->view('imports/vHeader');
-			$this->load->view('vQRCode');
+			$data['img_url']="";
+			$qr_code = rand();
+			$params['data'] = $qr_code;
+			$params['level'] = 'H';
+			$params['size'] = 8;
+			$params['savename'] =FCPATH."assets/images/qr_image/".$qr_code.'.png';
+			if($this->ciqrcode->generate($params))
+			{
+				$data['img_url']=$qr_code.'.png';
+				$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
+				
+				$array = array('ordered_qr_code' => $qr_code );
+				$result = $this->MOrdered->update($order_id, $array);	
+			}
+			if($result){
+				$this->load->view('imports/vHeader');
+				$this->load->view('vQRCode',$data);
+			}
+			
 		}
 	}
 

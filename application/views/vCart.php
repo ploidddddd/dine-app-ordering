@@ -17,7 +17,7 @@
 	<!-- CONTENT -->
 	<div class='column'></div> 
 	<div class='fourteen wide column'>
-		<form class='ui form'>
+		<!-- <form class='ui form'> -->
 			<div class='ui four stackable cards'>
 				<?php if(isset($items)) { ?>
 				<?php foreach($items as $prod){ ?>
@@ -42,13 +42,14 @@
 		            <div class="extra content">
 						<div class='ui hidden divider'></div>
 						<div class='ui hidden divider'></div>
-		            	<form class='' method='POST' action='<?php echo site_url()?>/CProduct/updateCart'>
+		            	<form class='' method='POST' action='<?php echo site_url()?>/COrderItem/updateCart/<?php echo  $prod->order_item_id; ?>'>
 			                <center>
+								<input type='hidden' value='<?php echo $prod->product_price; ?>' name='prod_price'>
 								<div class='ui small brown icon button minus' id='minus' data-id='<?php echo $prod->product_id; ?>'>
 									<i class=' minus icon '></i>
 								</div>
 			                    <div class='ui disabled input ' style='max-width:50px; padding-right:2px;'>
-			                        <input style='text-align:center; ' value='<?php echo $prod->order_item_qty; ?>' id='qty<?php echo $prod->product_id; ?>'>
+			                        <input style='text-align:center; ' value='<?php echo $prod->order_item_qty; ?>' id='qty<?php echo $prod->product_id; ?>' name='qty<?php echo $prod->order_item_id; ?>'>
 			                    </div>
 			                    <div class='ui small brown icon button plus' id='plus' data-id='<?php echo $prod->product_id; ?>'>
 		                        	<i class='plus icon '></i>
@@ -56,16 +57,16 @@
 							</center>
 							<div class='ui hidden divider'></div>
 						  	<div class="ui two buttons">
-						    	<button class="ui basic black labeled icon button"><i class='remove icon'></i>Remove</button>
+						    	<a class="ui basic black labeled icon button" href='<?php echo site_url()?>/COrderItem/removeToCart/<?php echo  $prod->order_item_id; ?>'><i class='remove icon'></i>Remove</a>
 						    	<button class="ui basic brown labeled icon button" type='submit'><i class='pencil icon'></i>Update</button>
 						  	</div>
-
+					</form>
 					</div>
 		        </div> <!-- meal card -->
 		        <?php } ?>
 				<?php } ?>
 		    </div> <!--three cards -->
-		</form> 
+		<!-- </form>  -->
 	</div>
 	<div class='column'></div>
 
@@ -73,7 +74,9 @@
 		<div class='thirteen wide computer eight wide mobile tablet column'></div>
 		<div class='three wide computer eight wide center mobile tablet aligned middle aligned column'>
 			<div class='description'>
-		    	<p>TOTAL (P): 210.00</p>
+				<?php if (isset($total)) {?>
+		    	<p>TOTAL (P): <?php echo $total; ?></p>
+				<?php } ?>
 		    </div>
 		</div>
 	</div> 
@@ -81,7 +84,7 @@
 		<div class='column'></div>
 		<div class='ten wide computer six wide mobile tablet column'></div>
 		<div class='four wide computer eight wide mobile tablet column'>
-			<a href='<?php echo site_url()?>/CProduct/viewCheckout?>'><button class='ui fluid brown button'><i class='check icon'></i>Proceed to checkout</button></a>
+			<a href='<?php echo site_url()?>/CProduct/viewCheckout'><button class='ui fluid brown button'><i class='check icon'></i>Proceed to checkout</button></a>
 		</div>
 		<div class='column'></div>
 	</div>

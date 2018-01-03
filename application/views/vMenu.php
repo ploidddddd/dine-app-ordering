@@ -37,7 +37,7 @@
 
 		<div class='four wide computer ten wide tablet thirteen wide mobile column'>
 			<a href='<?php echo site_url()?>/CProduct/viewProductsInCategory/MAIN COURSE'>
-				<button class='ui massive fluid brown button'>MAINCOURSE</button>
+				<button class='ui massive fluid brown button'>MAIN COURSE</button>
 			</a>
 		</div>
 

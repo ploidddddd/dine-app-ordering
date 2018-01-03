@@ -16,7 +16,9 @@
 		<div class='fourteen wide column'>
 			<form class='ui form'>
 		        <div class='ui centered small card'>       
-		            <img src='<?php echo base_url("assets/images/dummyqr.png")?>' class='ui fluid image'>
+					<?php if(isset($img_url)){ ?>
+		            <img src='<?php echo base_url("assets/images/qr_image/".$img_url)?>' class='ui fluid image'>
+					<?php } ?>
 		        </div> <!-- meal card -->
 			</form>
 
@@ -34,7 +36,7 @@
 		<div class='column'></div>
 		<div class='ten wide computer six wide mobile tablet column'></div>
 		<div class='four wide computer eight wide mobile tablet column'>
-			<a href='<?php echo site_url()?>/CProduct/viewMenu?>'><button class='ui fluid brown button'><i class='check icon'></i>Finish</button></a>
+			<a href='<?php echo site_url()?>/CInitialize/deleteSession'><button class='ui fluid brown button'><i class='check icon'></i>Finish</button></a>
 		</div>
 		<div class='column'></div>
 	</div>

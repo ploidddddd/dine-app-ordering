@@ -5,7 +5,7 @@
 			<h1 class='ui middle aligned brown header'>CHECKOUT</h1>
 			<div class='ui breadcrumb'>
 				<i class='left arrow icon divider'></i>
-				<a href='<?php echo site_url()?>/CProduct/viewCart?>' class='section'>Back to cart</a>
+				<a href='<?php echo site_url()?>/CProduct/viewCart' class='section'>Back to cart</a>
 			</div>
 		</div>
 		<div class='column'></div>
@@ -20,17 +20,18 @@
 		<div class='fourteen wide column'>
 			<form class='ui form'>
 				<div class='ui four stackable cards'>
-
+				<?php if(isset($items)) { ?>
+				<?php foreach($items as $prod){ ?>
 			        <div class='ui centered small card'>       
 			            <div class='content'>
 			                <div class='header'>
-			                    Pork Sisig
+							<?php echo $prod->product_name; ?>
 			                </div>
 			                <div class='description'>
 	                    		<p>
-	                    			Price (P): 70.00 <br>
-	                    			Qty: 3 <br>
-	                    			<strong>Subtotal (P): 210.00</strong>
+	                    			Price (P): <?php echo $prod->product_price; ?> <br>
+	                    			Qty: <?php echo $prod->order_item_qty; ?> <br>
+	                    			<strong>Subtotal (P): <?php echo $prod->order_item_subtotal; ?></strong>
 	                    		</p>
 
 	                    		<div class='ui hidden divider'></div>
@@ -41,12 +42,14 @@
 			            <div class='ui hidden divider'></div>
 			        </div> <!-- meal card -->
 			        
-
+					<?php } ?>
+				<?php } ?>
 
 			    </div> <!--three cards -->
 
 			    
 			</form>
+			
 		</div>
 		<div class='column'></div>
 	</div>
@@ -55,7 +58,9 @@
 		<div class='thirteen wide computer eight wide mobile tablet column'></div>
 		<div class='three wide computer eight wide center mobile tablet aligned middle aligned column'>
 			<div class='description'>
-		    	<p>TOTAL (P): 210.00</p>
+				<?php if (isset($total)) {?>
+		    		<p>TOTAL (P): <?php echo $total; ?></p>
+				<?php } ?>
 		    </div>
 		</div>
 	</div> 
@@ -63,7 +68,7 @@
 		<div class='column'></div>
 		<div class='ten wide computer six wide mobile tablet column'></div>
 		<div class='four wide computer eight wide mobile tablet column'>
-			<a href='<?php echo site_url()?>/CProduct/viewQRCode?>'><button class='ui fluid brown button'><i class='check icon'></i>Order</button></a>
+			<a href='<?php echo site_url()?>/CProduct/viewQRCode'><button class='ui fluid brown button'><i class='check icon'></i>Order</button></a>
 		</div>
 		<div class='column'></div>
 	</div>
