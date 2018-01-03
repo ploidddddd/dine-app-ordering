@@ -41,12 +41,12 @@
 			}
 			$this->load->view('imports/vHeader');
 			$this->load->view('vProducts',$data);
+			$this->load->view('imports/vFooter');
 
 		}
 
 		function viewMenu()
 		{
-			$this->load->view('imports/vHeader');
 			$this->load->view('vMenu');
 		}
 
@@ -60,6 +60,7 @@
 
 			$this->load->view('imports/vHeader');
 			$this->load->view('vProduct',$data);
+			$this->load->view('imports/vFooter');
 		}
 
 		public function viewCart()
@@ -77,6 +78,7 @@
 
 			$this->load->view('imports/vHeader');
 			$this->load->view('vCart',$data);
+			$this->load->view('imports/vFooter');
 		}
 
 		function viewCheckout()
@@ -96,6 +98,7 @@
 			if($result){
 				$this->load->view('imports/vHeader');
 				$this->load->view('vCheckout',$data);
+				$this->load->view('imports/vFooter');
 			}	
 			
 		}
@@ -117,7 +120,6 @@
 				$result = $this->MOrdered->update($order_id, $array);	
 			}
 			if($result){
-				$this->load->view('imports/vHeader');
 				$this->load->view('vQRCode',$data);
 			}
 			

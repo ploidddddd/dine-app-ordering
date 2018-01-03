@@ -1,73 +1,185 @@
-	<div class='ui center aligned middle aligned grid'>
-		<div class='eight wide center aligned middle aligned column'>
-			<a href='<?php echo site_url()?>/CProduct/viewMenu'><h1 class='ui middle aligned brown header'>MENU</h1></a>
-		</div>
-		<div class='eight wide center aligned middle aligned column'>
-			<a href='<?php echo site_url()?>/CProduct/viewCart'><i class='big brown inbox icon cart-icon'></i></a>
-		</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DINE | Menu</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/style.css")?>">
+    <link rel='stylesheet' href='<?php echo base_url("assets/semantic/semantic.min.css")?>'>
+    <script src='<?php echo base_url("assets/jquery.min.js")?>'></script>
+    <script src='<?php echo base_url("assets/semantic/semantic.min.js")?>'></script>
+</head>
+<body>
 
-		<!-- MENU -->
- 
-		<div class='mobile computer only column'></div>
-		<div class='three wide tablet only column'></div>
+<div class='ui fixed inverted menu ' style='background-color: #800000 !important;'>
+    <a class='borderless item'>DINE</a>
+    <div class='right menu'>
+    	<a class='borderless item' href='<?php echo site_url()?>/CProduct/viewCart'><i class='big white inbox icon cart-icon'></i></a>
+    </div>
+</div>
 
-		<div class='four wide computer ten wide tablet thirteen wide mobile column'>
+<div class='ui bottom attached padded segment'>
+	<div class='ui hidden segment'></div>
+	<div class='ui basic segment'>
+        <h1 class="ui brown dividing header">
+            <!-- <i class="dashboard icon"></i> -->
+            <div class="content">
+              MENU
+              <!-- <div class="sub header">Shows the dashboard</div> -->
+            </div>
+        </h1> <!-- header --> 
+    </div> <!-- segment -->
+    <div class='ui grid'>
+		<div class='sixteen wide mobile four wide tablet four wide computer column'>
 			<a href='<?php echo site_url()?>/CProduct/viewProductsInCategory/RICE MEAL'>
-				<button class='ui massive fluid brown button'>RICE MEALS</button>
-			</a>
+	    		<div class='ui fluid segment' style='background: #4682b4;'>
+	    			<div class='ui grid'>
+	    				<!-- mobile -->
+	    				<div class='five wide mobile only center aligned middle aligned column'>
+	    					<img src='<?php echo base_url("assets/images/ricemeal.png")?>' class='ui tiny image'>
+	    				</div>
+	    				<div class=' eleven wide mobile only middle aligned column'>
+	    					<p style='color: white; font-size: 2em; font-family:"Roboto"; font-weight: bold; '>RICE MEALS</p>
+	    				</div>
+
+	    				<!-- tablet/computer -->
+	    				<div class='sixteen wide tablet computer only column'>
+	    					<img src='<?php echo base_url("assets/images/ricemeal.png")?>' class='ui centered tiny image'>
+	    				</div>
+	    				<div class='sixteen wide wide tablet only center aligned middle aligned column'>
+	    					<span style='color: white; font-size: 1.4em; font-family:"Roboto"; font-weight: bold; '>RICE MEALS</span><br>
+	    				</div>
+
+	    				<!-- computer -->
+	    				<div class='sixteen wide wide computer only center aligned middle aligned column'>
+	    					<span style='color: white; font-size: 2em; font-family:"Roboto"; font-weight: bold; '>RICE MEALS</span><br>
+	    				</div>
+	    			</div>
+	    		</div>
+    		</a>
 		</div>
-
-		<div class='mobile only column'></div>
-		<div class='three wide tablet only column'></div>
-
-		<div class='mobile computer only column'></div>
-		<div class='three wide tablet only column'></div>
-
-		<div class='four wide computer ten wide tablet thirteen wide mobile column'>
+    	<div class='sixteen wide mobile four wide tablet four wide computer column'>
 			<a href='<?php echo site_url()?>/CProduct/viewProductsInCategory/SOUP'>
-				<button class='ui massive fluid brown button'>SOUP</button>
-			</a>
+	    		<div class='ui fluid segment' style='background: #3cb371;'>
+	    			<div class='ui grid'>
+	    				<!-- mobile -->
+	    				<div class='five wide mobile only center aligned middle aligned column'>
+	    					<img src='<?php echo base_url("assets/images/soups.png")?>' class='ui tiny image'>
+	    				</div>
+	    				<div class=' eleven wide mobile only  middle aligned column'>
+	    					<p style='color: white; font-size: 2em; font-family:"Roboto"; font-weight: bold; '>SOUP</p>
+	    				</div>
+
+	    				<!-- tablet/computer -->
+	    				<div class='sixteen wide computer tablet only column'>
+	    					<img src='<?php echo base_url("assets/images/soups.png")?>' class='ui centered tiny image'>
+	    				</div>
+
+	    				<!-- tablet -->
+	    				<div class='sixteen wide wide tablet only center aligned middle aligned column'>
+	    					<span style='color: white; font-size: 1.4em; font-family:"Roboto"; font-weight: bold; '>SOUP</span>
+	    				</div>
+
+	    				<!-- computer -->
+	    				<div class='sixteen wide wide computer only center aligned middle aligned column'>
+	    					<span style='color: white; font-size: 2em; font-family:"Roboto"; font-weight: bold; '>SOUP</span>
+	    				</div>
+	    			</div>
+	    		</div>
+    		</a>
 		</div>
-
-		<div class='mobile only column'></div>
-		<div class='three wide tablet only column'></div>
-
-		<div class='mobile computer only column'></div>
-		<div class='three wide tablet only column'></div>
-
-		<div class='four wide computer ten wide tablet thirteen wide mobile column'>
+    	<div class='sixteen wide mobile four wide tablet four wide computer column'>
 			<a href='<?php echo site_url()?>/CProduct/viewProductsInCategory/MAIN COURSE'>
-				<button class='ui massive fluid brown button'>MAIN COURSE</button>
-			</a>
-		</div>
+	    		<div class='ui fluid segment' style='background: #f4a460;'>
+	    			<div class='ui grid'>
+	    				<!-- mobile -->
+	    				<div class='five wide mobile only center aligned middle aligned column'>
+	    					<img src='<?php echo base_url("assets/images/main course.png")?>' class='ui tiny image'>
+	    				</div>
+	    				<div class=' eleven wide mobile only  middle aligned column'>
+	    					<p style='color: white; font-size: 2em; font-family:"Roboto"; font-weight: bold; '>MAIN COURSE</p>
+	    				</div>
 
-		<div class='mobile computer only column'></div>
-		<div class='three wide tablet only column'></div>
+	    				<!-- tablet/computer -->
+	    				<div class='sixteen wide tablet computer only column'>
+	    					<img src='<?php echo base_url("assets/images/main course.png")?>' class='ui centered tiny image'>
+	    				</div>
 
-		<div class='mobile only column'></div>
-		<div class='three wide tablet only column'></div>
+	    				<!-- tablet -->
+	    				<div class='sixteen wide wide tablet only center aligned middle aligned column'>
+	    					<span style='color: white; font-size: 1.4em; font-family:"Roboto"; font-weight: bold; '>MAIN COURSE</span><br>
+	    				</div>
 
-		<div class='four wide computer ten wide tablet thirteen wide mobile column'>
+	    				<!-- computer -->
+	    				<div class='sixteen wide wide computer only center aligned middle aligned column'>
+	    					<span style='color: white; font-size: 2em; font-family:"Roboto"; font-weight: bold; '>MAIN COURSE</span><br>
+	    				</div>
+	    			</div>
+	    		</div>
+    		</a>
+		</div> 
+		<div class='sixteen wide mobile four wide tablet four wide computer column'>
 			<a href='<?php echo site_url()?>/CProduct/viewProductsInCategory/DRINKS'>
-				<button class='ui massive fluid brown button'>DRINKS</button>
-			</a>
-		</div>
+	    		<div class='ui fluid segment' style='background: #2f4f4f;'>
+	    			<div class='ui grid'>
+	    				<!-- mobile -->
+	    				<div class='five wide mobile only center aligned middle aligned column'>
+	    					<img src='<?php echo base_url("assets/images/soda.png")?>' class='ui tiny image'>
+	    				</div>
+	    				<div class=' eleven wide mobile only  middle aligned column'>
+	    					<p style='color: white; font-size: 2em; font-family:"Roboto"; font-weight: bold; '>DRINKS</p>
+	    				</div>
+	    				
 
-		<div class='mobile computer only column'></div>
-		<div class='three wide tablet only column'></div>
+	    				<!-- tablet/computer -->
+	    				<div class='sixteen wide tablet computer only center aligned middle aligned column'>
+	    					<img src='<?php echo base_url("assets/images/soda.png")?>' class='ui centered tiny image'>
+	    				</div>
 
-		<div class='mobile computer only column'></div>
-		<div class='three wide tablet only column'></div>
+	    				<!-- tablet -->
+	    				<div class='sixteen wide tablet only center aligned middle aligned column'>
+	    					<span style='color: white; font-size: 1.4em; font-family:"Roboto"; font-weight: bold; '>DRINKS</span>
+	    				</div>
 
-		<div class='four wide computer ten wide tablet thirteen wide mobile column'>
+	    				<!-- computer -->
+	    				<div class='sixteen wide computer only center aligned middle aligned column'>
+	    					<span style='color: white; font-size: 2em; font-family:"Roboto"; font-weight: bold; '>DRINKS</span>
+	    				</div>
+	    			</div>
+	    		</div>
+    		</a>
+		</div> 
+		<div class='sixteen wide mobile four wide tablet four wide computer column'>
 			<a href='<?php echo site_url()?>/CProduct/viewProductsInCategory/EXTRAS'>
-				<button class='ui massive fluid brown button'>EXTRAS</button>
-			</a>
-		</div>
+	    		<div class='ui fluid segment' style='background: #cd5c5c;'>
+	    			<div class='ui grid'>
+	    				<!-- mobile -->
+	    				<div class='five wide mobile only center aligned middle aligned column'>
+	    					<img src='<?php echo base_url("assets/images/extras.png")?>' class='ui tiny image'>
+	    				</div>
+	    				<div class=' eleven wide mobile only  middle aligned column'>
+	    					<p style='color: white; font-size: 2em; font-family:"Roboto"; font-weight: bold;'>EXTRAS</p>
+	    				</div>
 
-		<div class='mobile only column'></div>
-		<div class='three wide tablet only column'></div>
-	</div>
+	    				<!-- tablet/computer -->
+	    				<div class='sixteen wide tablet computer only center aligned middle aligned column'>
+	    					<img src='<?php echo base_url("assets/images/extras.png")?>' class='ui centered tiny image'>
+	    				</div>
+
+	    				<!-- tablet -->
+	    				<div class='sixteen wide tablet only center aligned middle aligned column'>
+	    					<p style='color: white; font-size: 1.4em; font-family:"Roboto"; font-weight: bold;'>EXTRAS</p>
+	    				</div>
+	    				
+	    				<!-- computer -->
+	    				<div class=' sixteen wide computer only center aligned middle aligned column'>
+	    					<p style='color: white; font-size: 2em; font-family:"Roboto"; font-weight: bold;'>EXTRAS</p>
+	    				</div>
+	    			</div>
+	    		</div>
+    		</a>
+		</div>
+    </div>
 </div>
 
 </body>

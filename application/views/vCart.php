@@ -1,102 +1,117 @@
-<div class='ui grid'>
-	<div class='row'>
-		<div class='column'></div>
-		<div class='fourteen wide column'>
-			<h1 class='ui middle aligned brown header'>CART</h1>
-			<div class='ui breadcrumb'>
-				<i class='left arrow icon divider'></i>
-				<a href='<?php echo site_url()?>/CProduct/viewMenu?>' class='section'>Back to menu</a>
-			</div>
-		</div>
-		<div class='column'></div>
-	</div>
+<div class='pusher'>
+	<div class='ui attached segment'>
+		<div class='ui hidden segment'></div>
+		<div class='ui basic segment'>
+	        <h1 class="ui brown dividing header">
+	            <!-- <i class="dashboard icon"></i> -->
+	            <div class="content">
+		            CART
+	              <!-- <div class="sub header">Shows the dashboard</div> -->
+	            </div>
+	        </h1> <!-- header --> 
+	    </div> <!-- segment -->
 
-
-	<!--  END OF MENU AND CART -->
-
-	<!-- CONTENT -->
-	<div class='column'></div> 
-	<div class='fourteen wide column'>
-		<!-- <form class='ui form'> -->
-			<div class='ui four stackable cards'>
-				<?php if(isset($items)) { ?>
+	    <div class='ui centered grid'>
+	    	<?php if(isset($items)) { ?>
 				<?php foreach($items as $prod){ ?>
-		        <div class='ui centered card'>       
-		            <div class='content'>
-		            	<center><img class='ui small image' src='<?php echo base_url($prod->product_image)?>'></center>
-		            	<div class='ui hidden divider'></div>
-		                <div class='header'>
-							<?php echo $prod->product_name; ?>
-		                </div>
-		                <div class='meta'>
-							<?php echo $prod->product_description; ?>
-		                </div>
-		                <div class='description'>
-                    		<p>Price (P): <?php echo $prod->product_price; ?></p>
-                    		<p>Qty: <?php echo $prod->order_item_qty; ?></p>
-		                    <p><strong>Subtotal (P): <?php echo $prod->order_item_subtotal; ?></strong></p>
-                    		<div class='ui hidden divider'></div>
-		                </div>
-		                <div class='ui hidden divider'></div>
-		            </div>
-		            <div class="extra content">
-						<div class='ui hidden divider'></div>
-						<div class='ui hidden divider'></div>
-		            	<form class='' method='POST' action='<?php echo site_url()?>/COrderItem/updateCart/<?php echo  $prod->order_item_id; ?>'>
-			                <center>
-								<input type='hidden' value='<?php echo $prod->product_price; ?>' name='prod_price'>
-								<div class='ui small brown icon button minus' id='minus' data-id='<?php echo $prod->product_id; ?>'>
-									<i class=' minus icon '></i>
-								</div>
-			                    <div class='ui disabled input ' style='max-width:50px; padding-right:2px;'>
-			                        <input style='text-align:center; ' value='<?php echo $prod->order_item_qty; ?>' id='qty<?php echo $prod->product_id; ?>' name='qty<?php echo $prod->order_item_id; ?>'>
-			                    </div>
-			                    <div class='ui small brown icon button plus' id='plus' data-id='<?php echo $prod->product_id; ?>'>
-		                        	<i class='plus icon '></i>
-		                    	</div>
-							</center>
-							<div class='ui hidden divider'></div>
-						  	<div class="ui two buttons">
-						    	<a class="ui basic black labeled icon button" href='<?php echo site_url()?>/COrderItem/removeToCart/<?php echo  $prod->order_item_id; ?>'><i class='remove icon'></i>Remove</a>
-						    	<button class="ui basic brown labeled icon button" type='submit'><i class='pencil icon'></i>Update</button>
-						  	</div>
-					</form>
-					</div>
-		        </div> <!-- meal card -->
-		        <?php } ?>
-				<?php } ?>
-		    </div> <!--three cards -->
-		<!-- </form>  -->
+		    	<div class='sixteen wide mobile five wide computer eight wide tablet column'>	
+		    		<div class='ui top attached segment'>
+		    			<div class='ui compact grid'>
+		    				<div class='fourteen wide column'>
+		    					<span style='font-family: "Roboto"; color: black; font-size: 1.2em;'>
+			    						<?php echo $prod->product_name; ?>
+			    					</span>
+		    				</div>
+		    				<div class='two wide column'>
+		    					<a class='confirmRemove' style='float: right; cursor: pointer;' ><i class='large red remove icon'></i></a>
+		    				</div>
+		    			</div>
+		    		</div>
+	    			<div class='ui attached segment'>
+		    			<div class='ui grid'>
+		    				<div class='seven wide mobile center aligned middle aligned column'>
+		    					<img class='ui centered small image' src='<?php echo base_url($prod->product_image)?>'>
+		    				</div>
+		    				<div class='nine wide mobile column' style='line-height: 1.9em;'>
+		    					<span style='font-family: "Courier New"; color: black; font-size: 1.4em;'>
+		    						P <?php echo $prod->product_price; ?>		
+		    					</span><br>
+
+		    					<span style='font-style: italic; font-family: "Roboto Light"; font-size: 1.2em;'>Quantity: x <?php echo $prod->order_item_qty; ?></span><br>
+		    					<span style='font-style: italic; font-family: "Roboto Light"; font-size: 1.2em;'>Subtotal: P<?php echo $prod->order_item_subtotal; ?></span><br>
+		    					<center><form class='' method='POST' action='<?php echo site_url()?>/COrderItem/updateCart/<?php echo  $prod->order_item_id; ?>'>
+									<input type='hidden' value='<?php echo $prod->product_price; ?>' name='prod_price'>
+								 	
+									<button class='ui  basic left attached icon button minus' id='minus' data-id='<?php echo $prod->product_id; ?>'>
+										<i class=' minus icon '></i>
+									</button>
+									
+				                    <div class='ui disabled input' style='max-width: 50px;'>
+				                        <input style='text-align:center; '  value='<?php echo $prod->order_item_qty; ?>' id='qty<?php echo $prod->product_id; ?>' name='qty<?php echo $prod->order_item_id; ?>'>
+				                    </div>
+				                    
+				                    <button class='ui basic right attached icon button plus' id='plus' data-id='<?php echo $prod->product_id; ?>'>
+			                        	<i class='plus icon '></i>
+			                    	</button>
+			                    </form></center>
+		    				</div>
+		    			</div>
+	    			</div>
+		    	</div>
+		   		<?php } ?>
+	    </div>
 	</div>
-	<div class='column'></div>
-
-	<div class='row'>
-		<div class='thirteen wide computer eight wide mobile tablet column'></div>
-		<div class='three wide computer eight wide center mobile tablet aligned middle aligned column'>
-			<div class='description'>
-				<?php if (isset($total)) {?>
-		    	<p>TOTAL (P): <?php echo $total; ?></p>
+	<div class='ui bottom attached segment'>
+    	<div class='ui grid'>
+			<div class='six wide computer tablet only column'></div>
+    		<div class='eight wide mobile four wide computer four wide tablet center aligned middle aligned column'>
+    			<?php if (isset($total)) {?>
+			    	<p style='font-size: 1.2em; font-family: "Roboto";'>TOTAL: <span style='font-size: 1.3em; font-family: "Courier New"; font-weight: bold;'>P <?php echo $total; ?></span></p>
 				<?php } ?>
-		    </div>
-		</div>
-	</div> 
-	<div class='row'>
-		<div class='column'></div>
-		<div class='ten wide computer six wide mobile tablet column'></div>
-		<div class='four wide computer eight wide mobile tablet column'>
-			<a href='<?php echo site_url()?>/CProduct/viewCheckout'><button class='ui fluid brown button'><i class='check icon'></i>Proceed to checkout</button></a>
-		</div>
-		<div class='column'></div>
-	</div>
-
-
-
-
+    		</div>
+    		<div class='six wide computer tablet only column'></div>
+    		<div class='six wide computer tablet only column'></div>
+    		<div class='eight wide mobile four wide computer four wide tablet column'>
+    			<a href='<?php echo site_url()?>/CProduct/viewCheckout'><button style='background: #800000; color: white;' class='ui circular fluid button'><i class='check icon'></i>Checkout</button></a>
+    		</div>
+    		<div class='six wide computer tablet only column'></div>
+    		<div class='computer tablet only column'></div>
+    	</div>
+    </div>
+    <?php 
+		}else{
+			echo "
+				<div class='sixteen wide center aligned middle aligned column'>
+					<p style='font-style: italic; font-family: ".'Roboto Light'."; font-size: 1.3em;'><i class='circular info icon' style='color: white; background-color: #800000;'></i>Your cart is empty.</p>
+				</div>
+				<div class='row'></div>
+			";
+		} ?>
 </div>
+
+
+<div class='ui mini modal' id='removeItem'>
+  <div class='header'>Remove Item | <?php echo  $prod->order_item_id;?></div> 
+  <div class='content'>
+    <p>Are you sure you want to remove this item?</p>
+  </div>
+  <div class='actions'>
+  	<div class='ui gray cancel button'>
+  		Cancel
+  	</div>
+  	<a href='<?php echo site_url()?>/COrderItem/removeToCart/<?php echo  $prod->order_item_id; ?>'><div class='ui cancel inverted button' style='background-color: #800000;'>
+  		Remove
+  	</div></a>
+  </div>
+</div>
+
 </body>
 </html>
 <script>
 	$(document).ready(function(){
+		$('.confirmRemove').click(function(){
+			$('#removeItem').modal('show');
+		});
 		var value = 0 ;
 		$(document).on('click','.plus',function() {
 			var id = $(this).data("id");
@@ -109,12 +124,14 @@
 
 		$(document).on('click','.minus',function() {
 			var id = $(this).data("id");
-			if($('#qty'+id).val() >= 1){
+			if($('#qty'+id).val() > 1){
 				var get = $('#qty'+id).val();
 				get -= 1;
 				$('#qty'+id).val(get); 
-			} 
-			
+			}else{
+				$('#removeItem').modal('show');
+			}
+
 		});
 	});
 </script>
