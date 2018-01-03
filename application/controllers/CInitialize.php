@@ -31,6 +31,7 @@
 					}
 				}
 			}
+			// $this->deleteSession();
 			// print_r($this->session->userdata('orderingSession'));
 			$this->load->view('imports/vHeader');
 			$this->load->view('vMenu');
