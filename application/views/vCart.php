@@ -24,7 +24,8 @@
 		    				</div>
 		    				<div class='two wide column'>
 		    					<a class='confirmRemove' style='float: right; cursor: pointer;' data-id='<?php echo  $prod->order_item_id;?>' ><i class='large red remove icon'></i></a>
-		    				</div>
+								
+							</div>
 		    			</div>
 		    		</div>
 	    			<div class='ui attached segment'>
@@ -45,9 +46,10 @@
 									<button class='ui  basic left attached icon button minus' id='minus' data-id='<?php echo $prod->product_id; ?>'>
 										<i class=' minus icon '></i>
 									</button>
+									<input type='hidden' value='<?php echo $prod->order_item_id; ?>' id='od_id<?php echo $prod->product_id; ?>'>
 									
 				                    <div class='ui disabled input' style='max-width: 50px;'>
-				                        <input style='text-align:center; '  value='<?php echo $prod->order_item_qty; ?>' id='qty<?php echo $prod->product_id; ?>' name='qty<?php echo $prod->order_item_id; ?>'>
+				                        <input style='text-align:center; '  value='<?php echo $prod->order_item_qty; ?>' id='qty' name='qty<?php echo $prod->order_item_id; ?>'>
 				                    </div>
 				                    
 				                    <button class='ui basic right attached icon button plus' id='plus' data-id='<?php echo $prod->product_id; ?>'>
@@ -135,6 +137,8 @@
 				get -= 1;
 				$('#qty'+id).val(get); 
 			}else{
+				$('#order_item_id').val($('#od_id'+id).val());
+				// alert($('#order_item_id').val());
 				$('#removeItem').modal('show');
 				e.preventDefault();
 			}
