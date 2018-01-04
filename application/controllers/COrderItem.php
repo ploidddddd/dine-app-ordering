@@ -51,9 +51,11 @@
 			}
 		}
 
-		public function removeToCart($order_item_id)
+		public function removeToCart()
 		{
 			// print_r('deleting..');
+			$order_item_id = $this->input->post('order_item_id');
+			// print_r($order_item_id);
 			$result = $this->MOrderItem->delete($order_item_id);
 			if($result){
 				redirect('CProduct/viewCart');
