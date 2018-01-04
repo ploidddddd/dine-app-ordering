@@ -16,7 +16,7 @@
 			
 		}
 
-		public function addOrderItem()
+		public function addOrderItem() 
 		{
 			$subtotal = $this->input->post('prod_price') * $this->input->post('qty');
 			$data = array('order_item_qty' => $this->input->post('qty'),
