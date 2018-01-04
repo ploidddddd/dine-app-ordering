@@ -38,7 +38,7 @@
     <a class="borderless item toggleMenu">
         <i class="sidebar icon"></i>
     </a>
-    <a class='borderless item' href='<?php echo site_url()?>/CProduct/viewMenu?>'>DINE</a>
+    <a class='borderless item' href='<?php echo site_url()?>/CProduct/viewMenu'>DINE</a>
     <div class='right menu'>
         <a class='borderless item' href='<?php echo site_url()?>/CProduct/viewCart'><i class='big white inbox icon cart-icon'></i></a>
     </div>

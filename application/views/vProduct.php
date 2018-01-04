@@ -68,7 +68,7 @@
 	    		<div class='eight wide mobile only column'>
 	    		</div>
 	    		<div class='eight wide mobile four wide computer four wide tablet column'>
-	    			<button style='background: #800000; color: white;' class='ui circular fluid button' type='submit'><i class='plus icon'></i>Add to cart</button>
+	    			<button style='background: #800000; color: white;' class='ui circular fluid button disabled' type='submit' id='cButton'><i class='plus icon'></i>Add to cart</button>
 	    		</div></form>
 	    		<div class='six wide computer tablet only column'></div>
 	    	</div>
@@ -84,11 +84,23 @@
 <script>
 	$(document).ready(function(){
 		var value = 0 ;
+
+	
+		// if($('#qty').val() == 0){
+		// 	$("#cButton").addClass("disabled");
+		// } else {
+		// 	$("#cButton").removeClass("disabled");
+		// }
+
+		
+
+
 		$(document).on('click','#plus',function() {
 			var get = parseInt($('#qty').val());
       		if (get <= 99) {
         		get += 1;
         		$('#qty').val(get); 
+				$("#cButton").removeClass("disabled");
      		}
 		});
 
@@ -98,7 +110,17 @@
 				get -= 1;
 				$('#qty').val(get); 
 			} 
+
+			if($('#qty').val() == 0){
+				$("#cButton").addClass("disabled");
+			}
 			
 		});
+
+		$(document).on('change','#qty',function() {
+			alert();
+			$("#cButton").removeClass("disabled");
+		});
+
 	});
 </script>

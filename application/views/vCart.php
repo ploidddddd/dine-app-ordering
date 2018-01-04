@@ -39,7 +39,7 @@
 
 		    					<span style='font-style: italic; font-family: "Roboto Light"; font-size: 1.2em;'>Quantity: x <?php echo $prod->order_item_qty; ?></span><br>
 		    					<span style='font-style: italic; font-family: "Roboto Light"; font-size: 1.2em;'>Subtotal: P<?php echo $prod->order_item_subtotal; ?></span><br>
-		    					<center><form class='' method='POST' action='<?php echo site_url()?>/COrderItem/updateCart/<?php echo  $prod->order_item_id; ?>'>
+		    					<center><form class='' id='form' method='POST' action='<?php echo site_url()?>/COrderItem/updateCart/<?php echo  $prod->order_item_id; ?>'>
 									<input type='hidden' value='<?php echo $prod->product_price; ?>' name='prod_price'>
 								 	
 									<button class='ui  basic left attached icon button minus' id='minus' data-id='<?php echo $prod->product_id; ?>'>
@@ -118,11 +118,11 @@
 			var get = parseInt($('#qty'+id).val());
       		if (get <= 99) {
         		get += 1;
-        		$('#qty'+id).val(get); 
+        		$('#qty'+id).val(get); 	
      		}
 		});
 
-		$(document).on('click','.minus',function() {
+		$(document).on('click','.minus',function(e) {
 			var id = $(this).data("id");
 			if($('#qty'+id).val() > 1){
 				var get = $('#qty'+id).val();
@@ -130,8 +130,10 @@
 				$('#qty'+id).val(get); 
 			}else{
 				$('#removeItem').modal('show');
+				e.preventDefault();
 			}
-
 		});
+
+		$('.ui.modal').modal('setting', 'closable', false);
 	});
 </script>
