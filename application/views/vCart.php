@@ -23,7 +23,7 @@
 			    					</span>
 		    				</div>
 		    				<div class='two wide column'>
-		    					<a class='confirmRemove' style='float: right; cursor: pointer;' ><i class='large red remove icon'></i></a>
+		    					<a class='confirmRemove' style='float: right; cursor: pointer;' data-id='<?php echo  $prod->order_item_id;?>' ><i class='large red remove icon'></i></a>
 		    				</div>
 		    			</div>
 		    		</div>
@@ -91,18 +91,22 @@
 
 
 <div class='ui mini modal' id='removeItem'>
-  <div class='header'>Remove Item | <?php echo  $prod->order_item_id;?></div> 
+  <div class='header'>Remove Item </div> 
   <div class='content'>
+	<form method='POST' action='<?php echo site_url()?>/COrderItem/removeToCart'>
+	<input type='hidden' name='order_item_id' id='order_item_id' value=''>
     <p>Are you sure you want to remove this item?</p>
+	
   </div>
   <div class='actions'>
   	<div class='ui gray cancel button'>
   		Cancel
   	</div>
-  	<a href='<?php echo site_url()?>/COrderItem/removeToCart/<?php echo  $prod->order_item_id; ?>'><div class='ui cancel inverted button' style='background-color: #800000;'>
+  	<button class='ui cancel inverted button' style='background-color: #800000;' type='submit'>
   		Remove
-  	</div></a>
+  	</button>
   </div>
+  </form>
 </div>
 
 </body>
@@ -110,7 +114,9 @@
 <script>
 	$(document).ready(function(){
 		$('.confirmRemove').click(function(){
+			$('#order_item_id').val($(this).data("id"));
 			$('#removeItem').modal('show');
+
 		});
 		var value = 0 ;
 		$(document).on('click','.plus',function() {
