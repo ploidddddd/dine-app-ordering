@@ -86,20 +86,24 @@
 
 		public function viewCart()
 		{
-			$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
-			$result = $this->MCart->getAllOrderProducts($order_id);
-			$data['items'] = null;
-			$data['total'] = 0;
-			if($result){
-				$data['items'] = $result;
-				foreach($result as $res){
-					$data['total'] += $res->order_item_subtotal;
+			if($this->session->userdata('orderingSession')){
+				$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
+				$result = $this->MCart->getAllOrderProducts($order_id);
+				$data['items'] = null;
+				$data['total'] = 0;
+				if($result){
+					$data['items'] = $result;
+					foreach($result as $res){
+						$data['total'] += $res->order_item_subtotal;
+					}
 				}
+				$this->load->view('imports/vHeader');
+				$this->load->view('vCart',$data);
+			} else {
+				$this->load->view('imports/vHeader');
+				$this->load->view('vCart');
 			}
-
-			$this->load->view('imports/vHeader');
-			$this->load->view('vCart',$data);
-			// $this->load->view('imports/vFooter');
+			
 		}
 
 		function viewCheckout()
