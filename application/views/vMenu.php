@@ -14,7 +14,7 @@
 <div class='ui fixed inverted menu ' style='background-color: #800000 !important;'>
     <a class='borderless item'>DINE</a>
     <div class='right menu'>
-    	<a class='borderless item' href='<?php echo site_url()?>/CProduct/viewCart'><i class='big white inbox icon cart-icon'></i></a>
+        <a class='borderless item' href='<?php echo site_url()?>/CProduct/viewCart' ><img src='<?php echo base_url("assets/images/tray1.png")?>'></a>
     </div>
 </div>
 

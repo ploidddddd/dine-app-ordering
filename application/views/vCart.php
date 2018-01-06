@@ -5,10 +5,11 @@
 	        <h1 class="ui brown dividing header">
 	            <!-- <i class="dashboard icon"></i> -->
 	            <div class="content">
-		            CART
+		            TRAY
 	              <!-- <div class="sub header">Shows the dashboard</div> -->
 	            </div>
 	        </h1> <!-- header --> 
+	        <a href='<?php echo site_url()?>/CProduct/viewMenu?>' style='color: #a5673f; font-family: "Roboto Light"; font-size: 1.5em; font-weight: bold;'><i class='brown left arrow icon'></i>BACK TO MENU</a>
 	    </div> <!-- segment -->
 
 	    <div class='ui centered grid'>
@@ -65,6 +66,7 @@
 	</div>
 	<div class='ui bottom attached segment'>
     	<div class='ui grid'>
+			<div class='sixteen wide computer tablet only column'></div>
 			<div class='six wide computer tablet only column'></div>
     		<div class='eight wide mobile four wide computer four wide tablet center aligned middle aligned column'>
     			<?php if (isset($total)) {?>
@@ -77,14 +79,15 @@
     			<a href='<?php echo site_url()?>/CProduct/viewCheckout'><button style='background: #800000; color: white;' class='ui circular fluid button'><i class='check icon'></i>Checkout</button></a>
     		</div>
     		<div class='six wide computer tablet only column'></div>
-    		<div class='computer tablet only column'></div>
+    		<div class='sixteen wide computer tablet only column'></div>
     	</div>
     </div>
+    <div class='ui hidden divider'></div>
     <?php 
 		}else{
 			echo "
 				<div class='sixteen wide center aligned middle aligned column'>
-					<p style='font-style: italic; font-family: ".'Roboto Light'."; font-size: 1.3em;'><i class='circular info icon' style='color: white; background-color: #800000;'></i>Your cart is empty.</p>
+					<p style='font-style: italic; font-family: ".'Roboto Light'."; font-size: 1.7em;'><i class='small circular info icon' style='color: white; background-color: #800000;'></i>Your tray is empty.</p>
 				</div>
 				<div class='row'></div>
 			";
@@ -104,7 +107,7 @@
   	<div class='ui gray cancel button'>
   		Cancel
   	</div>
-  	<button class='ui cancel inverted button' style='background-color: #800000;' type='submit'>
+  	<button class='ui cancel button' style='background-color: #800000; color: white;' type='submit'>
   		Remove
   	</button>
   </div>
