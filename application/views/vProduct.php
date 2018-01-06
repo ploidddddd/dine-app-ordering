@@ -63,15 +63,16 @@
 	</div>
 	<div class='ui bottom attached segment'>
     	<div class='ui grid'>
-    		<div class='row'>
-    			<div class='six wide computer tablet only column'></div>
-	    		<div class='eight wide mobile only column'>
-	    		</div>
-	    		<div class='eight wide mobile four wide computer four wide tablet column'>
-	    			<button style='background: #800000; color: white;' class='ui circular fluid button disabled' type='submit' id='cButton'><i class='plus icon'></i>Add to cart</button>
-	    		</div></form>
-	    		<div class='six wide computer tablet only column'></div>
-	    	</div>
+			<div class='six wide computer tablet only column'></div>
+    		<div class='eight wide mobile only column'>
+    		</div>
+    		<div class='six wide computer tablet only column'></div>
+    		<div class='six wide computer tablet only column'></div>
+    		<div class='eight wide mobile four wide computer four wide tablet column'>
+    			<button style='background: #800000; color: white;' class='ui circular fluid button disabled' type='submit' id='cButton'><i class='plus icon'></i>Add to cart</button>
+    		</div></form>
+    		<div class='six wide computer tablet only column'></div>
+    		<div class='computer tablet only column'></div>
     	</div>
     </div>
 </div>
