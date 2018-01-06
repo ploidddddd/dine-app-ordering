@@ -11,6 +11,7 @@
 		  $this->load->library('ciqrcode');
 		  $this->load->model('MProduct');
 		  $this->load->model('MOrdered');
+		  $this->load->model('MGuest');
 		  $this->load->model('MCart');
 	  	}
 
