@@ -124,7 +124,7 @@
 
 		});
 		var value = 0 ;
-		$(document).on('click','.plus',function() {
+		$(document).on('click','#plus',function() {
 			var id = $(this).data("id");
 			var get = parseInt($('#qty'+id).val());
       		if (get <= 99) {
@@ -133,7 +133,7 @@
      		}
 		});
 
-		$(document).on('click','.minus',function(e) {
+		$(document).on('click','#minus',function(e) {
 			var id = $(this).data("id");
 			if($('#qty'+id).val() > 1){
 				var get = $('#qty'+id).val();
@@ -141,7 +141,6 @@
 				$('#qty'+id).val(get); 
 			}else{
 				$('#order_item_id').val($('#od_id'+id).val());
-				// alert($('#order_item_id').val());
 				$('#removeItem').modal('show');
 				e.preventDefault();
 			}

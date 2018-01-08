@@ -36,8 +36,10 @@
 	    	<!-- computer/tablet -->
 	    	<div class='four wide computer tablet only column'></div>
 	    	<div class='eight wide computer tablet only center aligned middle aligned column'>
-	    		<p style='font-family: "Roboto Light"; font-size: 1.5em;'>Reference Number: <strong style='font-size: 1.4em !important; font-family: "Sansation Light"; color: blue;'>00001</strong></p>
-	    		<p style='font-family: "Roboto Light"; font-size: 1.5em; '>Proceed to the cashier. Present the QR Code and pay for the <br> exact amount. Your order will be processed in a moment. <center style='font-family: "Roboto Light"; font-size: 2em;'>Thank you for using Dine!</center></p>
+				<?php if(isset($ref_num)){ ?>
+	    			<p style='font-family: "Roboto Light"; font-size: 1.5em;'>Reference Number: <strong style='font-size: 1.4em !important; font-family: "Sansation Light"; color: blue;'><?php echo $ref_num;?></strong></p>
+	    		<?php } ?>
+				<p style='font-family: "Roboto Light"; font-size: 1.5em; '>Proceed to the cashier. Present the QR Code and pay for the <br> exact amount. Your order will be processed in a moment. <center style='font-family: "Roboto Light"; font-size: 2em;'>Thank you for using Dine!</center></p>
 	    	</div>
 	    	<div class='four wide computer tablet only column'></div>
 
@@ -55,7 +57,7 @@
 	    		<div class='eight wide mobile only column'></div>
 	    		<div class='six wide computer tablet only column'></div>
 	    		<div class='eight wide mobile four wide tablet four wide computer column'>
-	    			<a href='<?php echo site_url()?>/CInitialize/deleteSession'><button style='background: #800000; color: white;' class='ui circular fluid button' type='submit'><i class='check icon'></i>Done</button></a>
+	    			<a href='<?php echo site_url()?>/CProduct/deleteSession'><button style='background: #800000; color: white;' class='ui circular fluid button' type='submit'><i class='check icon'></i>Done</button></a>
 	    		</div>
 	    		<div class='six wide computer tablet only column'></div>
 	    	</div>

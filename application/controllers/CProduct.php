@@ -142,7 +142,8 @@
 				$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
 				
 				$array = array('ordered_qr_code' => $qr_code );
-				$result = $this->MOrdered->update($order_id, $array);	
+				$result = $this->MOrdered->update($order_id, $array);
+				$data['ref_num'] = $qr_code;	
 			}
 			if($result){
 				$this->load->view('vQRCode',$data);
