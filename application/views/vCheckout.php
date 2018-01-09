@@ -59,7 +59,7 @@
 	    	<div class='six wide computer tablet only column'></div>
     		<div class='six wide computer tablet only column'></div>
     		<div class='eight wide mobile four wide computer four wide tablet column'>
-	    		<a href='<?php echo site_url()?>/CProduct/viewQRCode?>'><button style='background: #800000; color: white;' class='ui circular fluid button' type='submit'><i class='check icon'></i>Get QR</button></a>
+	    		<a href='<?php echo site_url()?>/CProduct/viewQRCode'><button style='background: #800000; color: white;' class='ui circular fluid button' type='submit'><i class='check icon'></i>Get QR</button></a>
 	    	</div></form>
 	    	<div class='six wide computer tablet only column'></div>
     		<div class='sixteen wide computer tablet only column'></div>
