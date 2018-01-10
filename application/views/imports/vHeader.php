@@ -14,19 +14,19 @@
 
 <!-- sidebar -->
 <div class='ui sidebar vertical menu left thin'>
-    <a class='item' href='<?php echo site_url()?>/CProduct/viewProductsInCategory/RICE MEAL'>
+    <a class='item' href='<?php echo site_url()?>menu/category/RICE MEAL'>
          RICE MEAL
     </a>
-    <a class='item' href='<?php echo site_url()?>/CProduct/viewProductsInCategory/SOUP'>
+    <a class='item' href='<?php echo site_url()?>menu/category/SOUP'>
          SOUP
     </a>
-    <a class='item' href='<?php echo site_url()?>/CProduct/viewProductsInCategory/MAIN COURSE'>
+    <a class='item' href='<?php echo site_url()?>menu/category/MAIN COURSE'>
          MAIN COURSE
     </a>
-    <a class='item' href='<?php echo site_url()?>/CProduct/viewProductsInCategory/DRINKS'>
+    <a class='item' href='<?php echo site_url()?>menu/category/DRINKS'>
          DRINKS
     </a>
-    <a class='item' href='<?php echo site_url()?>/CProduct/viewProductsInCategory/EXTRAS'>
+    <a class='item' href='<?php echo site_url()?>menu/category/EXTRAS'>
          EXTRAS
     </a>
 </div>
@@ -38,9 +38,9 @@
     <a class="borderless item toggleMenu">
         <i class="sidebar icon"></i>
     </a>
-    <a class='borderless item' href='<?php echo site_url()?>/CProduct/viewMenu'>DINE</a>
+    <a class='borderless item' href='<?php echo site_url()?>home'>DINE</a>
     <div class='right menu'>
-        <a class='borderless item' href='<?php echo site_url()?>/CProduct/viewCart' ><img src='<?php echo base_url("assets/images/tray1.png")?>'></a>
+        <a class='borderless item' href='<?php echo site_url()?>tray' ><img src='<?php echo base_url("assets/images/tray1.png")?>'></a>
     </div>
 </div>
 <!-- end of top menu -->
