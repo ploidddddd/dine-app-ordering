@@ -13,11 +13,7 @@
 
 		public function index()
 		{
-			// $this->deleteSession();
-			// print_r($this->session->userdata('orderingSession'));
-			// $this->load->view('imports/vHeader');
 			$this->load->view('vMenu');
-			// $this->load->view('imports/vFooter');
 		}
 
 		

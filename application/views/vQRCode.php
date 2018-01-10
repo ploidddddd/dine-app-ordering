@@ -57,7 +57,7 @@
 	    		<div class='eight wide mobile only column'></div>
 	    		<div class='six wide computer tablet only column'></div>
 	    		<div class='eight wide mobile four wide tablet four wide computer column'>
-	    			<a href='<?php echo site_url()?>/CProduct/deleteSession'><button style='background: #800000; color: white;' class='ui circular fluid button' type='submit'><i class='check icon'></i>Done</button></a>
+	    			<a href='<?php echo site_url()?>done'><button style='background: #800000; color: white;' class='ui circular fluid button' type='submit'><i class='check icon'></i>Done</button></a>
 	    		</div>
 	    		<div class='six wide computer tablet only column'></div>
 	    	</div>

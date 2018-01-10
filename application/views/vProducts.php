@@ -29,7 +29,7 @@
 			    					<span style='font-family: "Courier New"; color: black; font-size: 1.4em;'>
 			    						P <?php echo $prod->product_price; ?>		
 			    					</span><br>
-			    					<a href='<?php echo site_url()?>/CProduct/viewProduct/<?php echo $prod->product_id; ?>'><button class='ui circular fluid button' style='background: #800000; color: white;'><i class='unhide icon' ></i>View Item</button></a>
+			    					<a href='<?php echo site_url()?>menu/category/product/<?php echo $prod->product_id; ?>'><button class='ui circular fluid button' style='background: #800000; color: white;'><i class='unhide icon' ></i>View Item</button></a>
 			    				</div>
 			    			</div>
 		    			</div>

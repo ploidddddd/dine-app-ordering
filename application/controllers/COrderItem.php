@@ -27,7 +27,7 @@
 
 			$result = $this->MOrderItem->insert($data);
 			if($result){
-				redirect('CProduct/viewCart');
+				redirect('tray');
 			}
 			# code...
 		}
@@ -41,12 +41,12 @@
 						  );
 				$result = $this->MOrderItem->update($order_item_id,$data);
 				if($result){
-					redirect('CProduct/viewCart');
+					redirect('tray');
 				}
 			} else {
 				$result = $this->MOrderItem->delete($order_item_id);
 				if($result){
-					redirect('CProduct/viewCart');
+					redirect('tray');
 				}
 			}
 		}
@@ -58,7 +58,7 @@
 			// print_r($order_item_id);
 			$result = $this->MOrderItem->delete($order_item_id);
 			if($result){
-				redirect('CProduct/viewCart');
+				redirect('tray');
 			}
 		}
 

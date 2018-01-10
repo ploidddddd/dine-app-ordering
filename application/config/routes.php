@@ -50,5 +50,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'CInitialize';
+
+$route['home'] = 'CInitialize';
+$route['checkout'] = 'CProduct/viewCheckout';
+$route['qrcode'] = 'CProduct/viewQRCode';
+$route['done'] = 'CProduct/deleteSession';
+
+$route['tray/updateProduct/(.*)'] = 'COrderItem/updateCart/$1';
+$route['tray/removeProduct'] = 'COrderItem/removeToCart';
+$route['tray/addProduct'] = 'COrderItem/addOrderItem';
+$route['tray'] = 'CProduct/viewCart';
+
+$route['menu/category/product/(.*)'] = 'CProduct/viewProduct/$1';
+$route['menu/category/(.*)'] = 'CProduct/viewProductsInCategory/$1';
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

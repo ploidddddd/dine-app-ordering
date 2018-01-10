@@ -41,7 +41,7 @@
 
 		    					<span style='font-style: italic; font-family: "Roboto Light"; font-size: 1.2em;'>Quantity: x <?php echo $prod->order_item_qty; ?></span><br>
 		    					<span style='font-style: italic; font-family: "Roboto Light"; font-size: 1.2em;'>Subtotal: P<?php echo $prod->order_item_subtotal; ?></span><br>
-		    					<center><form class='' id='form' method='POST' action='<?php echo site_url()?>/COrderItem/updateCart/<?php echo  $prod->order_item_id; ?>'>
+		    					<center><form class='' id='form' method='POST' action='<?php echo site_url()?>tray/updateProduct/<?php echo  $prod->order_item_id; ?>'>
 									<input type='hidden' value='<?php echo $prod->product_price; ?>' name='prod_price'>
 								 	
 									<button class='ui  basic left attached icon button minus' id='minus' data-id='<?php echo $prod->product_id; ?>'>
@@ -76,7 +76,7 @@
     		<div class='six wide computer tablet only column'></div>
     		<div class='six wide computer tablet only column'></div>
     		<div class='eight wide mobile four wide computer four wide tablet column'>
-    			<a href='<?php echo site_url()?>/CProduct/viewCheckout'><button style='background: #800000; color: white;' class='ui circular fluid button'><i class='check icon'></i>Checkout</button></a>
+    			<a href='<?php echo site_url()?>checkout'><button style='background: #800000; color: white;' class='ui circular fluid button'><i class='check icon'></i>Checkout</button></a>
     		</div>
     		<div class='six wide computer tablet only column'></div>
     		<div class='sixteen wide computer tablet only column'></div>
@@ -98,7 +98,7 @@
 <div class='ui mini modal' id='removeItem'>
   <div class='header'>Remove Item </div> 
   <div class='content'>
-	<form method='POST' action='<?php echo site_url()?>/COrderItem/removeToCart'>
+	<form method='POST' action='<?php echo site_url()?>tray/removeProduct'>
 	<input type='hidden' name='order_item_id' id='order_item_id' value=''>
     <p>Are you sure you want to remove this item?</p>
 	

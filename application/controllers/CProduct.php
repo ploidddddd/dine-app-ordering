@@ -165,7 +165,7 @@
 		public function deleteSession()
 		{
 			$this->session->unset_userdata('orderingSession');
-			redirect('CInitialize');
+			redirect('home');
 		}
 	}
 
