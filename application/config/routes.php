@@ -63,6 +63,7 @@ $route['tray'] = 'CProduct/viewCart';
 
 $route['menu/category/product/(.*)'] = 'CProduct/viewProduct/$1';
 $route['menu/category/(.*)'] = 'CProduct/viewProductsInCategory/$1';
+$route['menu'] = 'CProduct/viewMenu';
 
 
 $route['404_override'] = '';
