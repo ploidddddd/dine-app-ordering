@@ -9,7 +9,7 @@
 	              <!-- <div class="sub header">Shows the dashboard</div> -->
 	            </div>
 	        </h1> <!-- header --> 
-	        <a href='<?php echo site_url()?>/CProduct/viewMenu' style='color: #a5673f; font-family: "Roboto Light"; font-size: 1.5em; font-weight: bold;'><i class='brown left arrow icon'></i>BACK TO MENU</a>
+	        <a href='<?php echo site_url()?>menu' style='color: #a5673f; font-family: "Roboto Light"; font-size: 1.5em; font-weight: bold;'><i class='brown left arrow icon'></i>BACK TO MENU</a>
 	    </div> <!-- segment -->
 
 	    <div class='ui centered grid'>
