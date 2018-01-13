@@ -49,7 +49,8 @@
 	</div>
 	<div class='ui bottom attached segment'>
     	<div class='ui grid'>
-    		<div class='six wide computer tablet only column'></div>
+    		<div class='sixteen wide computer tablet only column'></div>
+			<div class='six wide computer tablet only column'></div>
     		<div class='eight wide mobile four wide computer four wide tablet center aligned middle aligned column'>
     			<?php if (isset($total)) {?>
 			    	<p style='font-size: 1.2em; font-family: "Roboto";'>TOTAL: <span style='font-size: 1.3em; font-family: "Courier New"; font-weight: bold;'>P <?php echo $total; ?></span></p>
@@ -58,12 +59,13 @@
 	    	<div class='six wide computer tablet only column'></div>
     		<div class='six wide computer tablet only column'></div>
     		<div class='eight wide mobile four wide computer four wide tablet column'>
-	    		<a href='<?php echo site_url()?>/CProduct/viewQRCode?>'><button style='background: #800000; color: white;' class='ui circular fluid button' type='submit'><i class='check icon'></i>Get QR</button></a>
+	    		<a href='<?php echo site_url()?>qrcode'><button style='background: #800000; color: white;' class='ui circular fluid button' type='submit'><i class='check icon'></i>Get QR</button></a>
 	    	</div></form>
 	    	<div class='six wide computer tablet only column'></div>
-    		<div class='computer tablet only column'></div>
+    		<div class='sixteen wide computer tablet only column'></div>
     	</div>
     </div>
+    <div class='ui hidden divider'></div>
 </div>
 
 

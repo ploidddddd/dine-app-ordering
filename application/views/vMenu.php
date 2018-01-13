@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DINE | Menu</title>
+    <title>DINE | Mameng's Seafood & BBQ Hauz</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/style.css")?>">
@@ -14,7 +14,7 @@
 <div class='ui fixed inverted menu ' style='background-color: #800000 !important;'>
     <a class='borderless item'>DINE</a>
     <div class='right menu'>
-    	<a class='borderless item' href='<?php echo site_url()?>/CProduct/viewCart'><i class='big white inbox icon cart-icon'></i></a>
+        <a class='borderless item' href='<?php echo site_url()?>tray' ><img src='<?php echo base_url("assets/images/tray1.png")?>'></a>
     </div>
 </div>
 
@@ -31,7 +31,7 @@
     </div> <!-- segment -->
     <div class='ui grid'>
 		<div class='sixteen wide mobile four wide tablet four wide computer column'>
-			<a href='<?php echo site_url()?>/CProduct/viewProductsInCategory/RICE MEAL'>
+			<a href='<?php echo site_url()?>menu/category/RICE MEAL'>
 	    		<div class='ui fluid segment' style='background: #4682b4;'>
 	    			<div class='ui grid'>
 	    				<!-- mobile -->
@@ -59,7 +59,7 @@
     		</a>
 		</div>
     	<div class='sixteen wide mobile four wide tablet four wide computer column'>
-			<a href='<?php echo site_url()?>/CProduct/viewProductsInCategory/SOUP'>
+			<a href='<?php echo site_url()?>menu/category/SOUP'>
 	    		<div class='ui fluid segment' style='background: #3cb371;'>
 	    			<div class='ui grid'>
 	    				<!-- mobile -->
@@ -89,7 +89,7 @@
     		</a>
 		</div>
     	<div class='sixteen wide mobile four wide tablet four wide computer column'>
-			<a href='<?php echo site_url()?>/CProduct/viewProductsInCategory/MAIN COURSE'>
+			<a href='<?php echo site_url()?>menu/category/MAIN COURSE'>
 	    		<div class='ui fluid segment' style='background: #f4a460;'>
 	    			<div class='ui grid'>
 	    				<!-- mobile -->
@@ -119,7 +119,7 @@
     		</a>
 		</div> 
 		<div class='sixteen wide mobile four wide tablet four wide computer column'>
-			<a href='<?php echo site_url()?>/CProduct/viewProductsInCategory/DRINKS'>
+			<a href='<?php echo site_url()?>menu/category/DRINKS'>
 	    		<div class='ui fluid segment' style='background: #2f4f4f;'>
 	    			<div class='ui grid'>
 	    				<!-- mobile -->
@@ -150,7 +150,7 @@
     		</a>
 		</div> 
 		<div class='sixteen wide mobile four wide tablet four wide computer column'>
-			<a href='<?php echo site_url()?>/CProduct/viewProductsInCategory/EXTRAS'>
+			<a href='<?php echo site_url()?>menu/category/EXTRAS'>
 	    		<div class='ui fluid segment' style='background: #cd5c5c;'>
 	    			<div class='ui grid'>
 	    				<!-- mobile -->

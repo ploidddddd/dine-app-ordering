@@ -5,10 +5,11 @@
 	        <h1 class="ui brown dividing header">
 	            <!-- <i class="dashboard icon"></i> -->
 	            <div class="content">
-		            CART
+		            TRAY
 	              <!-- <div class="sub header">Shows the dashboard</div> -->
 	            </div>
 	        </h1> <!-- header --> 
+	        <a href='<?php echo site_url()?>menu' style='color: #a5673f; font-family: "Roboto Light"; font-size: 1.5em; font-weight: bold;'><i class='brown left arrow icon'></i>BACK TO MENU</a>
 	    </div> <!-- segment -->
 
 	    <div class='ui centered grid'>
@@ -40,7 +41,7 @@
 
 		    					<span style='font-style: italic; font-family: "Roboto Light"; font-size: 1.2em;'>Quantity: x <?php echo $prod->order_item_qty; ?></span><br>
 		    					<span style='font-style: italic; font-family: "Roboto Light"; font-size: 1.2em;'>Subtotal: P<?php echo $prod->order_item_subtotal; ?></span><br>
-		    					<center><form class='' id='form' method='POST' action='<?php echo site_url()?>/COrderItem/updateCart/<?php echo  $prod->order_item_id; ?>'>
+		    					<center><form class='' id='form' method='POST' action='<?php echo site_url()?>tray/updateProduct/<?php echo  $prod->order_item_id; ?>'>
 									<input type='hidden' value='<?php echo $prod->product_price; ?>' name='prod_price'>
 								 	
 									<button class='ui  basic left attached icon button minus' id='minus' data-id='<?php echo $prod->product_id; ?>'>
@@ -65,6 +66,7 @@
 	</div>
 	<div class='ui bottom attached segment'>
     	<div class='ui grid'>
+			<div class='sixteen wide computer tablet only column'></div>
 			<div class='six wide computer tablet only column'></div>
     		<div class='eight wide mobile four wide computer four wide tablet center aligned middle aligned column'>
     			<?php if (isset($total)) {?>
@@ -74,17 +76,18 @@
     		<div class='six wide computer tablet only column'></div>
     		<div class='six wide computer tablet only column'></div>
     		<div class='eight wide mobile four wide computer four wide tablet column'>
-    			<a href='<?php echo site_url()?>/CProduct/viewCheckout'><button style='background: #800000; color: white;' class='ui circular fluid button'><i class='check icon'></i>Checkout</button></a>
+    			<a href='<?php echo site_url()?>checkout'><button style='background: #800000; color: white;' class='ui circular fluid button'><i class='check icon'></i>Checkout</button></a>
     		</div>
     		<div class='six wide computer tablet only column'></div>
-    		<div class='computer tablet only column'></div>
+    		<div class='sixteen wide computer tablet only column'></div>
     	</div>
     </div>
+    <div class='ui hidden divider'></div>
     <?php 
 		}else{
 			echo "
 				<div class='sixteen wide center aligned middle aligned column'>
-					<p style='font-style: italic; font-family: ".'Roboto Light'."; font-size: 1.3em;'><i class='circular info icon' style='color: white; background-color: #800000;'></i>Your cart is empty.</p>
+					<p style='font-style: italic; font-family: ".'Roboto Light'."; font-size: 1.7em;'><i class='small circular info icon' style='color: white; background-color: #800000;'></i>Your tray is empty.</p>
 				</div>
 				<div class='row'></div>
 			";
@@ -95,7 +98,7 @@
 <div class='ui mini modal' id='removeItem'>
   <div class='header'>Remove Item </div> 
   <div class='content'>
-	<form method='POST' action='<?php echo site_url()?>/COrderItem/removeToCart'>
+	<form method='POST' action='<?php echo site_url()?>tray/removeProduct'>
 	<input type='hidden' name='order_item_id' id='order_item_id' value=''>
     <p>Are you sure you want to remove this item?</p>
 	
@@ -104,7 +107,7 @@
   	<div class='ui gray cancel button'>
   		Cancel
   	</div>
-  	<button class='ui cancel inverted button' style='background-color: #800000;' type='submit'>
+  	<button class='ui cancel button' style='background-color: #800000; color: white;' type='submit'>
   		Remove
   	</button>
   </div>
@@ -121,7 +124,7 @@
 
 		});
 		var value = 0 ;
-		$(document).on('click','.plus',function() {
+		$(document).on('click','#plus',function() {
 			var id = $(this).data("id");
 			var get = parseInt($('#qty'+id).val());
       		if (get <= 99) {
@@ -130,7 +133,7 @@
      		}
 		});
 
-		$(document).on('click','.minus',function(e) {
+		$(document).on('click','#minus',function(e) {
 			var id = $(this).data("id");
 			if($('#qty'+id).val() > 1){
 				var get = $('#qty'+id).val();
@@ -138,7 +141,6 @@
 				$('#qty'+id).val(get); 
 			}else{
 				$('#order_item_id').val($('#od_id'+id).val());
-				// alert($('#order_item_id').val());
 				$('#removeItem').modal('show');
 				e.preventDefault();
 			}
