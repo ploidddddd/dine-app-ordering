@@ -29,7 +29,7 @@
 
 			$result = $this->MOrderItem->insert($data);
 			if($result){
-				redirect('menu/category/'.$cat);
+				redirect('menu/category/'.$cat."/1");
 			}
 			# code...
 		}
