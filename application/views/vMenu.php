@@ -24,34 +24,34 @@
                             <!-- RICE MEALS -->
                     <!-- computer -->
                     <div class="five wide computer only column">
-                        <a href='<?php echo site_url()?>menu/category/RICE MEAL'>
+                        <a href='<?php echo site_url()?>menu/category/PANCIT/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <img src='<?php echo base_url("assets/images/ricemeal.png")?>' class='ui centered tiny image'>
                                 <br>
-                                <p class="ricemeals-dsk">RICE MEALS</p>
+                                <p class="ricemeals-dsk">PANCIT</p>
                             </div>
                         </a>
                     </div>
                     <!-- tablet -->
                     <div class="seven wide tablet only column">
-                        <a href='<?php echo site_url()?>menu/category/RICE MEAL'>
+                        <a href='<?php echo site_url()?>menu/category/PANCIT/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <img src='<?php echo base_url("assets/images/ricemeal.png")?>' class='ui centered tiny image'>
                                 <br>
-                                <p class="ricemeals-tb">RICE MEALS</p>
+                                <p class="ricemeals-tb">PANCIT</p>
                             </div>
                         </a>
                     </div>
                     <!-- mobile -->
                     <div class="sixteen wide mobile only column">
-                        <a href='<?php echo site_url()?>menu/category/RICE MEAL'>
+                        <a href='<?php echo site_url()?>menu/category/PANCIT/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <div class="ui two column grid">
                                     <div class="column">
                                         <img src='<?php echo base_url("assets/images/ricemeal.png")?>' class='ui centered tiny image'>
                                     </div> 
                                     <div class="middle aligned column">
-                                        <p class="ricemeals-mb">RICE MEALS</p>
+                                        <p class="ricemeals-mb">PANCIT</p>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                             <!-- SOUP  -->
                     <!-- computer -->
                     <div class="five wide computer only column">
-                        <a href='<?php echo site_url()?>menu/category/SOUP'>
+                        <a href='<?php echo site_url()?>menu/category/SOUP/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <img src='<?php echo base_url("assets/images/soups.png")?>' class='ui centered tiny image'>
                                 <br>
@@ -71,7 +71,7 @@
                     </div>
                     <!-- tablet -->
                     <div class="seven wide tablet only column">
-                        <a href='<?php echo site_url()?>menu/category/SOUP'>
+                        <a href='<?php echo site_url()?>menu/category/SOUP/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <img src='<?php echo base_url("assets/images/soups.png")?>' class='ui centered tiny image'>
                                 <br>
@@ -80,7 +80,7 @@
                         </a>
                     </div>
                     <div class="sixteen wide mobile only column">
-                        <a href='<?php echo site_url()?>menu/category/SOUP'>
+                        <a href='<?php echo site_url()?>menu/category/SOUP/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <div class="ui two column grid">
                                     <div class="column">
@@ -96,7 +96,7 @@
 
                             <!-- MAIN COURSE -->
                     <div class="five wide computer only column">
-                        <a href='<?php echo site_url()?>menu/category/MAIN COURSE'>
+                        <a href='<?php echo site_url()?>menu/category/MAIN COURSE/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <img src='<?php echo base_url("assets/images/main course.png")?>' class='ui centered tiny image'>
                                 <br>
@@ -106,7 +106,7 @@
                     </div>
                     <!-- tablet -->
                     <div class="seven wide tablet only column">
-                        <a href='<?php echo site_url()?>menu/category/MAIN COURSE'>
+                        <a href='<?php echo site_url()?>menu/category/MAIN COURSE/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <img src='<?php echo base_url("assets/images/main course.png")?>' class='ui centered tiny image'>
                                 <br>
@@ -115,7 +115,7 @@
                         </a>
                     </div>
                     <div class="sixteen wide mobile only column">
-                        <a href='<?php echo site_url()?>menu/category/MAIN COURSE'>
+                        <a href='<?php echo site_url()?>menu/category/MAIN COURSE/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <div class="ui two column grid">
                                     <div class="column">
@@ -131,7 +131,7 @@
 
                             <!-- DRINKS -->
                     <div class="five wide computer only column">
-                        <a href='<?php echo site_url()?>menu/category/DRINKS'>
+                        <a href='<?php echo site_url()?>menu/category/DRINKS/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <img src='<?php echo base_url("assets/images/soda.png")?>' class='ui centered tiny image'>
                                 <br>
@@ -140,7 +140,7 @@
                         </a>
                     </div>
                     <div class="seven wide tablet only column">
-                        <a href='<?php echo site_url()?>menu/category/DRINKS'>
+                        <a href='<?php echo site_url()?>menu/category/DRINKS/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <img src='<?php echo base_url("assets/images/soda.png")?>' class='ui centered tiny image'>
                                 <br>
@@ -149,7 +149,7 @@
                         </a>
                     </div>
                     <div class="sixteen wide mobile only column">
-                        <a href='<?php echo site_url()?>menu/category/DRINKS'>
+                        <a href='<?php echo site_url()?>menu/category/DRINKS/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <div class="ui two column grid">
                                     <div class="column">
@@ -166,7 +166,7 @@
 
                             <!-- EXTRAS -->
                     <div class="five wide computer only column">
-                        <a href='<?php echo site_url()?>menu/category/EXTRAS'>
+                        <a href='<?php echo site_url()?>menu/category/EXTRAS/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <img src='<?php echo base_url("assets/images/extras.png")?>' class='ui centered tiny image'>
                                 <br>
@@ -175,7 +175,7 @@
                         </a>
                     </div>
                     <div class="seven wide tablet only column">
-                        <a href='<?php echo site_url()?>menu/category/EXTRAS'>
+                        <a href='<?php echo site_url()?>menu/category/EXTRAS/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <img src='<?php echo base_url("assets/images/extras.png")?>' class='ui centered tiny image'>
                                 <br>
@@ -184,7 +184,7 @@
                         </a>
                     </div>
                     <div class="sixteen wide mobile only column">
-                        <a href='<?php echo site_url()?>menu/category/EXTRAS'>
+                        <a href='<?php echo site_url()?>menu/category/EXTRAS/1'>
                             <div class="ui fluid segment" style="background: gray;">
                                 <div class="ui two column grid">
                                     <div class="column">

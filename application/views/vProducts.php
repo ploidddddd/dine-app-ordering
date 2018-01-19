@@ -52,26 +52,34 @@
                 <!-- computer tablet -->
                 <div class='ui computer tablet only two column grid'>
                     <div class='middle aligned column'>
-                        Showing 1 to 6 of depende entries.
+                        Showing page <?php echo $page ?> of <?php echo $totalpage ?> pages.
                     </div>
                     <div class='right aligned column'>
                         <div class='ui pagination menu'>
-                            <a class='previous item'>Previous</a>
-                            <a class='active item'>1</a>
-                            <a class='next item' >Next</a>
+                             <a class='previous item' href = <?php echo site_url()?>/CProduct/viewProductsInCategory/<?php $p = $page-1; echo $prod_cat."/".$p?>>Previous</a>
+                           <?php 
+                            for($n=1; $n<=$totalpage; $n++){
+                                echo "<a class='active item' href='".base_url()."/CProduct/viewProductsInCategory/".$prod_cat."/".$n."'>".$n."</a>";
+                            }
+                            ?>
+                            <a class='next item' href = <?php echo site_url()?>/CProduct/viewProductsInCategory/<?php $p = $page+1; echo $prod_cat."/".$p?>>Next</a>
                         </div> <!-- pagination -->
                     </div>
                 </div> <!-- two column row -->
                 <!-- mobile -->
                 <div class="ui mobile only grid">
                     <div class="sixteen wide center aligned middle aligned column">
-                        Showing 1 to 6 of depende entries.
+                       Showing page <?php echo $page ?> of <?php echo $totalpage ?> pages.
                     </div>
                     <div class="sixteen wide center aligned middle aligned column">
                         <div class='ui pagination menu'>
-                            <a class='previous item'>Previous</a>
-                            <a class='active item'>1</a>
-                            <a class='next item' >Next</a>
+                            <a class='previous item' href = <?php echo site_url()?>/CProduct/viewProductsInCategory/<?php $p = $page-1; echo $prod_cat."/".$p?>>Previous</a>
+                            <?php 
+                            for($n=1; $n<=$totalpage; $n++){
+                               echo "<a class='active item' href='".base_url()."/CProduct/viewProductsInCategory/".$prod_cat."/".$n."'>".$n."</a>";
+                            }
+                            ?>
+                            <a class='next item' href = <?php echo site_url()?>/CProduct/viewProductsInCategory/<?php $p = $page+1; echo $prod_cat."/".$p?>>Next</a>
                         </div> <!-- pagination -->
                     </div>
                 </div>
