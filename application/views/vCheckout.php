@@ -1,74 +1,100 @@
-<div class='pusher'>
-	<div class='ui attached segment'>
-		<div class='ui hidden segment'></div>
-		<div class='ui basic segment'>
-	        <h1 class="ui brown dividing header">
-	            <!-- <i class="dashboard icon"></i> -->
-	            <div class="content">
-		            CHECKOUT
-	              <!-- <div class="sub header">Shows the dashboard</div> -->
-	            </div>
-	        </h1> <!-- header --> 
-	    </div> <!-- segment -->
+<div class="pusher">
+    <div class="ui grid">
+        <div class="row"></div><div class="row"></div><div class="row"></div><div class="row"></div>
+        <div class="row">
+            <div class="two wide column"></div>
+            <div class="twelve wide center aligned middle black aligned column banner-bg">
+                <h1 class="ui header banner-name-dsk banner-name-tb banner-name-mb">
+                    CHECKOUT
+                </h1>
+                <div class="ui massive breadcrumb lbl-header" id="lbl-header">
+                    <a href="<?php echo site_url()?>home" class="section" >HOME</a>
+                    <div class="divider" style="color: white;">/</div>
+                    <a href="<?php echo site_url()?>tray" class="section lbl-header" >TRAY</a>
+                    <div class="divider" style="color: white;">/</div>
+                    <div class="active section lbl-header">CHECKOUT</div>
+                </div>
+            </div>
+            <div class="two wide column"></div>
+        </div>
+        <div class="row">
+            <div class="two wide column"></div>
+            <div class="twelve wide column">
+                <div class="ui left aligned middle aligned grid">
+                    <div class="sixteen wide left aligned column ">
+                        <a href="<?php echo site_url()?>tray" class="header-breadcrumb"></i>Back to tray</a>
+                    </div>
+                    <?php if(isset($items)) { ?>
+							<div class="two wide column"></div>
+							<div class="twelve wide center aligned middle aligned column">
+								<p class='chckoutHeader'>ORDERED ITEMS</p>
+								<div class="ui divider"></div>
+								<table class="ui very basic table">
+									<tbody>
+										<?php foreach($items as $prod){ ?>
+										<tr>
+											<td>
+												<div class="ui grid">
+													<div class="five wide column">
+														<img class='ui left aligned tiny image' src='<?php echo base_url($prod->product_image)?>'>
+													</div>
+													<div class="eleven wide column">
+														<p class="prodName"><?php echo $prod->product_name; ?></p>
+														<p class="prodPrice">P <?php echo $prod->product_price; ?></p>
+														<p class="qty" style="float: right;">x <?php echo $prod->order_item_qty; ?></p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<?php }?>
+									</tbody>
+								</table>
+								<div class="ui divider"></div>
+							</div>
+							<div class="two wide column"></div>
 
-	    <div class='ui centered grid'>
-			<?php if(isset($items)) { ?>
-			<?php foreach($items as $prod){ ?>
-			<div class='sixteen wide mobile four wide computer five wide tablet column'>
-				<div class='ui top attached segment'>
-	    			<div class='ui grid'>
-	    				<div class='fourteen wide column'>
-	    					<span style='font-family: "Roboto"; color: black; font-size: 1.2em;'>
-		    						<?php echo $prod->product_name; ?>
-		    					</span>
-	    				</div>
-	    			</div>
-	    		</div>
-    			<div class='ui attached segment'>
-	    			<div class='ui grid'>
-	    				<div class='sixteen wide column' style='line-height: 1.5em;'>
-	    					<div class='ui grid'>
-	    						<div class='eight wide column'>
-	    							<span style='font-family: "Courier New"; color: black; font-size: 1.4em;'>
-			    						P <?php echo $prod->product_price; ?>		
-			    					</span>
-	    						</div>
-	    						<div class='eight wide column'>
-	    							<span style='font-style: italic; font-family: "Roboto Light"; font-size: 1.2em;'> x <?php echo $prod->order_item_qty; ?></span>
-	    						</div>
-	    					</div>
-	    					<div class='ui divider'></div>
-	    					<span style='font-style: italic; font-family: "Roboto Light"; font-size: 1.2em;'>Subtotal: P<?php echo $prod->order_item_subtotal; ?></span><br>
-	    				</div>
-	    			</div>
-		        </div>
-		    </div>
-			<?php } ?>
-			<?php } ?>
-		</div>	
-	</div>
-	<div class='ui bottom attached segment'>
-    	<div class='ui grid'>
-    		<div class='sixteen wide computer tablet only column'></div>
-			<div class='six wide computer tablet only column'></div>
-    		<div class='eight wide mobile four wide computer four wide tablet center aligned middle aligned column'>
-    			<?php if (isset($total)) {?>
-			    	<p style='font-size: 1.2em; font-family: "Roboto";'>TOTAL: <span style='font-size: 1.3em; font-family: "Courier New"; font-weight: bold;'>P <?php echo $total; ?></span></p>
-				<?php } ?>
-	    	</div>
-	    	<div class='six wide computer tablet only column'></div>
-    		<div class='six wide computer tablet only column'></div>
-    		<div class='eight wide mobile four wide computer four wide tablet column'>
-	    		<a href='<?php echo site_url()?>qrcode'><button style='background: #800000; color: white;' class='ui circular fluid button' type='submit'><i class='check icon'></i>Get QR</button></a>
-	    	</div></form>
-	    	<div class='six wide computer tablet only column'></div>
-    		<div class='sixteen wide computer tablet only column'></div>
-    	</div>
+					<!-- computer -->
+					<div class="eleven wide computer only column"></div>
+					<div class="five wide computer only left aligned column">
+						<?php if (isset($total)) {?>
+							<p class="total-price">TOTAL: <?php echo $total; ?>.00</p>
+						<?php } ?>
+					</div>
+
+					<div class="eleven wide computer only column"></div>
+					<div class="five wide computer only left aligned column">
+						<a href='<?php echo site_url()?>qrcode'><button style="background: #800000; color: white;" class='ui circular fluid button'><i class='qrcode icon'></i>Generate QR</button></a>
+					</div>
+					<!-- tablet -->
+					<div class="eight wide tablet only column"></div>
+					<div class="eight wide tablet only left aligned column">
+						<?php if (isset($total)) {?>
+							<p class="total-price">TOTAL: <?php echo $total; ?>.00</p>
+						<?php } ?>
+					</div>
+
+					<div class="eight wide tablet only column"></div>
+					<div class="eight wide tablet only left aligned column">
+						<a href='<?php echo site_url()?>qrcode'><button style="background: #800000; color: white;" class='ui circular fluid button'><i class='qrcode icon'></i>Generate QR</button></a>
+					</div>
+					<!-- mobile -->
+					<div class="six wide mobile only column"></div>
+					<div class="ten wide mobile only left aligned column">
+						<?php if (isset($total)) {?>
+							<p class="total-price">TOTAL: <?php echo $total; ?>.00</p>
+						<?php } ?>
+					</div>
+					<div class="six wide mobile only column"></div>
+					<div class="ten wide mobile only left aligned column">
+						<a href='<?php echo site_url()?>qrcode'><button style="background: #800000; color: white;" class='ui circular fluid button'><i class='qrcode icon'></i>Generate QR</button></a>
+					</div>
+
+					<?php }?>
+                </div>
+            </div> 
+            <div class="two wide column"></div>
+        </div> 
+        <div class="row"></div>
+        <div class="row"></div>
     </div>
-    <div class='ui hidden divider'></div>
 </div>
-
-
-
-</body>
-</html>
