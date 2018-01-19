@@ -27,25 +27,66 @@
         <div class="row">
             <div class="two wide column"></div>
             <div class="twelve wide column">
-                <div class="ui center aligned middle aligned column grid">
-                	<div class="column">
-                		<img src='<?php echo base_url("assets/images/qr_image/".$img_url)?>' class='ui centered medium image'>
-                		<p class="ref-no">REFERENCE NUMBER: <?php echo $ref_num; ?></p>
-                		<p class="ref-info">Proceed to the cashier. Present the QR Code and pay for the exact amount. Your order will be processed in a moment.</p>
-                		<div class="ui grid">
-                			<div class="sixteen wide computer tablet only column">
-                				<p class="ty-dsk">Thank you and please come again.</p>
-                			</div>
-                			<div class="sixteen wide mobile only column">
-                				<p class="ty-mb">Thank you and please come again.</p>
-                			</div>
-                			<div class="row"></div>
-                		</div>
+                <!-- computer/tablet -->
+                <div class="ui computer tablet only two column grid">
+                    <div class="center aligned middle aligned column">
+                        <img src='<?php echo base_url("assets/images/qr_image/".$img_url)?>' class='ui centered medium image'>
+                        <p class="ref-no">REFERENCE NUMBER: <?php echo $ref_num; ?></p>
+                    </div>
+                	<div class="left aligned middle aligned column">
+                		<div class="ui success message">
+                            <i class="check icon"></i> <span class="ref-info">Successfully created order</span>
+                        </div>
+                        <div class="ui info message">
+                            <ul class="list ref-info">
+                                <li>Proceed to the cashier. Present the QR Code and pay for the exact amount. </li>
+                                <li>Your order will be processed in a moment.</li>
+                                <li>Editing of orders can be done through the cashier.</li>
+                            </ul>
+                        </div>
+                		<div class="ui warning message">
+                            <i class="warning sign icon"></i> <span class="ref-info">Reminder: This QR Code will expire after 3 hours. Please complete the transaction within the given time.</span>
+                        </div>
                 	</div>
+                </div>
+                <!-- mobile -->
+                <div class="ui mobile only two column grid">
+                    <!-- <div class="three wide mobile only column"></div> -->
+                    <div class="sixteen wide mobile only center aligned middle aligned column">
+                        <img src='<?php echo base_url("assets/images/qr_image/".$img_url)?>' class='ui centered medium image'>
+                        <p class="ref-no">REFERENCE NUMBER: <?php echo $ref_num; ?></p>
+                    </div>
+                    <!-- <div class="three wide mobile only column"></div> -->
+
+                    <!-- <div class="three wide mobile only column"></div> -->
+                    <div class="sixteen wide mobile only left aligned middle aligned column">
+                        <div class="ui success message">
+                            <i class="check icon"></i> <span class="ref-info">Successfully created order</span>
+                        </div>
+                        <div class="ui info message">
+                            <ul class="list ref-info">
+                                <li>Proceed to the cashier. Present the QR Code and pay for the exact amount. </li>
+                                <li>Your order will be processed in a moment.</li>
+                                <li>Editing of orders can be done through the cashier.</li>
+                            </ul>
+                        </div>
+                        <div class="ui warning message">
+                            <i class="warning sign icon"></i> <span class="ref-info">Reminder: This QR Code will expire after 3 hours. Please complete the transaction within the given time.</span>
+                        </div>
+                    </div>
+                    <!-- <div class="three wide mobile only"></div> -->
+                </div>
+                <div class="ui grid">
+                    <div class="six wide computer tablet three wide mobile column"></div>
+                    <div class="four wide computer tablet ten wide mobile center aligned column">
+                        <a href="<?php echo site_url()?>/done" ><button style="background: #800000; color: white;" class="ui circular fluid button" type="submit"><i class="check icon"></i>DONE</button></a>
+                    </div>
+                    <div class="six wide computer tablet three wide mobile column"></div>
                 </div>
             </div> 
             <div class="two wide column"></div>
         </div> 
+        <div class="row"></div>
     </div>
 </div>
 
