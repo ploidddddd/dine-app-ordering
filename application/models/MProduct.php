@@ -35,7 +35,15 @@
 			return $query;
 		}
 
-		public function getProductsNotInCart($cat, $ordered_id)
+		public function getProductsNotInCart($cat, $ordered_id,$page)
+		{
+			$statement ="product WHERE product.product_id NOT IN (SELECT cart.product_id FROM cart WHERE cart.ordered_id = $ordered_id) AND product.product_category = '$cat' LIMIT ".$page.",6";
+			$query = $this->db->get($statement);
+
+			return $query->result();
+		}
+
+		public function getAllProductsNotInCart($cat, $ordered_id)
 		{
 			$statement ="product WHERE product.product_id NOT IN (SELECT cart.product_id FROM cart WHERE cart.ordered_id = $ordered_id) AND product.product_category = '$cat'";
 			$query = $this->db->get($statement);
