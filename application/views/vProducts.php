@@ -59,7 +59,7 @@
                              <a class='previous item' href = <?php echo site_url()?>/CProduct/viewProductsInCategory/<?php $p = $page-1; echo $prod_cat."/".$p?>>Previous</a>
                            <?php 
                             for($n=1; $n<=$totalpage; $n++){
-                                echo "<a class='active item' href='".base_url()."/CProduct/viewProductsInCategory/".$prod_cat."/".$n."'>".$n."</a>";
+                                echo "<a class='item' href='".base_url()."/CProduct/viewProductsInCategory/".$prod_cat."/".$n."'>".$n."</a>";
                             }
                             ?>
                             <a class='next item' href = <?php echo site_url()?>/CProduct/viewProductsInCategory/<?php $p = $page+1; echo $prod_cat."/".$p?>>Next</a>
