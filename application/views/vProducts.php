@@ -27,26 +27,26 @@
                         <a href="<?php echo site_url()?>menu" class="header-breadcrumb"></i>Back to menu</a>
                     </div>
                     <?php if(isset($products)) { ?>
-						<?php foreach($products as $prod) { ?>
-							<div class="five wide computer eight wide tablet sixteen wide mobile center aligned middle aligned column">
-								<div class="ui segment">
-									<div class="ui grid">
-										<div class="five wide middle aligned column">
-											<img class='ui centered tiny image' src='<?php echo base_url($prod->product_image)?>'>
-										</div>
-										<div class="eleven wide left aligned column">
-											<p class="prodName"><?php echo $prod->product_name; ?></p>
-											<p class="prodDesc"><?php echo $prod->product_description; ?></p><br>
-											<p class="prodPrice">P <?php echo $prod->product_price; ?>.00</p>
-                                            <input type="hidden" id="prod_id" value="<?php echo $prod->product_id; ?>">
-                                            <input type="hidden" id="prod_price" value="<?php echo $prod->product_price; ?>">
-                                             <input type="hidden" id="prod_category" value="<?php echo $prod->product_category; ?>">
-											<a class='openAdd' data-id='<?php echo $prod->product_id; ?>'><button class='ui circular fluid button' style='background: #800000; color: white;'><i class='plus icon' ></i><span class="addToCart">Add to tray</span></button></a>
-										</div>
+					<?php foreach($products as $prod) { ?>
+						<div class="five wide computer eight wide tablet sixteen wide mobile center aligned middle aligned column">
+							<div class="ui segment">
+								<div class="ui grid">
+									<div class="five wide middle aligned column">
+										<img class='ui centered tiny image' src='<?php echo base_url($prod->product_image)?>'>
+									</div>
+									<div class="eleven wide left aligned column">
+										<p class="prodName"><?php echo $prod->product_name; ?></p>
+										<p class="prodDesc"><?php echo $prod->product_description; ?></p><br>
+										<p class="prodPrice">P <?php echo $prod->product_price; ?>.00</p>
+                                        <input type="hidden" id="prod_id" value="<?php echo $prod->product_id; ?>">
+                                        <input type="hidden" id="prod_price" value="<?php echo $prod->product_price; ?>">
+                                         <input type="hidden" id="prod_category" value="<?php echo $prod->product_category; ?>">
+										<a class='openAdd' data-id='<?php echo $prod->product_id; ?>'><button class='ui circular fluid button' style='background: #800000; color: white;'><i class='plus icon' ></i><span class="addToCart">Add to tray</span></button></a>
 									</div>
 								</div>
 							</div>
-						<?php }?>
+						</div>
+					<?php }?>
                 </div>
                                 <!-- pagination -->
                 <!-- computer tablet -->
@@ -86,23 +86,24 @@
                 <?php 
                     }else{
                         echo "
+                        <div class='ui grid'>
                             <div class='sixteen wide center aligned middle aligned column'>
-                                <p style='font-style: italic; font-family: ".'Roboto Light'."; font-size: 1.3em;'><i class='circular info icon' style='color: white; background-color: #800000;'></i>There are no available products for this category.</p>
+                                <p style='font-style: italic; font-family: ".'Roboto Light'."; font-size: 1.7em;'><i class='small circular info icon' style='color: white; background-color: #800000;'></i>There are no available products for this category.</p>
                             </div>
-                            <div class='row'></div>
+                            <div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div>
+                        </div>
                         ";
                     } ?>
-            </div> 
+            </div>
             <div class="two wide column"></div>
-            
         </div>
-
-        
         <div class="row"></div>
         <div class="row"></div>
         <div class="row"></div>
     </div>
 </div>
+
+
 
 <div class="ui mini modal" id="enterQty">
     <div class="header">
