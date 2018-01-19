@@ -1,6 +1,7 @@
 <div class='pusher'>
 	<div class='ui attached segment'>
-		<div class='ui hidden segment'></div>
+		<div class='ui hidden divider'></div>
+		<div class='ui hidden divider'></div>
 		<div class='ui basic segment'>
 	        <h1 class="ui brown dividing header">
 	            <!-- <i class="dashboard icon"></i> -->
@@ -11,7 +12,7 @@
 	        </h1> <!-- header --> 
 	<?php if(isset($product)) { ?>
 		<?php foreach($product as $prod) {} ?>
-	        <a href='<?php echo site_url()?>menu/category/<?php echo $prod->product_category; ?>' style='color: #a5673f; font-family: "Roboto Light"; font-size: 1.5em; font-weight: bold;'><i class='brown left arrow icon'></i>BACK TO <?php echo $prod->product_category; ?></a>
+	        <a href='<?php echo site_url()?>menu/category/<?php echo $prod->product_category; ?>' style='color: #a5673f; font-family: "Roboto Light"; font-size: 1.2em; font-weight: bold;'><i class='brown left arrow icon'></i>BACK TO <?php echo $prod->product_category; ?></a>
 	    </div> <!-- segment -->
 	<form class='ui form' method='POST' action='<?php echo site_url()?>tray/addProduct'>
 	    <div class='ui grid'>

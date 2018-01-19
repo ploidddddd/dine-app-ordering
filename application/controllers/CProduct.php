@@ -53,6 +53,7 @@
 						$arrObj->product_id = $value->product_id;
 						$arrObj->product_name = $value->product_name;
 						$arrObj->product_price = $value->product_price;
+						$arrObj->product_description = $value->product_description;
 						$arrObj->product_image = $value->product_image;
 						$arrObj->product_category = $value->product_category;
 						$array[] = $arrObj;
@@ -68,7 +69,9 @@
 
 		function viewMenu()
 		{
+			$this->load->view('imports/vHeader');
 			$this->load->view('vMenu');
+			$this->load->view('imports/vFooter');
 		}
 
 		function viewProduct($id)
@@ -102,6 +105,7 @@
 			} else {
 				$this->load->view('imports/vHeader');
 				$this->load->view('vCart');
+				$this->load->view('imports/vFooter');
 			}
 			
 		}
@@ -147,6 +151,7 @@
 			}
 			if($result){
 				$this->load->view('vQRCode',$data);
+				$this->load->view('imports/vFooter');
 			}
 			
 		}
