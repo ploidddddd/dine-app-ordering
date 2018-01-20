@@ -45,7 +45,7 @@
                                     <span>We offer a wide variety of Seafood & BBQ meals to choose from.</span>
                                 </div>
                                 <div class="center aligned middle aligned column">
-                                    <a href="<?php echo site_url()?>/menu"><button class="ui massive black button"><span class="checkout-menu-dsk">Check out our menu</span></button></a>
+                                    <a href="<?php echo site_url()?>menu"><button class="ui massive black button"><span class="checkout-menu-dsk">Check out our menu</span></button></a>
                                 </div>
                             </div>
 
@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="center aligned middle aligned column">
-                                        <a href="<?php echo site_url()?>/menu"><button class="ui massive black button"><span class="checkout-menu-tb">Check out our menu</span></button></a>
+                                        <a href="<?php echo site_url()?>menu"><button class="ui massive black button"><span class="checkout-menu-tb">Check out our menu</span></button></a>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +195,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="sixteen wide center aligned middle aligned column">
-                                        <a href="<?php echo site_url()?>/menu"><button class="ui massive black button"><span class="checkout-menu-mb">Check out our menu</span></button></a>
+                                        <a href="<?php echo site_url()?>menu"><button class="ui massive black button"><span class="checkout-menu-mb">Check out our menu</span></button></a>
                                     </div>
                                 </div> 
                             </div>
