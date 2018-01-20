@@ -54,7 +54,7 @@
                     <!-- <div class="three wide mobile only column"></div> -->
                     <div class="sixteen wide mobile only center aligned middle aligned column">
                         <img src='<?php echo base_url("assets/images/qr_image/".$img_url)?>' class='ui centered medium image'>
-                        <p class="ref-no">REFERENCE NUMBER: <?php echo $ref_num; ?></p>
+                        <p class="ref-no" sty>REFERENCE NUMBER: </p><span class="qrNum"><?php echo $ref_num; ?></span>
                     </div>
                     <!-- <div class="three wide mobile only column"></div> -->
 

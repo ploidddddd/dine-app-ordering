@@ -27,20 +27,19 @@
 							<div class="five wide computer eight wide tablet sixteen wide mobile center aligned middle aligned column">
 								<div class="ui segment">
 									<div class="ui grid">
-										<div class="five wide middle aligned column">
-											<img class='ui centered tiny image' src='<?php echo base_url($prod->product_image)?>'>
+										<!-- computer -->
+										
+										<div class="five wide computer only middle aligned column">
+											<img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'>
 										</div>
-										<div class="eleven wide left aligned column">
+										<div class="eleven wide computer only left aligned column">
 											<a class='confirmRemove' style='float: right; cursor: pointer;' data-id='<?php echo  $prod->order_item_id;?>' ><i class='large red remove icon'></i></a>
-											<span class="prodName"><?php echo $prod->product_name; ?></span><br> <br>
+											<br><span class="prodName"><?php echo $prod->product_name; ?></span><br> <br>
 											<span class="prodDesc"><?php echo $prod->product_description; ?></span><br><br>
 											<span class="prodPrice">P <?php echo $prod->product_price; ?>.00</span><br><br>
 											<span class="qty">Quantity: x <?php echo $prod->order_item_qty; ?></span><br>
 											<span class="qty">Subtotal: P<?php echo $prod->order_item_subtotal; ?>.00</span>
 											<p></p>
-
-
-
 											<center><form class='' id='form' method='POST' action='<?php echo site_url()?>tray/updateProduct/<?php echo  $prod->order_item_id; ?>'>
 												<input type='hidden' value='<?php echo $prod->product_price; ?>' name='prod_price'>
 											 	
@@ -58,6 +57,69 @@
 						                    	</button>
 						                    </form></center>
 										</div>
+										<!-- tablet -->
+										<div class="sixteen wide tablet only column">
+											<img class='ui centered small image' src='<?php echo base_url($prod->product_image)?>'>
+										</div>
+										<div class="two wide tablet only column"></div>
+										<div class="twelve wide tablet only left aligned column">
+											<a class='confirmRemove' style='float: right; cursor: pointer;' data-id='<?php echo  $prod->order_item_id;?>' ><i class='large red remove icon'></i></a>
+											<br><span class="prodName"><?php echo $prod->product_name; ?></span><br> <br>
+											<span class="prodDesc"><?php echo $prod->product_description; ?></span><br><br>
+											<span class="prodPrice">P <?php echo $prod->product_price; ?>.00</span><br><br>
+											<span class="qty">Quantity: x <?php echo $prod->order_item_qty; ?></span><br>
+											<span class="qty">Subtotal: P<?php echo $prod->order_item_subtotal; ?>.00</span>
+											<p></p>
+											<center><form class='' id='form' method='POST' action='<?php echo site_url()?>tray/updateProduct/<?php echo  $prod->order_item_id; ?>'>
+												<input type='hidden' value='<?php echo $prod->product_price; ?>' name='prod_price'>
+											 	
+												<button class='ui  basic left attached icon button minus' id='minus' data-id='<?php echo $prod->product_id; ?>'>
+													<i class=' minus icon '></i>
+												</button>
+												<input type='hidden' value='<?php echo $prod->order_item_id; ?>' id='od_id<?php echo $prod->product_id; ?>'>
+												
+							                    <div class='ui disabled input' style='max-width: 50px;'>
+							                        <input style='text-align:center; '  value='<?php echo $prod->order_item_qty; ?>' id='qty<?php echo $prod->product_id; ?>' name='qty<?php echo $prod->order_item_id; ?>'>
+							                    </div>
+							                    
+							                    <button class='ui basic right attached icon button plus' id='plus' data-id='<?php echo $prod->product_id; ?>'>
+						                        	<i class='plus icon '></i>
+						                    	</button>
+						                    </form></center>
+										</div>
+										<div class="two wide tablet only column"></div>
+
+										<!-- mobile -->
+										<div class="sixteen wide mobile only column">
+											<img class='ui centered small image' src='<?php echo base_url($prod->product_image)?>'>
+										</div>
+										<div class="two wide mobile only column"></div>
+										<div class="twelve wide mobile only left aligned column">
+											<a class='confirmRemove' style='float: right; cursor: pointer;' data-id='<?php echo  $prod->order_item_id;?>' ><i class='large red remove icon'></i></a>
+											<br><span class="prodName"><?php echo $prod->product_name; ?></span><br> <br>
+											<span class="prodDesc"><?php echo $prod->product_description; ?></span><br><br>
+											<span class="prodPrice">P <?php echo $prod->product_price; ?>.00</span><br><br>
+											<span class="qty">Quantity: x <?php echo $prod->order_item_qty; ?></span><br>
+											<span class="qty">Subtotal: P<?php echo $prod->order_item_subtotal; ?>.00</span>
+											<p></p>
+											<center><form class='' id='form' method='POST' action='<?php echo site_url()?>tray/updateProduct/<?php echo  $prod->order_item_id; ?>'>
+												<input type='hidden' value='<?php echo $prod->product_price; ?>' name='prod_price'>
+											 	
+												<button class='ui  basic left attached icon button minus' id='minus' data-id='<?php echo $prod->product_id; ?>'>
+													<i class=' minus icon '></i>
+												</button>
+												<input type='hidden' value='<?php echo $prod->order_item_id; ?>' id='od_id<?php echo $prod->product_id; ?>'>
+												
+							                    <div class='ui disabled input' style='max-width: 50px;'>
+							                        <input style='text-align:center; '  value='<?php echo $prod->order_item_qty; ?>' id='qty<?php echo $prod->product_id; ?>' name='qty<?php echo $prod->order_item_id; ?>'>
+							                    </div>
+							                    
+							                    <button class='ui basic right attached icon button plus' id='plus' data-id='<?php echo $prod->product_id; ?>'>
+						                        	<i class='plus icon '></i>
+						                    	</button>
+						                    </form></center>
+										</div>
+										<div class="two wide mobile only column"></div>
 									</div>
 								</div>
 							</div>
