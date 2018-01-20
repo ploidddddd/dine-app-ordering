@@ -1,0 +1,248 @@
+@font-face {
+    font-family: 'helsinkii';
+    src: url('../fonts/helsinki/helsinki.eot');
+    src: url('../fonts/helsinki/helsinki.eot') format('embedded-opentype'),
+         url('../fonts/helsinki/helsinki.woff2') format('woff2'),
+         url('../fonts/helsinki/helsinki.woff') format('woff'),
+         url('../fonts/helsinki/helsinki.ttf') format('truetype'),
+         url('../fonts/helsinki/helsinki.svg#helsinki') format('svg');
+}
+
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('../fonts/bebas/BebasNeueRegular.eot');
+    src: url('../fonts/bebas/BebasNeueRegular.eot') format('embedded-opentype'),
+         url('../fonts/bebas/BebasNeueRegular.woff2') format('woff2'),
+         url('../fonts/bebas/BebasNeueRegular.woff') format('woff'),
+         url('../fonts/bebas/BebasNeueRegular.ttf') format('truetype'),
+         url('../fonts/bebas/BebasNeueRegular.svg#BebasNeueRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'BebasNeueBook';
+    src: url('../fonts/bebas/BebasNeueBook.eot');
+    src: url('../fonts/bebas/BebasNeueBook.eot') format('embedded-opentype'),
+         url('../fonts/bebas/BebasNeueBook.woff2') format('woff2'),
+         url('../fonts/bebas/BebasNeueBook.woff') format('woff'),
+         url('../fonts/bebas/BebasNeueBook.ttf') format('truetype'),
+         url('../fonts/bebas/BebasNeueBook.svg#BebasNeueBook') format('svg');
+}
+
+@font-face {
+    font-family: 'BEBAS_';
+    src: url('../fonts/bebas/BEBAS.eot');
+    src: url('../fonts/bebas/BEBAS.eot') format('embedded-opentype'),
+         url('../fonts/bebas/BEBAS.woff2') format('woff2'),
+         url('../fonts/bebas/BEBAS.woff') format('woff'),
+         url('../fonts/bebas/BEBAS.ttf') format('truetype'),
+         url('../fonts/bebas/BEBAS.svg#BEBAS') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bebas_neuelight';
+    src: url('../fonts/bebas/bebasneue_light-webfont.eot');
+    src: url('../fonts/bebas/bebasneue_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bebas/bebasneue_light-webfont.woff2') format('woff2'),
+         url('../fonts/bebas/bebasneue_light-webfont.woff') format('woff'),
+         url('../fonts/bebas/bebasneue_light-webfont.ttf') format('truetype'),
+         url('../fonts/bebas/bebasneue_light-webfont.svg#bebas_neuelight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ostrich_sans';
+    src: url('../fonts/ostrich/ostrich-regular-webfont.eot');
+    src: url('../fonts/ostrich/ostrich-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ostrich/ostrich-regular-webfont.woff2') format('woff2'),
+         url('../fonts/ostrich/ostrich-regular-webfont.woff') format('woff'),
+         url('../fonts/ostrich/ostrich-regular-webfont.ttf') format('truetype'),
+         url('../fonts/ostrich/ostrich-regular-webfont.svg#ostrich_sansmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ostrich_sansmedium';
+    src: url('../fonts/ostrich/ostrichsans-medium-webfont.eot');
+    src: url('../fonts/ostrich/ostrichsans-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ostrich/ostrichsans-medium-webfont.woff2') format('woff2'),
+         url('../fonts/ostrich/ostrichsans-medium-webfont.woff') format('woff'),
+         url('../fonts/ostrich/ostrichsans-medium-webfont.ttf') format('truetype'),
+         url('../fonts/ostrich/ostrichsans-medium-webfont.svg#ostrich_sansmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'BarlowCondensed-Light';
+  src: url('../fonts/barlow/BarlowCondensed-Light.eot?#iefix') format('embedded-opentype'),  
+  	   url('../fonts/barlow/BarlowCondensed-Light.otf')  format('opentype'),
+	   url('../fonts/barlow/BarlowCondensed-Light.woff') format('woff'), 
+	   url('../fonts/barlow/BarlowCondensed-Light.ttf')  format('truetype'), 
+	   url('../fonts/barlow/BarlowCondensed-Light.svg#BarlowCondensed-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'snicklesregular';
+    src: url('../fonts/snickles/snickles-webfont.eot');
+    src: url('../fonts/snickles/snickles-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/snickles/snickles-webfont.woff2') format('woff2'),
+         url('../fonts/snickles/snickles-webfont.woff') format('woff'),
+         url('../fonts/snickles/snickles-webfont.ttf') format('truetype'),
+         url('../fonts/snickles/snickles-webfont.svg#snicklesregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sf_cartoonist_handregular';
+    src: url('../fonts/cartoonist/sf_cartoonist_hand-webfont.eot');
+    src: url('../fonts/cartoonist/sf_cartoonist_hand-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/cartoonist/sf_cartoonist_hand-webfont.woff2') format('woff2'),
+         url('../fonts/cartoonist/sf_cartoonist_hand-webfont.woff') format('woff'),
+         url('../fonts/cartoonist/sf_cartoonist_hand-webfont.ttf') format('truetype'),
+         url('../fonts/cartoonist/sf_cartoonist_hand-webfont.svg#sf_cartoonist_handregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'passion_oneblack';
+    src: url('../fonts/passion/passionone-black-webfont.eot');
+    src: url('../fonts/passion/passionone-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/passion/passionone-black-webfont.woff2') format('woff2'),
+         url('../fonts/passion/passionone-black-webfont.woff') format('woff'),
+         url('../fonts/passion/passionone-black-webfont.ttf') format('truetype'),
+         url('../fonts/passion/passionone-black-webfont.svg#passion_oneblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.orderingMenu{ background: #800000 !important;}
+.lbl-header{ font-family: 'ostrich_sans';}
+
+/*For desktop devices*/
+/*@media only screen and (min-width: 1200px){*/
+.top-menu-items{ font-family: 'helsinkii'; font-size: 1.3em; }
+
+.banner-name-dsk{ font-family: 'BEBAS_' !important; font-size: 3em !important; color: white !important; }
+.home-greeting-dsk{ font-family: 'BarlowCondensed-Light'; font-size: 3em; line-height: 0;}
+.resto-name-dsk{ font-family: 'snicklesregular'; font-size: 6.5em; line-height: 80px;}
+.resto-slogan-dsk{font-family: 'BarlowCondensed-Light'; font-size: 3em; line-height: 0;}
+
+.footer-name-dsk{ font-family: 'snicklesregular'; font-size: 2.5em; }
+.footer-label-dsk{font-family: 'sf_cartoonist_handregular'; font-size: 1.3em;}
+
+.first-info-dsk{font-family: 'BarlowCondensed-Light'; font-size: 3em; line-height: 0.8em; text-align: justify; text-justify: auto;}
+.checkout-menu-dsk{font-family: 'BEBAS_'; }
+
+.lower-info-dsk{ font-family: 'BEBAS_'; font-size: 2em; }
+.location-info-dsk{font-size: 1.7em; font-family: 'BEBAS_'; font-weight: bold;}
+.store-info-dsk{ background:#e4e4e4; }
+.location-extra-dsk{font-family: 'bebas_neuelight'; font-size: 1.8em; color: #696969; line-height: 20px;}
+/* */
+
+
+
+/*For tablet devices*/
+/*@media only screen and (max-width: 1199px) and (min-width: 768px){*/
+.top-menu-items-tb{ font-family: 'helsinkii'; font-size: 1.3em; }
+
+.banner-name-tb{ font-family: 'BEBAS_' !important; font-size: 3em !important; color: white !important; }
+
+.home-greeting-tb{ font-family: 'BarlowCondensed-Light'; font-size: 2.5em; }
+.resto-name-tb{ font-family: 'snicklesregular'; font-size: 5em; line-height: 70px;}
+.resto-slogan-tb{font-family: 'BarlowCondensed-Light'; font-size: 2.8em;}
+
+.footer-name-tb{ font-family: 'snicklesregular'; font-size: 2.5em; }
+.footer-label{font-family: 'sf_cartoonist_handregular'; font-size: 1.3em;}
+
+.first-info-tb{font-family: 'BarlowCondensed-Light'; font-size: 3em; line-height: 0.8em; text-align: justify; text-justify: auto;}
+.checkout-menu-tb{font-family: 'BEBAS_'; font-size: 0.9em;}
+
+.lower-info-tb{ font-family: 'BEBAS_'; font-size: 1.8em; }
+.location-info-tb{font-size: 1.5em; font-family: 'BEBAS_'; font-weight: bold;}
+.store-info-tb{ background:#e4e4e4; }
+.location-extra-tb{font-family: 'bebas_neuelight'; font-size: 1.6em; color: #696969; line-height: 20px;}
+
+/*}*/
+
+/*For mobile devices*/
+/*@media only screen and (max-width: 767px){*/
+.top-menu-items-mb{ font-family: 'helsinkii'; font-size: 1.1em; }
+
+.banner-name-mb{ font-family: 'BEBAS_' !important; font-size : 3em !important; color: white !important; }
+
+.home-greeting-mb{ font-family: 'BarlowCondensed-Light'; font-size: 2.4em; line-height: 0;}
+.resto-name-mb{ font-family: 'snicklesregular'; font-size: 4em; line-height: 65px;}
+.resto-slogan-mb{font-family: 'BarlowCondensed-Light'; font-size: 2.4em; line-height: 30px;}
+
+.footer-name-mb{ font-family: 'snicklesregular'; font-size: 1.6em; line-height: 40px;}
+.footer-label-mb{font-family: 'sf_cartoonist_handregular'; font-size: 1.3em;}
+
+.first-info-mb{font-family: 'BarlowCondensed-Light'; font-size: 2.2em; line-height: 0.8em; text-align: justify; text-justify: auto;}
+.checkout-menu-mb{font-family: 'BEBAS_'; }
+
+.lower-info-mb{ font-family: 'BEBAS_'; font-size: 2em; }
+.location-info-mb{font-size: 1.7em; font-family: 'BEBAS_'; font-weight: bold;}
+.store-info-mb{ background:#e4e4e4; }
+.location-extra-mb{font-family: 'bebas_neuelight'; font-size: 1.8em; color: #696969; line-height: 20px;}
+
+
+.modal-item{font-size: 3em; font-family: 'BEBAS_';color: #e4e4e4;}
+.modal-item:hover{color: white;}
+
+/*}*/
+
+.header-breadcrumb{color: black; font-family: 'ostrich_sans'; font-size:1.9em; font-weight: bold;}
+
+.ricemeals-dsk{color: white; font-size: 2em; font-family:'BEBAS_'; }
+.ricemeals-tb{color: white; font-size: 2em; font-family: 'BEBAS_'; }
+.ricemeals-mb{color: white; font-size: 2em; font-family:'BEBAS_'; }
+
+
+.maincourse-dsk{color: white; font-size: 2em; font-family:'BEBAS_';}
+.maincourse-mb{color: white; font-size: 2em; font-family:'BEBAS_'; }
+.maincourse-tb{color: white; font-size: 2em; font-family: 'BEBAS_'; }
+
+
+.soup-dsk{color: white; font-size: 2em; font-family:'BEBAS_';  }
+.soup-mb{color: white; font-size: 2em; font-family:'BEBAS_'; }
+.soup-tb{color: white; font-size: 2em; font-family: 'BEBAS_'; }
+
+
+.drinks-dsk{color: white; font-size: 2em; font-family:'BEBAS_';}
+.drinks-mb{color: white; font-size: 2em; font-family:'BEBAS_'; }
+.drinks-tb{color: white; font-size: 2em; font-family: 'BEBAS_'; }
+    
+.extras-dsk{color: white; font-size: 2em; font-family:'BEBAS_';  }
+.extras-mb{color: white; font-size: 2em; font-family:'BEBAS_'; }
+.extras-tb{color: white; font-size: 2em; font-family: 'BEBAS_'; }
+
+
+.prodName{font-size: 1.7em; font-family: 'BarlowCondensed-Light';}
+.prodDesc{font-size: 1.5em;font-family: 'sf_cartoonist_handregular'; line-height: 25px;}
+.prodPrice{font-family: 'BarlowCondensed-Light'; font-size: 1.8em; line-height: 0;}
+.addToCart{font-family: 'sf_cartoonist_handregular'; line-height: 0; font-size: 1.4em;}
+.qty{font-family: 'BarlowCondensed-Light'; font-size: 1.5em;}
+.tray-submit{background: #800000; font-family: 'sf_cartoonist_handregular'; color: white; font-size: 1.5em;}
+.total-price{font-family: 'BarlowCondensed-Light'; font-size: 2.8em;}
+
+.chckoutHeader{font-family: 'BEBAS_'; font-size: 2em;}
+.ref-no{font-size: 1.8em; font-family: 'BarlowCondensed-Light';}
+.ref-info{font-size: 1.8em; font-family: 'BarlowCondensed-Light';}
+.ty-dsk{font-family: 'snicklesregular'; font-size: 2.4em; line-height: 0;}
+.ty-mb{font-family: 'sf_cartoonist_handregular'; font-size: 1.8em;}
+.qrNum{color: blue; }

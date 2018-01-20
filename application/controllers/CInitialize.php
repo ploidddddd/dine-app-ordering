@@ -13,7 +13,9 @@
 
 		public function index()
 		{
-			$this->load->view('vMenu');
+			$this->load->view('imports/vHeader');
+			$this->load->view('vHome');
+			$this->load->view('imports/vFooter');
 		}
 
 		

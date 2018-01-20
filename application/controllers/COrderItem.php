@@ -18,9 +18,10 @@
 
 		public function addOrderItem() 
 		{
-			$subtotal = $this->input->post('prod_price') * $this->input->post('qty');
-			$prod_id = $this->input->post('prod_id');
-			$data = array('order_item_qty' => $this->input->post('qty'),
+			$subtotal = $this->input->post('modprod_price') * $this->input->post('modqty');
+			$prod_id = $this->input->post('modprod_id');
+			$cat = $this->input->post('modprod_category');
+			$data = array('order_item_qty' => $this->input->post('modqty'),
 						  'order_item_subtotal' => $subtotal ,
 						  'order_item_product_id' => $prod_id,
 						  'order_item_ordered_id' => $this->session->userdata['orderingSession']['ordered_id']
@@ -28,9 +29,8 @@
 
 			$result = $this->MOrderItem->insert($data);
 			if($result){
-				redirect('tray');
+				redirect('menu/category/'.$cat."/1");
 			}
-			# code...
 		}
 
 		public function updateCart($order_item_id)

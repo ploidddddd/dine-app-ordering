@@ -20,7 +20,7 @@
 			
 		}
 
-		function viewProductsInCategory($cat)
+		function viewProductsInCategory($cat,$page)
 		{
 			$now = new DateTime(NULL, new DateTimeZone('Asia/Manila'));
 			if(!$this->session->userdata('orderingSession')){
@@ -41,34 +41,58 @@
 				}
 			}
 
+			$npage = ($page * 6)-6;
 			$cat = urldecode($cat);
 			$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
-			$result = $this->MProduct->getProductsNotInCart($cat,$order_id);
-			$data['prod_cat']  = $cat;
-			// print_r($result);
-            $array = array();
+			$result = $this->MProduct->getProductsNotInCart($cat,$order_id,$npage);
+            //$cnt = mysqli_num_rows($result);
+
 			if($result){
-				foreach ($result as $value) {
-						$arrObj = new stdClass;
-						$arrObj->product_id = $value->product_id;
-						$arrObj->product_name = $value->product_name;
-						$arrObj->product_price = $value->product_price;
-						$arrObj->product_image = $value->product_image;
-						$arrObj->product_category = $value->product_category;
-						$array[] = $arrObj;
+				$array = array();
+				if($result){
+					foreach ($result as $value) {
+							$arrObj = new stdClass;
+							$arrObj->product_id = $value->product_id;
+							$arrObj->product_name = $value->product_name;
+							$arrObj->product_price = $value->product_price;
+							$arrObj->product_description = $value->product_description;
+							$arrObj->product_image = $value->product_image;
+							$arrObj->product_category = $value->product_category;
+							$array[] = $arrObj;
+					}
+				$data['products']  = $array;
 				}
-			$data['products']  = $array;
+				$result1 = $this->MProduct->getAllProductsNotInCart($cat,$order_id);
+				$x = 0;
+				foreach ($result1 as $value) {
+					$x++;
+				}
+			 	$num = $x/6;
+     			$num = ceil($num);
+
+    			$data['page'] = $page;
+    			$data['totalpage'] = $num;
+
+			}else{
+				$data = null;
 			}
+			
+			// print_r($result);
+            
 			// print_r($this->session->userdata('orderingSession'));
+			$data['prod_cat']  = $cat;
 			$this->load->view('imports/vHeader');
 			$this->load->view('vProducts',$data);
 			$this->load->view('imports/vFooter');
+			// / print_r($num);
 
 		}
 
 		function viewMenu()
 		{
+			$this->load->view('imports/vHeader');
 			$this->load->view('vMenu');
+			$this->load->view('imports/vFooter');
 		}
 
 		function viewProduct($id)
@@ -102,6 +126,7 @@
 			} else {
 				$this->load->view('imports/vHeader');
 				$this->load->view('vCart');
+				$this->load->view('imports/vFooter');
 			}
 			
 		}
@@ -147,6 +172,7 @@
 			}
 			if($result){
 				$this->load->view('vQRCode',$data);
+				$this->load->view('imports/vFooter');
 			}
 			
 		}

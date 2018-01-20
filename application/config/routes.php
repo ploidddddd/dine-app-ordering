@@ -61,6 +61,7 @@ $route['tray/removeProduct'] = 'COrderItem/removeToCart';
 $route['tray/addProduct'] = 'COrderItem/addOrderItem';
 $route['tray'] = 'CProduct/viewCart';
 
+
 $route['menu/category/product/(.*)'] = 'CProduct/viewProduct/$1';
 $route['menu/category/(.*)'] = 'CProduct/viewProductsInCategory/$1';
 $route['menu'] = 'CProduct/viewMenu';
