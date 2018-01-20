@@ -78,3 +78,12 @@
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function(){
+	$('#toggleMenu').click(function(){
+		$('#showMenu').modal('show');
+	}); 
+	$('.ui.modal').modal('setting', 'closable', false);
+});
+</script>

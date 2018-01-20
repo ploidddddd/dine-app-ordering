@@ -145,7 +145,7 @@
 .footer-name-dsk{ font-family: 'snicklesregular'; font-size: 2.5em; }
 .footer-label-dsk{font-family: 'sf_cartoonist_handregular'; font-size: 1.3em;}
 
-.first-info-dsk{font-family: 'passion_oneblack'; font-size: 3em; line-height: 0.8em; text-align: justify; text-justify: auto;}
+.first-info-dsk{font-family: 'BarlowCondensed-Light'; font-size: 3em; line-height: 0.8em; text-align: justify; text-justify: auto;}
 .checkout-menu-dsk{font-family: 'BEBAS_'; }
 
 .lower-info-dsk{ font-family: 'BEBAS_'; font-size: 2em; }
@@ -169,7 +169,7 @@
 .footer-name-tb{ font-family: 'snicklesregular'; font-size: 2.5em; }
 .footer-label{font-family: 'sf_cartoonist_handregular'; font-size: 1.3em;}
 
-.first-info-tb{font-family: 'passion_oneblack'; font-size: 3em; line-height: 0.8em; text-align: justify; text-justify: auto;}
+.first-info-tb{font-family: 'BarlowCondensed-Light'; font-size: 3em; line-height: 0.8em; text-align: justify; text-justify: auto;}
 .checkout-menu-tb{font-family: 'BEBAS_'; font-size: 0.9em;}
 
 .lower-info-tb{ font-family: 'BEBAS_'; font-size: 1.8em; }
@@ -192,7 +192,7 @@
 .footer-name-mb{ font-family: 'snicklesregular'; font-size: 1.6em; line-height: 40px;}
 .footer-label-mb{font-family: 'sf_cartoonist_handregular'; font-size: 1.3em;}
 
-.first-info-mb{font-family: 'passion_oneblack'; font-size: 2.2em; line-height: 0.8em; text-align: justify; text-justify: auto;}
+.first-info-mb{font-family: 'BarlowCondensed-Light'; font-size: 2.2em; line-height: 0.8em; text-align: justify; text-justify: auto;}
 .checkout-menu-mb{font-family: 'BEBAS_'; }
 
 .lower-info-mb{ font-family: 'BEBAS_'; font-size: 2em; }
@@ -233,7 +233,7 @@
 
 
 .prodName{font-size: 1.7em; font-family: 'BarlowCondensed-Light';}
-.prodDesc{font-size: 1.5em; font-family: 'sf_cartoonist_handregular'; line-height: 0;}
+.prodDesc{font-size: 1.5em;font-family: 'sf_cartoonist_handregular'; line-height: 25px;}
 .prodPrice{font-family: 'BarlowCondensed-Light'; font-size: 1.8em; line-height: 0;}
 .addToCart{font-family: 'sf_cartoonist_handregular'; line-height: 0; font-size: 1.4em;}
 .qty{font-family: 'BarlowCondensed-Light'; font-size: 1.5em;}
@@ -245,3 +245,4 @@
 .ref-info{font-size: 1.8em; font-family: 'BarlowCondensed-Light';}
 .ty-dsk{font-family: 'snicklesregular'; font-size: 2.4em; line-height: 0;}
 .ty-mb{font-family: 'sf_cartoonist_handregular'; font-size: 1.8em;}
+.qrNum{color: blue; }

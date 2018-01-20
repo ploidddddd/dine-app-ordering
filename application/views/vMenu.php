@@ -26,7 +26,7 @@
                     <div class="five wide computer only column">
                         <a href='<?php echo site_url()?>menu/category/PANCIT/1'>
                             <div class="ui fluid segment" style="background: gray;">
-                                <img src='<?php echo base_url("assets/images/ricemeal.png")?>' class='ui centered tiny image'>
+                                <img src='<?php echo base_url("assets/images/extras.png")?>' class='ui centered tiny image'>
                                 <br>
                                 <p class="ricemeals-dsk">PANCIT</p>
                             </div>
@@ -36,7 +36,7 @@
                     <div class="seven wide tablet only column">
                         <a href='<?php echo site_url()?>menu/category/PANCIT/1'>
                             <div class="ui fluid segment" style="background: gray;">
-                                <img src='<?php echo base_url("assets/images/ricemeal.png")?>' class='ui centered tiny image'>
+                                <img src='<?php echo base_url("assets/images/extras.png")?>' class='ui centered tiny image'>
                                 <br>
                                 <p class="ricemeals-tb">PANCIT</p>
                             </div>
@@ -48,7 +48,7 @@
                             <div class="ui fluid segment" style="background: gray;">
                                 <div class="ui two column grid">
                                     <div class="column">
-                                        <img src='<?php echo base_url("assets/images/ricemeal.png")?>' class='ui centered tiny image'>
+                                        <img src='<?php echo base_url("assets/images/extras.png")?>' class='ui centered tiny image'>
                                     </div> 
                                     <div class="middle aligned column">
                                         <p class="ricemeals-mb">PANCIT</p>
@@ -168,7 +168,7 @@
                     <div class="five wide computer only column">
                         <a href='<?php echo site_url()?>menu/category/EXTRAS/1'>
                             <div class="ui fluid segment" style="background: gray;">
-                                <img src='<?php echo base_url("assets/images/extras.png")?>' class='ui centered tiny image'>
+                                <img src='<?php echo base_url("assets/images/ricemeal.png")?>' class='ui centered tiny image'>
                                 <br>
                                 <p class="extras-dsk">EXTRAS</p>
                             </div>
@@ -177,7 +177,7 @@
                     <div class="seven wide tablet only column">
                         <a href='<?php echo site_url()?>menu/category/EXTRAS/1'>
                             <div class="ui fluid segment" style="background: gray;">
-                                <img src='<?php echo base_url("assets/images/extras.png")?>' class='ui centered tiny image'>
+                                <img src='<?php echo base_url("assets/images/ricemeal.png")?>' class='ui centered tiny image'>
                                 <br>
                                 <p class="extras-tb">EXTRAS</p>
                             </div>
@@ -188,7 +188,7 @@
                             <div class="ui fluid segment" style="background: gray;">
                                 <div class="ui two column grid">
                                     <div class="column">
-                                        <img src='<?php echo base_url("assets/images/extras.png")?>' class='ui centered tiny image'>
+                                        <img src='<?php echo base_url("assets/images/ricemeal.png")?>' class='ui centered tiny image'>
                                     </div>
                                     <div class="middle aligned column">
                                         <p class="extras-mb">EXTRAS</p>

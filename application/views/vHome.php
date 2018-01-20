@@ -41,8 +41,8 @@
                             <div class="ui hidden divider"></div>
 
                             <div class="ui two column grid">
-                                <div class="middle aligned left aligned column first-info-dsk">
-                                    <span>We offer a wide variety of seafood meals to choose from</span>
+                                <div class="middle aligned center aligned column first-info-dsk">
+                                    <span>We offer a wide variety of Seafood & BBQ meals to choose from.</span>
                                 </div>
                                 <div class="center aligned middle aligned column">
                                     <a href="<?php echo site_url()?>/menu"><button class="ui massive black button"><span class="checkout-menu-dsk">Check out our menu</span></button></a>
@@ -112,8 +112,8 @@
                             <div class="ui grid">
                                 <div class="row">
                                     <div class="two wide column"></div>
-                                    <div class="twelve wide middle aligned left aligned column first-info-tb">
-                                        <span>We offer a wide variety of seafood meals to choose from</span>
+                                    <div class="twelve wide middle aligned center aligned column first-info-tb">
+                                        <span>We offer a wide variety of Seafood & BBQ meals to choose from.</span>
                                     </div>
                                     <div class="two wide column"></div>
                                 </div>
@@ -189,8 +189,8 @@
 
                             <div class="ui grid">
                                 <div class="row">
-                                    <div class="sixteen wide middle aligned left aligned column first-info-mb">
-                                        <span>We offer a wide variety of seafood meals to choose from</span>
+                                    <div class="sixteen wide middle aligned center aligned column first-info-mb">
+                                        <span>We offer a wide variety of Seafood & BBQ meals to choose from.</span>
                                     </div>
                                 </div>
                                 <div class="row">
