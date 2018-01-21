@@ -120,7 +120,7 @@
                         echo "
                         <div class='ui grid'>
                             <div class='sixteen wide center aligned middle aligned column'>
-                                <p style='font-style: italic; font-family: ".'Roboto Light'."; font-size: 1.7em;'><i class='small circular info icon' style='color: white; background-color: #800000;'></i>There are no available products for this category.</p>
+                                <p style='font-style: italic; font-family: ".'Roboto Light'."; font-size: 1.7em;'><i class='small circular info icon' style='color: white; background-color: #800000;'></i>There are no available products for this category./ All products in this category has been placed in your tray.</p>
                             </div>
                             <div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div>
                         </div>
