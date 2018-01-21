@@ -90,29 +90,6 @@
     </div>
 </div>
 
-<div class="ui basic modal" id="cancelModal">
-  <div class="ui icon header">
-    <i class="sign out icon"></i>
-    Leave Page
-  </div>
-  <div class="content">
-    <center><p style='font-size: 1.5em;'>Are you sure you want to leave this page? Changes you made may not be saved.</p></center>
-  </div>
-  <form>
-  <div class="actions">
-    <div class="ui gray basic cancel inverted button">
-      <i class="remove icon"></i>
-      No
-    </div>
-    <a href="<?php echo site_url()?>/CProduct/viewCategoryList"><button class="ui basic brown ok inverted button" type="submit">
-      <i class="checkmark icon"></i>
-      Yes
-    </button></a>
-  </div>
-  </form>
-</div>
-
-
 <script>
   $(document).ready(function() {
     window.onbeforeunload = function() {
