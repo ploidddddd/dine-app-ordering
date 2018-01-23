@@ -155,6 +155,7 @@
 
 		function viewQRCode()
 		{
+			$now = new DateTime(NULL, new DateTimeZone('Asia/Manila'));
 			$data['img_url']="";
 			$qr_code = rand();
 			$params['data'] = $qr_code;
@@ -166,13 +167,17 @@
 				$data['img_url']=$qr_code.'.png';
 				$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
 				
-				$array = array('ordered_qr_code' => $qr_code );
+				$array = array('ordered_qr_code' => $qr_code,
+							   'ordered_time' => $now->format('Y-m-d H:i:s a') 
+							  );
 				$result = $this->MOrdered->update($order_id, $array);
 				$data['ref_num'] = $qr_code;	
 			}
 			if($result){
+				$this->session->unset_userdata('orderingSession');
 				$this->load->view('vQRCode',$data);
 				$this->load->view('imports/vFooter');
+				
 			}
 			
 		}
@@ -190,7 +195,7 @@
  
 		public function deleteSession()
 		{
-			$this->session->unset_userdata('orderingSession');
+			// $this->session->unset_userdata('orderingSession');
 			redirect('home');
 		}
 	}
