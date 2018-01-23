@@ -22,6 +22,17 @@
                     <div class="sixteen wide left aligned column ">
                         <a href="<?php echo site_url()?>menu" class="header-breadcrumb"></i>Back to menu</a>
                     </div>
+					<div class="sixteen wide column">
+                    <?php if($this->session->flashdata('response')){ ?>
+                        <div class="ui positive message">
+                            <i class="close icon"></i>
+                                <div class="header">
+                                    Your process was successful.
+                                </div>
+                            <p><?php echo $this->session->flashdata('response');?></p>
+                        </div>
+                    <?php } ?>
+                    </div>
                     <?php if(isset($items)) { ?>
 						<?php foreach($items as $prod){ ?>
 							<div class="five wide computer eight wide tablet sixteen wide mobile center aligned middle aligned column">
@@ -233,4 +244,10 @@
 
 		$('.ui.modal').modal('setting', 'closable', false);
 	});
+
+	$(document).ready(function(){
+        $('.message .close').on('click', function() {
+            $(this).closest('.message').transition('fade');
+        });
+    });
 </script>
