@@ -10,6 +10,8 @@
                 <div class="ui massive breadcrumb lbl-header" id="lbl-header">
                     <a href="<?php echo site_url()?>home" class="section" >HOME</a>
                     <div class="divider" style="color: white;">/</div>
+                    <a href="<?php echo site_url()?>menu" class="section" >MENU</a>
+                    <div class="divider" style="color: white;">/</div>
                     <div class="active section lbl-header">TRAY</div>
                 </div>
             </div>
@@ -160,7 +162,15 @@
 						<a href='<?php echo site_url()?>checkout'><button style='background: #800000; color: white;' class='ui circular fluid button'><i class='check icon'></i>Checkout</button></a>
 					</div>
 					<!-- mobile -->
-					<div class="six wide mobile only column"></div>
+					<!-- <div class="two wide mobile only column"></div> -->
+					<div class="sixteen wide mobile only column">
+						<?php if (isset($total)) {?>
+							<p class="total-price">TOTAL: <?php echo $total; ?>.00</p>
+						<?php } ?>
+						<a href='<?php echo site_url()?>checkout'><button style='background: #800000; color: white;' class='ui circular fluid button'><i class='check icon'></i>Checkout</button></a>
+					</div>
+					<!-- <div class="two wide mobile only column"></div> -->
+					<!-- <div class="six wide mobile only column"></div>
 					<div class="ten wide mobile only left aligned column">
 						<?php if (isset($total)) {?>
 							<p class="total-price">TOTAL: <?php echo $total; ?>.00</p>
@@ -169,29 +179,27 @@
 					<div class="six wide mobile only column"></div>
 					<div class="ten wide mobile only left aligned column">
 						<a href='<?php echo site_url()?>checkout'><button style='background: #800000; color: white;' class='ui circular fluid button'><i class='check icon'></i>Checkout</button></a>
-					</div>
+					</div> -->
+					<div class="row"></div>
 
 					<?php 
 					}else{
 						echo "
-							<div class='sixteen wide center aligned middle aligned column'>
-								<p style='font-style: italic; font-family: ".'Roboto Light'."; font-size: 1.7em;'><i class='small circular info icon' style='color: white; background-color: #800000;'></i>Your tray is empty.</p>
+							<div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div>
+							<div class='sixteen wide center aligned middle aligned column nocart'>
+								<h1 class='ui header' style='font-family:".'BarlowCondensed-Light'.";'><i class='warning circle icon'></i>Your tray is empty.</h1>
 							</div>
-							<div class='row'></div>
 						";
 					} ?>
                 </div>
             </div> 
             <div class="two wide column"></div>
         </div> 
-        <div class="row"></div>
-        <div class="row"></div>
     </div>
 </div>
 <div class="ui inverted black vertical footer center aligned segment">
     <p class="footer-label-dsk footer-label-tb footer-label-mb">&copy 2017 DINE | Mameng's Seafood & BBQ Hauz. All Rights Reserved.</p>
 </div>
-
 
 <div class='ui mini modal' id='removeItem'>
   <div class='header'>Remove Item </div> 
@@ -210,6 +218,8 @@
   </div>
   </form>
 </div>
+</body>
+</html>
 
 
 <script>
