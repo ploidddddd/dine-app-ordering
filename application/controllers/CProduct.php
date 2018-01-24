@@ -83,7 +83,7 @@
 			$data['prod_cat']  = $cat;
 			$this->load->view('imports/vHeader');
 			$this->load->view('vProducts',$data);
-			$this->load->view('imports/vFooter');
+			// $this->load->view('imports/vFooter');
 			// / print_r($num);
 
 		}
@@ -126,7 +126,7 @@
 			} else {
 				$this->load->view('imports/vHeader');
 				$this->load->view('vCart');
-				$this->load->view('imports/vFooter');
+				// $this->load->view('imports/vFooter');
 			}
 			
 		}

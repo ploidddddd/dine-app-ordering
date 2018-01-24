@@ -130,12 +130,13 @@
 
 }
 
+
 .orderingMenu{ background: #800000 !important;}
 .lbl-header{ font-family: 'ostrich_sans';}
 
 /*For desktop devices*/
 /*@media only screen and (min-width: 1200px){*/
-.top-menu-items{ font-family: 'helsinkii'; font-size: 1.3em; }
+.top-menu-items{ font-family: 'helsinkii'; font-size: 1.5em; }
 
 .banner-name-dsk{ font-family: 'BEBAS_' !important; font-size: 3em !important; color: white !important; }
 .home-greeting-dsk{ font-family: 'BarlowCondensed-Light'; font-size: 3em; line-height: 0;}
@@ -181,13 +182,13 @@
 
 /*For mobile devices*/
 /*@media only screen and (max-width: 767px){*/
-.top-menu-items-mb{ font-family: 'helsinkii'; font-size: 1.1em; }
+.top-menu-items-mb{ font-family: 'helsinkii'; font-size: 1.3em; }
 
-.banner-name-mb{ font-family: 'BEBAS_' !important; font-size : 3em !important; color: white !important; }
+.banner-name-mb{ font-family: 'BEBAS_' !important; font-size : 2em !important; color: white !important; }
 
-.home-greeting-mb{ font-family: 'BarlowCondensed-Light'; font-size: 2.4em; line-height: 0;}
-.resto-name-mb{ font-family: 'snicklesregular'; font-size: 4em; line-height: 65px;}
-.resto-slogan-mb{font-family: 'BarlowCondensed-Light'; font-size: 2.4em; line-height: 30px;}
+.home-greeting-mb{ font-family: 'BarlowCondensed-Light'; font-size: 2em; line-height: 0;}
+.resto-name-mb{ font-family: 'snicklesregular'; font-size: 3.2em; line-height: 55px;}
+.resto-slogan-mb{font-family: 'BarlowCondensed-Light'; font-size: 2em; line-height: 30px;}
 
 .footer-name-mb{ font-family: 'snicklesregular'; font-size: 1.6em; line-height: 40px;}
 .footer-label-mb{font-family: 'sf_cartoonist_handregular'; font-size: 1.3em;}
@@ -241,8 +242,8 @@
 .total-price{font-family: 'BarlowCondensed-Light'; font-size: 2.8em;}
 
 .chckoutHeader{font-family: 'BEBAS_'; font-size: 2em;}
-.ref-no{font-size: 1.8em; font-family: 'BarlowCondensed-Light';}
+.ref-no{font-size: 2em; font-family: 'BarlowCondensed-Light';}
 .ref-info{font-size: 1.8em; font-family: 'BarlowCondensed-Light';}
 .ty-dsk{font-family: 'snicklesregular'; font-size: 2.4em; line-height: 0;}
 .ty-mb{font-family: 'sf_cartoonist_handregular'; font-size: 1.8em;}
-.qrNum{color: blue; }
+.qrNum{color: blue; font-family: 'BarlowCondensed-Light'; font-size: 1.8em; }

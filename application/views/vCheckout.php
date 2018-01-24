@@ -35,10 +35,10 @@
 										<tr>
 											<td>
 												<div class="ui grid">
-													<div class="five wide column">
+													<!-- <div class="five wide column">
 														<img class='ui left aligned tiny image' src='<?php echo base_url($prod->product_image)?>'>
-													</div>
-													<div class="eleven wide column">
+													</div> -->
+													<div class="sixteen wide column">
 														<p class="prodName"><?php echo $prod->product_name; ?></p>
 														<p class="prodPrice">P <?php echo $prod->product_price; ?></p>
 														<p class="qty" style="float: right;">x <?php echo $prod->order_item_qty; ?></p>
@@ -78,16 +78,17 @@
 						<a href='<?php echo site_url()?>qrcode'><button style="background: #800000; color: white;" class='ui circular fluid button'><i class='qrcode icon'></i>Generate QR</button></a>
 					</div>
 					<!-- mobile -->
-					<div class="six wide mobile only column"></div>
-					<div class="ten wide mobile only left aligned column">
+					<!-- <div class="six wide mobile only column"></div> -->
+					<div class="sixteen wide mobile only left aligned column">
 						<?php if (isset($total)) {?>
 							<p class="total-price">TOTAL: <?php echo $total; ?>.00</p>
 						<?php } ?>
-					</div>
-					<div class="six wide mobile only column"></div>
-					<div class="ten wide mobile only left aligned column">
 						<a href='<?php echo site_url()?>qrcode'><button style="background: #800000; color: white;" class='ui circular fluid button'><i class='qrcode icon'></i>Generate QR</button></a>
 					</div>
+					<!-- <div class="six wide mobile only column"></div> -->
+					<!-- <div class="ten wide mobile only left aligned column">
+						<a href='<?php echo site_url()?>qrcode'><button style="background: #800000; color: white;" class='ui circular fluid button'><i class='qrcode icon'></i>Generate QR</button></a>
+					</div> -->
 
 					<?php }?>
                 </div>
