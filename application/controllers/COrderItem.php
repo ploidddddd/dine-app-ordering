@@ -29,6 +29,7 @@
 
 			$result = $this->MOrderItem->insert($data);
 			if($result){
+				$this->session->set_flashdata('response',"Successfully added product in your tray!");
 				redirect('menu/category/'.$cat."/1");
 			}
 		}
@@ -42,11 +43,13 @@
 						  );
 				$result = $this->MOrderItem->update($order_item_id,$data);
 				if($result){
+					$this->session->set_flashdata('response',"Successfully updated product in your tray!");
 					redirect('tray');
 				}
 			} else {
 				$result = $this->MOrderItem->delete($order_item_id);
 				if($result){
+					$this->session->set_flashdata('response',"Successfully deleted product in your tray!");
 					redirect('tray');
 				}
 			}
@@ -54,11 +57,10 @@
 
 		public function removeToCart()
 		{
-			// print_r('deleting..');
 			$order_item_id = $this->input->post('order_item_id');
-			// print_r($order_item_id);
 			$result = $this->MOrderItem->delete($order_item_id);
 			if($result){
+				$this->session->set_flashdata('response',"Successfully deleted product in your tray!");
 				redirect('tray');
 			}
 		}

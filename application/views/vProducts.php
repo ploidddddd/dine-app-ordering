@@ -25,26 +25,43 @@
                 <div class="ui left aligned middle aligned grid">
                     <div class="sixteen wide left aligned column ">
                         <a href="<?php echo site_url()?>menu" class="header-breadcrumb"></i>Back to menu</a>
+                    </div>  
+                    <div class="sixteen wide column">
+                    <?php if($this->session->flashdata('response')){ ?>
+                        <div class="ui positive message">
+                            <i class="close icon"></i>
+                                <div class="header">
+                                    Your process was successful.
+                                </div>
+                            <p><?php echo $this->session->flashdata('response');?></p>
+                        </div>
+                    <?php } ?>
                     </div>
                     <?php if(isset($products)) { ?>
 					<?php foreach($products as $prod) { ?>
 						<div class="five wide computer eight wide tablet sixteen wide mobile center aligned middle aligned column">
-							<div class="ui segment">
-								<div class="ui grid">
+							<div class="ui segment" style="height:100%;">
+								<div class="ui centered grid">
 									
                                     <!-- computer -->
-                                    <div class="five wide computer only middle aligned column">
+                                    
+                                    <div class="sixteen wide computer only center aligned middle aligned column">
 										<img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'>
                                     </div>
-                                    <div class="eleven wide computer only left aligned column">
+                                    
+
+                                    
+                                    <div class="sixteen wide computer only left aligned column">
 										<p class="prodName"><?php echo $prod->product_name; ?></p>
 										<p class="prodDesc"><?php echo $prod->product_description; ?></p><br>
 										<p class="prodPrice">P <?php echo $prod->product_price; ?>.00</p>
                                         <input type="hidden" id="prod_id" value="<?php echo $prod->product_id; ?>">
                                         <input type="hidden" id="prod_price" value="<?php echo $prod->product_price; ?>">
-                                         <input type="hidden" id="prod_category" value="<?php echo $prod->product_category; ?>">
+                                        <input type="hidden" id="prod_category" value="<?php echo $prod->product_category; ?>">
+                                        <div class="ui "></div>
 										<a class='openAdd' data-id='<?php echo $prod->product_id; ?>'><button class='ui circular fluid button' style='background: #800000; color: white;'><i class='plus icon' ></i><span class="addToCart">Add to tray</span></button></a>
                                     </div>
+                                    
                                     <!-- tablet-->
                                     <div class="sixteen wide tablet only middle aligned column">
 										<img class='ui centered small image' src='<?php echo base_url($prod->product_image)?>'>
@@ -118,12 +135,14 @@
                 <?php 
                     }else{
                         echo "
-                        <div class='ui grid'>
-                            <div class='sixteen wide center aligned middle aligned column'>
-                                <p style='font-style: italic; font-family: ".'Roboto Light'."; font-size: 1.7em;'><i class='small circular info icon' style='color: white; background-color: #800000;'></i>There are no available products for this category.</p>
+                            <div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div>
+                            <div class='sixteen wide center aligned middle aligned column nocart'>
+                                <h1 class='ui header' style='font-family:".'BarlowCondensed-Light'.";'><i class='warning circle icon'></i>Oops, there seems to be no products under this category or all products are in your cart already.</h1>
                             </div>
-                            <div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div>
-                        </div>
+                            <div class='row'></div><div class='row'></div><div class='row'></div>
+                            <div class='row'></div><div class='row'></div><div class='row'></div>
+                            <div class='row'></div><div class='row'></div><div class='row'></div>
+                            
                         ";
                     } ?>
             </div>
@@ -131,8 +150,10 @@
         </div>
         <div class="row"></div>
         <div class="row"></div>
-        <div class="row"></div>
     </div>
+</div>
+<div class="ui inverted black vertical footer center aligned segment">
+    <p class="footer-label-dsk footer-label-tb footer-label-mb">&copy 2017 DINE | Mameng's Seafood & BBQ Hauz. All Rights Reserved.</p>
 </div>
 
 
@@ -170,6 +191,9 @@
     </div>
     </form>
 </div>
+</body>
+</html>
+
 
 <script>
     $(document).ready(function(){
@@ -206,5 +230,12 @@
         });
 
         $('.ui.modal').modal('setting', 'closable', false);
+    });
+
+    $(document).ready(function(){
+        $('.message .close').on('click', function() {
+            $(this).closest('.message').transition('fade');
+        });
+
     });
 </script>

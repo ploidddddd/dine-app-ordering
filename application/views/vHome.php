@@ -14,10 +14,8 @@
         <div class="row">
             <div class="two wide column"></div>
             <div class="twelve wide center aligned middle aligned column">
-
-                <!-- desktop -->
                 <div class="ui grid">
-                    <div class="row">
+                    <div class="computer only row">
                         <div class="computer only column">
                             <div class="ui divider"></div>
                             <div class="ui hidden divider"></div>
@@ -45,7 +43,7 @@
                                     <span>We offer a wide variety of Seafood & BBQ meals to choose from.</span>
                                 </div>
                                 <div class="center aligned middle aligned column">
-                                    <a href="<?php echo site_url()?>/menu"><button class="ui massive black button"><span class="checkout-menu-dsk">Check out our menu</span></button></a>
+                                    <a href="<?php echo site_url()?>menu"><button class="ui massive black button"><span class="checkout-menu-dsk">Check out our menu</span></button></a>
                                 </div>
                             </div>
 
@@ -85,12 +83,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- end desktop -->
 
-                <!-- tablet devices -->
-                <div class="ui grid">
-                    <div class="row">
+                    <div class="tablet only row">
                         <div class="tablet only column">
                             <div class="ui divider"></div>
                             <div class="ui hidden divider"></div>
@@ -119,7 +113,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="center aligned middle aligned column">
-                                        <a href="<?php echo site_url()?>/menu"><button class="ui massive black button"><span class="checkout-menu-tb">Check out our menu</span></button></a>
+                                        <a href="<?php echo site_url()?>menu"><button class="ui massive black button"><span class="checkout-menu-tb">Check out our menu</span></button></a>
                                     </div>
                                 </div>
                             </div>
@@ -160,14 +154,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- end tablet -->
-
-                <!-- mobile devices -->
-                <div class="ui grid">
-                    <div class="row">
+                    <div class="mobile only row">
                         <div class="mobile only column">
                             <div class="ui divider"></div>
+                            <div class="ui hidden divider"></div>
+                            <div class="ui hidden divider"></div>
                             <div class="ui hidden divider"></div>
                             <span class="home-greeting-mb">Welcome to</span>
 
@@ -195,7 +186,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="sixteen wide center aligned middle aligned column">
-                                        <a href="<?php echo site_url()?>/menu"><button class="ui massive black button"><span class="checkout-menu-mb">Check out our menu</span></button></a>
+                                        <a href="<?php echo site_url()?>menu"><button class="ui massive black button"><span class="checkout-menu-mb">Check out our menu</span></button></a>
                                     </div>
                                 </div> 
                             </div>
@@ -242,6 +233,23 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- desktop -->
+                <!-- <div class="ui computer only grid">
+                    
+                </div> -->
+                <!-- end desktop -->
+
+                <!-- tablet devices -->
+                <!-- <div class="ui tablet only grid">
+                    
+                </div> -->
+                <!-- end tablet -->
+
+                <!-- mobile devices -->
+                <!-- <div class="ui mobile only grid">
+                    
+                </div> -->
                 <!-- end mobile -->
             </div>
             <div class="two wide column"></div>
