@@ -63,7 +63,6 @@ $route['tray'] = 'CProduct/viewCart';
 
 
 $route['menu/category/product/(.*)'] = 'CProduct/viewProduct/$1';
-$route['menu/pagination/(.*)/(.*)'] = 'CProduct/viewProductsInCategory/$1/$1';
 $route['menu/category/(.*)'] = 'CProduct/viewProductsInCategory/$1';
 $route['menu'] = 'CProduct/viewMenu';
 
