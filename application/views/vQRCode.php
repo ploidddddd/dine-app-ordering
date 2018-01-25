@@ -93,9 +93,14 @@
 
 <script>
   $(document).ready(function() {
-    window.onbeforeunload = function() {
-        return 'Data will be lost if you leave the page, are you sure?';
-    };
+        
+    $( window ).on('beforeunload',function() {
+        alert();
+        return "Data will be lost if you leave the page, are you sure?";
+    });
+    // window.onbeforeunload = function() {
+    //     return 'Data will be lost if you leave the page, are you sure?';
+    // };
 
 } );
 </script>
