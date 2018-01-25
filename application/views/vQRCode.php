@@ -76,9 +76,10 @@
                     </div>
                     <!-- <div class="three wide mobile only"></div> -->
                 </div>
-                <div class="ui grid">
-                    <div class="six wide computer tablet only column"></div>
-                    <div class="ten wide computer tablet sixteen wide mobile center aligned column">
+                <div class="ui grid"> 
+                    <div class="row"></div>
+                    <div class="eleven wide computer tablet only column"></div>
+                    <div class="five wide computer tablet sixteen wide mobile center aligned column">
                         <a href="<?php echo site_url()?>/done" ><button style="background: #800000; color: white;" class="ui circular fluid button"><i class="check icon"></i>DONE</button></a>
                         <!-- <a href="<?php echo site_url()?>/done"><button style="background: #800000; color: white;" class='ui circular fluid button'><i class='qrcode icon'></i>Generate QR</button></a> -->
                     </div>

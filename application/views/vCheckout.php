@@ -35,13 +35,16 @@
 										<tr>
 											<td>
 												<div class="ui grid">
-													<!-- <div class="five wide column">
-														<img class='ui left aligned tiny image' src='<?php echo base_url($prod->product_image)?>'>
-													</div> -->
 													<div class="sixteen wide column">
 														<p class="prodName"><?php echo $prod->product_name; ?></p>
-														<p class="prodPrice">P <?php echo $prod->product_price; ?></p>
-														<p class="qty" style="float: right;">x <?php echo $prod->order_item_qty; ?></p>
+													</div>
+													<div class="row">
+														<div class="eight wide middle aligned column">
+															<p class="prodPrice">P <?php echo $prod->product_price; ?></p>
+														</div>
+														<div class="eight wide right aligned middle aligned column">
+															<p class="qty">x <?php echo $prod->order_item_qty; ?></p>
+														</div>
 													</div>
 												</div>
 											</td>
