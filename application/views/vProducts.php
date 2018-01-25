@@ -105,13 +105,13 @@
                     </div>
                     <div class='right aligned column'>
                         <div class='ui pagination menu'>
-                        <a class='previous item' href = '<?php echo site_url()?>/CProduct/viewProductsInCategory/<?php $p = $page-1; echo $prod_cat."/".$p?>'>Previous</a>
+                        <a class='previous item action' href = '<?php echo site_url()?>menu/category/<?php if($page !=1){$ppage = $page-1;} echo $prod_cat."/".$ppage?>'>Previous</a>
                            <?php 
                             for($n=1; $n<=$totalpage; $n++){
-                                echo "<a class='item' href='".base_url()."/CProduct/viewProductsInCategory/".$prod_cat."/".$n."'>".$n."</a>";
+                                echo "<a id='page".$n."' class='page item' href='".base_url()."menu/category/".$prod_cat."/".$n."'>".$n."</a>";
                             }
                             ?>
-                            <a class='next item' href = '<?php echo site_url()?>/CProduct/viewProductsInCategory/<?php $p = $page+1; echo $prod_cat."/".$p?>'>Next</a>
+                            <a class='next item action' href = '<?php echo site_url()?>menu/category/<?php if($page != $totalpage){$npage = $page+1;} echo $prod_cat."/".$npage?>'>Next</a>
                         </div> <!-- pagination -->
                     </div>
                 </div> <!-- two column row -->
@@ -122,13 +122,13 @@
                     </div>
                     <div class="sixteen wide center aligned middle aligned column">
                         <div class='ui small pagination menu'>
-                            <a class='previous item' href = '<?php echo site_url()?>/CProduct/viewProductsInCategory/<?php $p = $page-1; echo $prod_cat."/".$p?>'><i class="caret left icon"></i></a>
+                            <a class='previous item action' type='button' href = '<?php echo site_url()?>menu/category/<?php if($page !=1){$ppage = $page-1;} echo $prod_cat."/".$ppage?>'><i class="caret left icon"></i></a>
                             <?php 
                             for($n=1; $n<=$totalpage; $n++){
-                               echo "<a class='item' href='".base_url()."/CProduct/viewProductsInCategory/".$prod_cat."/".$n."'>".$n."</a>";
+                               echo "<a id='page".$n."' class='page item' href='".base_url()."menu/category/".$prod_cat."/".$n."'>".$n."</a>";
                             }
                             ?>
-                            <a class='next item' href = '<?php echo site_url()?>/CProduct/viewProductsInCategory/<?php $p = $page+1; echo $prod_cat."/".$p?>'><i class="caret right icon"></i></a>
+                            <a class='next item action' href = '<?php echo site_url()?>menu/category/<?php if($page !=1){$npage = $page-1;} echo $prod_cat."/".$npage?>'><i class="caret right icon"></i></a>
                         </div> <!-- pagination -->
                     </div>
                 </div>
@@ -219,6 +219,7 @@
                 $("#cButton").removeClass("disabled");
             }
         });
+       
 
         $(document).on('click','#minus',function() {
             if($('#modqty').val() > 1){
@@ -237,5 +238,31 @@
             $(this).closest('.message').transition('fade');
         });
 
+    });
+
+    $(document).ready(function(){
+        // alert(<?php echo $page; ?>);
+        <?php if($page != 1){?>
+            $('#page1').addClass('active');
+        <?php } ?>
+        <?php if(isset($script)){ 
+            echo $script;
+        } ?>
+
+        <?php if($totalpage == 1){ ?>
+            $('.action').addClass('disabled');            
+        <?php } ?>
+            
+        <?php if($page == $totalpage){ ?>
+            $('.next').addClass('disabled');           
+        <?php } ?>
+
+        <?php if($page == 1){ ?>
+            $('.previous').addClass('disabled');          
+        <?php } ?>
+
+        $('.disabled').click(function(e){
+            e.preventDefault();
+        })
     });
 </script>

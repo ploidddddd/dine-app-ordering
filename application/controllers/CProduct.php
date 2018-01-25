@@ -44,6 +44,8 @@
 			$npage = ($page * 6)-6;
 			$cat = urldecode($cat);
 			$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
+			$data['script'] = '$(".page").removeClass("active");	
+							   $("#page'.$page.'").addClass("active");';
 			$result = $this->MProduct->getProductsNotInCart($cat,$order_id,$npage);
             //$cnt = mysqli_num_rows($result);
 
