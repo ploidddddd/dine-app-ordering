@@ -235,7 +235,7 @@
 
 .prodName{font-size: 1.7em; font-family: 'BarlowCondensed-Light';}
 .prodDesc{font-size: 1.5em;font-family: 'sf_cartoonist_handregular'; line-height: 25px;}
-.prodPrice{font-family: 'BarlowCondensed-Light'; font-size: 1.8em; line-height: 0;}
+.prodPrice{font-family: 'BarlowCondensed-Light'; font-size: 1.5em;}
 .addToCart{font-family: 'sf_cartoonist_handregular'; line-height: 0; font-size: 1.4em;}
 .qty{font-family: 'BarlowCondensed-Light'; font-size: 1.5em;}
 .tray-submit{background: #800000; font-family: 'sf_cartoonist_handregular'; color: white; font-size: 1.5em;}
