@@ -151,7 +151,9 @@
 				$this->load->view('imports/vHeader');
 				$this->load->view('vCheckout',$data);
 				$this->load->view('imports/vFooter');
-			}	
+			} else {
+				redirect('home');
+			}
 			
 		}
 
@@ -176,9 +178,13 @@
 				$data['ref_num'] = $qr_code;	
 			}
 			if($result){
-				$this->session->unset_userdata('orderingSession');
-				$this->load->view('vQRCode',$data);
-				$this->load->view('imports/vFooter');
+				if($this->session->userdata('orderingSession')){
+					$this->session->unset_userdata('orderingSession');
+					$this->load->view('vQRCode',$data);
+					$this->load->view('imports/vFooter');
+				} else{
+					redirect('home');
+				}
 				
 			}
 			
