@@ -45,7 +45,7 @@
                             </ul>
                         </div>
                 		<div class="ui warning message">
-                            <i class="warning sign icon"></i> <span class="ref-info">Reminder: This QR Code will expire after 3 hours. Please complete the transaction within the given time.</span>
+                            <i class="warning sign icon"></i> <span class="ref-info">Reminder: This QR Code will expire after 4 hours. Please complete the transaction within the given time.</span>
                         </div>
                 	</div>
                 </div>
