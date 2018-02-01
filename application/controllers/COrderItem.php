@@ -46,13 +46,19 @@
 					$this->session->set_flashdata('response',"Successfully updated product in your tray!");
 					redirect('tray');
 				}
-			} else {
-				$result = $this->MOrderItem->delete($order_item_id);
+			} 
+
+			if($this->input->post('qtym'."$order_item_id") > 0){
+				$subtotal = $this->input->post('prod_pricem') * $this->input->post('qtym'."$order_item_id");
+				$data = array('order_item_qty' => $this->input->post('qtym'."$order_item_id"),
+						  'order_item_subtotal' => $subtotal
+						  );
+				$result = $this->MOrderItem->update($order_item_id,$data);
 				if($result){
-					$this->session->set_flashdata('response',"Successfully deleted product in your tray!");
+					$this->session->set_flashdata('response',"Successfully updated product in your tray!");
 					redirect('tray');
 				}
-			}
+			} 
 		}
 
 		public function removeToCart()
