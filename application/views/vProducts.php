@@ -64,7 +64,7 @@
                                     
                                     <!-- tablet-->
                                     <div class="sixteen wide tablet only middle aligned column">
-										<img class='ui centered small image' src='<?php echo base_url($prod->product_image)?>'>
+										<img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'>
                                     </div>
                                     <div class="two wide tablet only column"></div>
                                     <div class="twelve wide tablet only left aligned column">
@@ -79,7 +79,7 @@
                                     <div class="two wide tablet only column"></div>
                                     <!-- mobile-->
                                     <div class="sixteen wide mobile only column">
-                                        <img class='ui centered small image' src='<?php echo base_url($prod->product_image)?>'>
+                                        <img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'>
                                     </div>
                                     <div class="two wide mobile only column"></div>
 									<div class="twelve wide mobile only left aligned column">
