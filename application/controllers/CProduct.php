@@ -45,7 +45,8 @@
 			$cat = urldecode($cat);
 			$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
 			$data['script'] = '$(".page").removeClass("active");	
-							   $("#page'.$page.'").addClass("active");';
+							   $("#page'.$page.'").addClass("active");
+							   $("#pagem'.$page.'").addClass("active");';
 			$result = $this->MProduct->getProductsNotInCart($cat,$order_id,$npage);
             //$cnt = mysqli_num_rows($result);
 
@@ -72,7 +73,9 @@
 			 	$num = $x/6;
      			$num = ceil($num);
 
-    			$data['page'] = $page;
+				$data['page'] = $page;
+				$data['ppage'] = 0;
+				$data['npage'] = 0;
     			$data['totalpage'] = $num;
 
 			}else{

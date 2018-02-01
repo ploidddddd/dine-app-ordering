@@ -122,10 +122,10 @@
                     </div>
                     <div class="sixteen wide center aligned middle aligned column">
                         <div class='ui small pagination menu'>
-                            <a class='previous item action' type='button' href = '<?php echo site_url()?>menu/category/<?php if($page !=1){$ppage = $page-1;} echo $prod_cat."/".$ppage?>'><i class="caret left icon"></i></a>
+                            <a class='previous item action' href = '<?php echo site_url()?>menu/category/<?php if($page !=1){$ppage = $page-1;} echo $prod_cat."/".$ppage?>'><i class="caret left icon"></i></a>
                             <?php 
                             for($n=1; $n<=$totalpage; $n++){
-                               echo "<a id='page".$n."' class='page item' href='".base_url()."menu/category/".$prod_cat."/".$n."'>".$n."</a>";
+                               echo "<a id='pagem".$n."' class='page item' href='".base_url()."menu/category/".$prod_cat."/".$n."'>".$n."</a>";
                             }
                             ?>
                             <a class='next item action' href = '<?php echo site_url()?>menu/category/<?php if($page !=1){$npage = $page-1;} echo $prod_cat."/".$npage?>'><i class="caret right icon"></i></a>
@@ -254,15 +254,18 @@
         <?php } ?>
             
         <?php if($page == $totalpage){ ?>
-            $('.next').addClass('disabled');           
+            $('.next').addClass('disabled');  
         <?php } ?>
 
         <?php if($page == 1){ ?>
             $('.previous').addClass('disabled');          
         <?php } ?>
-
-        $('.disabled').click(function(e){
+        
+        $(document).on('click','.disabled',function(e) {
             e.preventDefault();
-        })
+        });
+
+        
+        
     });
 </script>
