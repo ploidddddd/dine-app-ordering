@@ -115,19 +115,19 @@
 									<span class="qty">Quantity: x <?php echo $prod->order_item_qty; ?></span><br>
 									<span class="qty">Subtotal: P<?php echo $prod->order_item_subtotal; ?>.00</span>
 									<p></p>
-									<center><form class='' id='form' method='POST' action='<?php echo site_url()?>tray/updateProduct/<?php echo  $prod->order_item_id; ?>'>
-										<input type='hidden' value='<?php echo $prod->product_price; ?>' name='prod_price'>
+									<center><form class='' id='form1' method='POST' action='<?php echo site_url()?>tray/updateProduct/<?php echo  $prod->order_item_id; ?>'>
+										<input type='hidden' value='<?php echo $prod->product_price; ?>' name='prod_pricem'>
 									 	
-										<button class='ui  basic left attached icon button minus' id='minus' data-id='<?php echo $prod->product_id; ?>'>
+										<button class='ui  basic left attached icon button minus' id='minusm' data-id='<?php echo $prod->product_id; ?>'>
 											<i class=' minus icon '></i>
 										</button>
-										<input type='hidden' value='<?php echo $prod->order_item_id; ?>' id='od_id<?php echo $prod->product_id; ?>'>
+										<input type='hidden' value='<?php echo $prod->order_item_id; ?>' id='od_idm<?php echo $prod->product_id; ?>'>
 										
 					                    <div class='ui disabled input' style='max-width: 50px;'>
-					                        <input style='text-align:center; '  value='<?php echo $prod->order_item_qty; ?>' id='qty<?php echo $prod->product_id; ?>' name='qty<?php echo $prod->order_item_id; ?>'>
+					                        <input style='text-align:center; '  value='<?php echo $prod->order_item_qty; ?>' id='qtym<?php echo $prod->product_id; ?>' name='qtym<?php echo $prod->order_item_id; ?>'>
 					                    </div>
 					                    
-					                    <button class='ui basic right attached icon button plus' id='plus' data-id='<?php echo $prod->product_id; ?>'>
+					                    <button class='ui basic right attached icon button plus' id='plusm' data-id='<?php echo $prod->product_id; ?>'>
 				                        	<i class='plus icon '></i>
 				                    	</button>
 				                    </form></center>
@@ -247,6 +247,28 @@
 				$('#qty'+id).val(get); 
 			}else{
 				$('#order_item_id').val($('#od_id'+id).val());
+				$('#removeItem').modal('show');
+				e.preventDefault();
+			}
+		});
+
+		$(document).on('click','#plusm',function() {
+			var id = $(this).data("id");
+			var get = parseInt($('#qtym'+id).val());
+      		if (get <= 99) {
+        		get += 1;
+        		$('#qtym'+id).val(get); 	
+     		}
+		});
+
+		$(document).on('click','#minusm',function(e) {
+			var id = $(this).data("id");
+			if($('#qtym'+id).val() > 1){
+				var get = $('#qtym'+id).val();
+				get -= 1;
+				$('#qtym'+id).val(get); 
+			}else{
+				$('#order_item_id').val($('#od_idm'+id).val());
 				$('#removeItem').modal('show');
 				e.preventDefault();
 			}
