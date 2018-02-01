@@ -121,8 +121,10 @@
                        Showing page <?php echo $page ?> of <?php echo $totalpage ?> pages.
                     </div>
                     <div class="sixteen wide center aligned middle aligned column">
-                        <div class='ui small pagination menu'>
+
+                        <div class='ui mini pagination menu'>
                             <a class='previous item action' href = '<?php echo site_url()?>menu/category/<?php if($page !=1){$ppage = $page-1;} echo $prod_cat."/".$ppage?>'><i class="caret left icon"></i></a>
+
                             <?php 
                             for($n=1; $n<=$totalpage; $n++){
                                echo "<a id='pagem".$n."' class='page item' href='".base_url()."menu/category/".$prod_cat."/".$n."'>".$n."</a>";
