@@ -46,7 +46,8 @@
                                     <!-- computer -->
                                     
                                     <div class="sixteen wide computer only center aligned middle aligned column">
-										<img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'>
+										<!-- <img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'> -->
+                                        <img class='ui centered medium image' src='https://cashregister.dine-app.net/<?php echo $prod->product_image;  ?>'>
                                     </div>
                                     
 
@@ -64,7 +65,8 @@
                                     
                                     <!-- tablet-->
                                     <div class="sixteen wide tablet only middle aligned column">
-										<img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'>
+										<!-- <img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'> -->
+                                        <img class='ui centered medium image' src='https://cashregister.dine-app.net/<?php echo $prod->product_image;  ?>'>
                                     </div>
                                     <div class="two wide tablet only column"></div>
                                     <div class="twelve wide tablet only left aligned column">
@@ -79,7 +81,8 @@
                                     <div class="two wide tablet only column"></div>
                                     <!-- mobile-->
                                     <div class="sixteen wide mobile only column">
-                                        <img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'>
+                                        <!-- <img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'> -->
+                                        <img class='ui centered medium image' src='https://cashregister.dine-app.net/<?php echo $prod->product_image;  ?>'>
                                     </div>
                                     <div class="two wide mobile only column"></div>
 									<div class="twelve wide mobile only left aligned column">
@@ -177,7 +180,7 @@
                     <input type='hidden' value='0' name='modprod_id' id='modprod_id'>
                     <input type='hidden' value='0' name='modprod_price' id="modprod_price">
                     <input type='hidden' value='0' name='modprod_category' id="modprod_category">
-                    <input style='text-align:center; ' value='1' id='modqty' name='modqty' readonly>
+                    <input style='text-align:center;' value='1' id='modqty' name='modqty' readonly onfocus="this.blur()">
                 </div>
                 
                 <div class='ui basic right attached icon button plus' id='plus'>
@@ -188,7 +191,7 @@
         </div>
     </div>
     <div class="actions">
-        <div class="ui cancel button" style="font-family: 'sf_cartoonist_handregular'; font-size: 1.2em;">Cancel</div>
+        <div id='cancel' class="ui cancel button" style="font-family: 'sf_cartoonist_handregular'; font-size: 1.2em;">Cancel</div>
         <button class="ui submit button tray-submit" type="submit" style="background: #800000; font-family: 'sf_cartoonist_handregular'; font-size: 1.2em; color: white;">Add to tray</button>
     </div>
     </form>
@@ -230,6 +233,10 @@
                 $('#modqty').val(get); 
             }
             
+        });
+
+        $(document).on('click','#cancel',function() {
+            $('#modqty').val(1);
         });
 
         $('.ui.modal').modal('setting', 'closable', false);
