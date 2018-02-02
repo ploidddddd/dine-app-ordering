@@ -177,7 +177,7 @@
                     <input type='hidden' value='0' name='modprod_id' id='modprod_id'>
                     <input type='hidden' value='0' name='modprod_price' id="modprod_price">
                     <input type='hidden' value='0' name='modprod_category' id="modprod_category">
-                    <input style='text-align:center; ' value='1' id='modqty' name='modqty' readonly>
+                    <input style='text-align:center;' value='1' id='modqty' name='modqty' readonly onfocus="this.blur()">
                 </div>
                 
                 <div class='ui basic right attached icon button plus' id='plus'>
@@ -188,7 +188,7 @@
         </div>
     </div>
     <div class="actions">
-        <div class="ui cancel button" style="font-family: 'sf_cartoonist_handregular'; font-size: 1.2em;">Cancel</div>
+        <div id='cancel' class="ui cancel button" style="font-family: 'sf_cartoonist_handregular'; font-size: 1.2em;">Cancel</div>
         <button class="ui submit button tray-submit" type="submit" style="background: #800000; font-family: 'sf_cartoonist_handregular'; font-size: 1.2em; color: white;">Add to tray</button>
     </div>
     </form>
@@ -230,6 +230,10 @@
                 $('#modqty').val(get); 
             }
             
+        });
+
+        $(document).on('click','#cancel',function() {
+            $('#modqty').val(1);
         });
 
         $('.ui.modal').modal('setting', 'closable', false);
