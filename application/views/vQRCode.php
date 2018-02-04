@@ -80,6 +80,12 @@
                     <div class="row"></div>
                     <div class="eleven wide computer tablet only column"></div>
                     <div class="five wide computer tablet sixteen wide mobile center aligned column">
+                        <a target="_blank" href='<?php echo base_url("assets/images/qr_image/".$img_url)?>' download='<?php echo $ref_num; ?>' class="ui labeled icon button" style="background: #800000; color: white;" id="save-as">
+                            <i class="save icon"></i>
+                                Save QR Code
+                        </a>
+                    </div>
+                    <div class="five wide computer tablet sixteen wide mobile center aligned column">
                         <a href="<?php echo site_url()?>/done" ><button style="background: #800000; color: white;" class="ui circular fluid button"><i class="check icon"></i>DONE</button></a>
                         <!-- <a href="<?php echo site_url()?>/done"><button style="background: #800000; color: white;" class='ui circular fluid button'><i class='qrcode icon'></i>Generate QR</button></a> -->
                     </div>
