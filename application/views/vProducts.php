@@ -6,7 +6,7 @@
             <div class="twelve wide center aligned middle black aligned column banner-bg">
                 <h1 class="ui header banner-name-dsk banner-name-tb banner-name-mb">
                     <?php if(isset($prod_cat)) { ?>
-                        <?php echo $prod_cat; ?>  
+                        <?php echo $prod_cat; ?>
                 </h1>
                 <div class="ui massive breadcrumb lbl-header" id="lbl-header">
                     <a href="<?php echo site_url()?>home" class="section" >HOME</a>
@@ -25,15 +25,15 @@
                 <div class="ui left aligned middle aligned grid">
                     <div class="sixteen wide left aligned column ">
                         <a href="<?php echo site_url()?>menu" class="header-breadcrumb"></i>Back to menu</a>
-                    </div>  
+                    </div>
                     <div class="sixteen wide column">
                     <?php if($this->session->flashdata('response')){ ?>
                         <div class="ui positive message">
                             <i class="close icon"></i>
                                 <div class="header">
-                                    Your process was successful.
+                                  <?php echo $this->session->flashdata('response');?>
                                 </div>
-                            <p><?php echo $this->session->flashdata('response');?></p>
+                            <p>Click Tray to Preview your order.</p>
                         </div>
                     <?php } ?>
                     </div>
@@ -42,16 +42,16 @@
 						<div class="five wide computer eight wide tablet sixteen wide mobile center aligned middle aligned column">
 							<div class="ui segment" style="height:100%;">
 								<div class="ui centered grid">
-									
+
                                     <!-- computer -->
-                                    
+
                                     <div class="sixteen wide computer only center aligned middle aligned column">
 										<!-- <img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'> -->
                                         <img class='ui centered medium image' src='https://cashregister.dine-app.net/<?php echo $prod->product_image;  ?>'>
                                     </div>
-                                    
 
-                                    
+
+
                                     <div class="sixteen wide computer only left aligned column">
 										<p class="prodName"><?php echo $prod->product_name; ?></p>
 										<p class="prodDesc"><?php echo $prod->product_description; ?></p><br>
@@ -62,7 +62,7 @@
                                         <div class="ui "></div>
 										<a class='openAdd' data-id='<?php echo $prod->product_id; ?>'><button class='ui circular fluid button' style='background: #800000; color: white;'><i class='plus icon' ></i><span class="addToCart">Add to tray</span></button></a>
                                     </div>
-                                    
+
                                     <!-- tablet-->
                                     <div class="sixteen wide tablet only middle aligned column">
 										<!-- <img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'> -->
@@ -109,7 +109,7 @@
                     <div class='right aligned column'>
                         <div class='ui pagination menu'>
                         <a class='previous item action' href = '<?php echo site_url()?>menu/category/<?php if($page !=1){$ppage = $page-1;} echo $prod_cat."/".$ppage?>'>Previous</a>
-                           <?php 
+                           <?php
                             for($n=1; $n<=$totalpage; $n++){
                                 echo "<a id='page".$n."' class='page item' href='".base_url()."menu/category/".$prod_cat."/".$n."'>".$n."</a>";
                             }
@@ -128,7 +128,7 @@
                         <div class='ui mini pagination menu'>
                             <a class='previous item action' href = '<?php echo site_url()?>menu/category/<?php if($page !=1){$ppage = $page-1;} echo $prod_cat."/".$ppage?>'><i class="caret left icon"></i></a>
 
-                            <?php 
+                            <?php
                             for($n=1; $n<=$totalpage; $n++){
                                echo "<a id='pagem".$n."' class='page item' href='".base_url()."menu/category/".$prod_cat."/".$n."'>".$n."</a>";
                             }
@@ -137,7 +137,7 @@
                         </div> <!-- pagination -->
                     </div>
                 </div>
-                <?php 
+                <?php
                     }else{
                         echo "
                             <div class='row'></div><div class='row'></div><div class='row'></div><div class='row'></div>
@@ -147,7 +147,7 @@
                             <div class='row'></div><div class='row'></div><div class='row'></div>
                             <div class='row'></div><div class='row'></div><div class='row'></div>
                             <div class='row'></div><div class='row'></div><div class='row'></div>
-                            
+
                         ";
                     } ?>
             </div>
@@ -171,22 +171,22 @@
         <div class="description">
           <center>
             <form class='ui form' id='form' method='POST' action='<?php echo site_url()?>tray/addProduct'>
-                
+
                 <div class='ui  basic left attached icon button minus' id='minus'>
                     <i class=' minus icon '></i>
                 </div>
-                
+
                 <div class='ui disabled input' style='max-width: 50px;'>
                     <input type='hidden' value='0' name='modprod_id' id='modprod_id'>
                     <input type='hidden' value='0' name='modprod_price' id="modprod_price">
                     <input type='hidden' value='0' name='modprod_category' id="modprod_category">
                     <input style='text-align:center;' value='1' id='modqty' name='modqty' readonly onfocus="this.blur()">
                 </div>
-                
+
                 <div class='ui basic right attached icon button plus' id='plus'>
                     <i class='plus icon '></i>
                 </div>
-            
+
           </center>
         </div>
     </div>
@@ -209,7 +209,7 @@
             $('#modprod_price').val($('#prod_price'+id).val());
             $('#modprod_category').val($('#prod_category').val());
 
-        }); 
+        });
         $('.confirmRemove').click(function(){
             $('#order_item_id').val($(this).data("id"));
             $('#removeItem').modal('show');
@@ -220,19 +220,19 @@
             var get = parseInt($('#modqty').val());
             if (get <= 99) {
                 get += 1;
-                $('#modqty').val(get); 
+                $('#modqty').val(get);
                 $("#cButton").removeClass("disabled");
             }
         });
-       
+
 
         $(document).on('click','#minus',function() {
             if($('#modqty').val() > 1){
                 var get = $('#modqty').val();
                 get -= 1;
-                $('#modqty').val(get); 
+                $('#modqty').val(get);
             }
-            
+
         });
 
         $(document).on('click','#cancel',function() {
@@ -254,27 +254,27 @@
         <?php if($page != 1){?>
             $('#page1').addClass('active');
         <?php } ?>
-        <?php if(isset($script)){ 
+        <?php if(isset($script)){
             echo $script;
         } ?>
 
         <?php if($totalpage == 1){ ?>
-            $('.action').addClass('disabled');            
+            $('.action').addClass('disabled');
         <?php } ?>
-            
+
         <?php if($page == $totalpage){ ?>
-            $('.next').addClass('disabled');  
+            $('.next').addClass('disabled');
         <?php } ?>
 
         <?php if($page == 1){ ?>
-            $('.previous').addClass('disabled');          
+            $('.previous').addClass('disabled');
         <?php } ?>
-        
+
         $(document).on('click','.disabled',function(e) {
             e.preventDefault();
         });
 
-        
-        
+
+
     });
 </script>

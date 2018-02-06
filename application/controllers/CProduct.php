@@ -6,18 +6,18 @@
 		public function __Construct(){
 	      parent::__Construct ();
 	      $this->load->helper('url');
-		  $this->load->database(); // load database
-		  $this->load->library('session');
-		  $this->load->library('ciqrcode');
-		  $this->load->model('MProduct');
-		  $this->load->model('MOrdered');
-		  $this->load->model('MGuest');
-		  $this->load->model('MCart');
-	  	}
+		  	$this->load->database(); // load database
+		  	$this->load->library('session');
+		  	$this->load->library('ciqrcode');
+		  	$this->load->model('MProduct');
+		  	$this->load->model('MOrdered');
+		  	$this->load->model('MGuest');
+		  	$this->load->model('MCart');
+	  }
 
 		public function index()
 		{
-			
+
 		}
 
 		function viewProductsInCategory($cat,$page)
@@ -44,7 +44,7 @@
 			$npage = ($page * 6)-6;
 			$cat = urldecode($cat);
 			$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
-			$data['script'] = '$(".page").removeClass("active");	
+			$data['script'] = '$(".page").removeClass("active");
 							   $("#page'.$page.'").addClass("active");
 							   $("#pagem'.$page.'").addClass("active");';
 			$result = $this->MProduct->getProductsNotInCart($cat,$order_id,$npage);
@@ -81,15 +81,10 @@
 			}else{
 				$data = null;
 			}
-			
-			// print_r($result);
-            
-			// print_r($this->session->userdata('orderingSession'));
+
 			$data['prod_cat']  = $cat;
 			$this->load->view('imports/vHeader');
 			$this->load->view('vProducts',$data);
-			// $this->load->view('imports/vFooter');
-			// / print_r($num);
 
 		}
 
@@ -131,9 +126,8 @@
 			} else {
 				$this->load->view('imports/vHeader');
 				$this->load->view('vCart');
-				// $this->load->view('imports/vFooter');
 			}
-			
+
 		}
 
 		function viewCheckout()
@@ -157,7 +151,7 @@
 			} else {
 				redirect('home');
 			}
-			
+
 		}
 
 		function viewQRCode()
@@ -173,12 +167,12 @@
 			{
 				$data['img_url']=$qr_code.'.png';
 				$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
-				
+
 				$array = array('ordered_qr_code' => $qr_code,
-							   'ordered_time' => $now->format('Y-m-d H:i:s a') 
+							   'ordered_time' => $now->format('Y-m-d H:i:s a')
 							  );
 				$result = $this->MOrdered->update($order_id, $array);
-				$data['ref_num'] = $qr_code;	
+				$data['ref_num'] = $qr_code;
 			}
 			if($result){
 				if($this->session->userdata('orderingSession')){
@@ -188,9 +182,9 @@
 				} else{
 					redirect('home');
 				}
-				
+
 			}
-			
+
 		}
 
 		public function createSession($result)
@@ -203,10 +197,9 @@
 			}
 		}
 
- 
+
 		public function deleteSession()
 		{
-			// $this->session->unset_userdata('orderingSession');
 			redirect('home');
 		}
 	}

@@ -6,17 +6,17 @@
 		public function __Construct(){
 	      parent::__Construct ();
 	      $this->load->helper('url');
-		  $this->load->database(); // load database
-		  $this->load->library('session');
+		  	$this->load->database(); // load database
+		  	$this->load->library('session');
 	      $this->load->model('MOrderItem');
-	  	}
+	  }
 
 		public function index()
 		{
-			
+
 		}
 
-		public function addOrderItem() 
+		public function addOrderItem()
 		{
 			$subtotal = $this->input->post('modprod_price') * $this->input->post('modqty');
 			$prod_id = $this->input->post('modprod_id');
@@ -29,7 +29,7 @@
 
 			$result = $this->MOrderItem->insert($data);
 			if($result){
-				$this->session->set_flashdata('response',"Successfully added product in your tray!");
+				$this->session->set_flashdata('response',"Successfully added a product in your tray!");
 				redirect('menu/category/'.$cat."/1");
 			}
 		}
@@ -43,10 +43,10 @@
 						  );
 				$result = $this->MOrderItem->update($order_item_id,$data);
 				if($result){
-					$this->session->set_flashdata('response',"Successfully updated product in your tray!");
+					$this->session->set_flashdata('response',"Successfully updated a product in your tray!");
 					redirect('tray');
 				}
-			} 
+			}
 
 			if($this->input->post('qtym'."$order_item_id") > 0){
 				$subtotal = $this->input->post('prod_pricem') * $this->input->post('qtym'."$order_item_id");
@@ -55,10 +55,10 @@
 						  );
 				$result = $this->MOrderItem->update($order_item_id,$data);
 				if($result){
-					$this->session->set_flashdata('response',"Successfully updated product in your tray!");
+					$this->session->set_flashdata('response',"Successfully updated a product in your tray!");
 					redirect('tray');
 				}
-			} 
+			}
 		}
 
 		public function removeToCart()
@@ -66,7 +66,7 @@
 			$order_item_id = $this->input->post('order_item_id');
 			$result = $this->MOrderItem->delete($order_item_id);
 			if($result){
-				$this->session->set_flashdata('response',"Successfully deleted product in your tray!");
+				$this->session->set_flashdata('response',"Successfully deleted a product in your tray!");
 				redirect('tray');
 			}
 		}
