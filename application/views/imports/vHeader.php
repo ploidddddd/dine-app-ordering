@@ -21,7 +21,16 @@
                 <a class='borderless item top-menu-items' href='<?php echo site_url()?>menu'>MENU</a>
                 <div class="ui hidden borderless item"></div>
                 <div class='right menu'>
-                    <a class='borderless item top-menu-items' href='<?php echo site_url()?>tray' ><img class="ui mini image" src='<?php echo base_url("assets/images/tray1.png")?>'>&nbsp&nbspTRAY</a>
+                    <a class='borderless item top-menu-items item' href='<?php echo site_url()?>tray' >
+                      <img class="ui mini image" src='<?php echo base_url("assets/images/tray1.png")?>'>
+                      &nbsp&nbspTRAY
+                      <?php if (isset($tray)) {
+                        foreach ($tray as $t){}
+                          if ($t->products != 0) { ?>
+                            <div class="ui red circular label"><?php echo $t->products; ?></div>
+                          <?php } ?>
+                      <?php } ?>
+                    </a>
                 </div>
             </div>
         </div>
@@ -83,7 +92,7 @@
 $(document).ready(function(){
 	$('#toggleMenu').click(function(){
 		$('#showMenu').modal('show');
-	}); 
+	});
 	$('.ui.modal').modal('setting', 'closable', false);
 });
 </script>

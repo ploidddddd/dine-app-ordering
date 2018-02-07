@@ -76,34 +76,49 @@
 				$data['page'] = $page;
 				$data['ppage'] = 0;
 				$data['npage'] = 0;
-    			$data['totalpage'] = $num;
+    		$data['totalpage'] = $num;
+
 
 			}else{
 				$data = null;
 			}
+			$data['tray'] = $this->MProduct->getAllProductsInCart($order_id);
 
 			$data['prod_cat']  = $cat;
-			$this->load->view('imports/vHeader');
+			$this->load->view('imports/vHeader',$data);
 			$this->load->view('vProducts',$data);
 
 		}
 
 		function viewMenu()
 		{
-			$this->load->view('imports/vHeader');
-			$this->load->view('vMenu');
+			if($this->session->userdata('orderingSession')){
+			$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
+			$data['tray'] = $this->MProduct->getAllProductsInCart($order_id);
+
+			$this->load->view('imports/vHeader',$data);
+			$this->load->view('vMenu',$data);
 			$this->load->view('imports/vFooter');
+			} else {
+				$this->load->view('imports/vHeader');
+				$this->load->view('vMenu');
+				$this->load->view('imports/vFooter');
+			}
 		}
 
 		function viewProduct($id)
 		{
 			$data['product'] = null;
+
+			$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
+			$data['tray'] = $this->MProduct->getAllProductsInCart($order_id);
+
 			$result = $this->MProduct->getProductDetailsById($id);
 			if($result){
 				$data['product'] = $result;
 			}
 
-			$this->load->view('imports/vHeader');
+			$this->load->view('imports/vHeader',$data);
 			$this->load->view('vProduct',$data);
 			$this->load->view('imports/vFooter');
 		}
@@ -113,6 +128,7 @@
 			if($this->session->userdata('orderingSession')){
 				$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
 				$result = $this->MCart->getAllOrderProducts($order_id);
+
 				$data['items'] = null;
 				$data['total'] = 0;
 				if($result){
@@ -120,8 +136,10 @@
 					foreach($result as $res){
 						$data['total'] += $res->order_item_subtotal;
 					}
+					$data['tray'] = $this->MProduct->getAllProductsInCart($order_id);
 				}
-				$this->load->view('imports/vHeader');
+
+				$this->load->view('imports/vHeader',$data);
 				$this->load->view('vCart',$data);
 			} else {
 				$this->load->view('imports/vHeader');
@@ -143,9 +161,10 @@
 				}
 				$array = array('ordered_total' => $data['total'] );
 				$result = $this->MOrdered->update($order_id, $array);
+				$data['tray'] = $this->MProduct->getAllProductsInCart($order_id);
 			}
 			if($result){
-				$this->load->view('imports/vHeader');
+				$this->load->view('imports/vHeader',$data);
 				$this->load->view('vCheckout',$data);
 				$this->load->view('imports/vFooter');
 			} else {

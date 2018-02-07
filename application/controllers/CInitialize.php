@@ -9,16 +9,21 @@
 		  $this->load->library('session');
 		  $this->load->model('MGuest');
 		  $this->load->model('MOrdered');
+			$this->load->model('MProduct');
 	  	}
 
 		public function index()
 		{
-			$this->load->view('imports/vHeader');
-			$this->load->view('vHome');
-			$this->load->view('imports/vFooter');
+			if($this->session->userdata('orderingSession')){
+				$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
+				$data['tray'] = $this->MProduct->getAllProductsInCart($order_id);
+			}
+				$this->load->view('imports/vHeader',$data);
+				$this->load->view('vHome');
+				$this->load->view('imports/vFooter');
 		}
 
-		
+
 
 
 	}
