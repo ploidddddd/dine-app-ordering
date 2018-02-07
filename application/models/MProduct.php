@@ -11,7 +11,7 @@
 		private $product_created_on;
 		private $product_modified_by;
 		private $product_modified_on;
-		
+
 
     	const DB_TABLE = "product";
     	const DB_TABLE_PK = "product_id";
@@ -47,6 +47,17 @@
 		{
 			$statement ="product WHERE product.product_id NOT IN (SELECT cart.product_id FROM cart WHERE cart.ordered_id = $ordered_id) AND product.product_category = '$cat' AND product.product_availability = 'AVAILABLE' ORDER BY product.product_name ASC";
 			$query = $this->db->get($statement);
+
+			return $query->result();
+		}
+
+		public function getAllProductsInCart($ordered_id)
+		{
+			$where = array('ordered_id' => $ordered_id);
+			$this->db->select('count(*) as products');
+			$this->db->from('cart');
+			$this->db->where($where);
+			$query = $this->db->get();
 
 			return $query->result();
 		}
@@ -130,7 +141,7 @@
 		public function setProduct_modified_by($product_modified_by){
 			$this->product_modified_by = $product_modified_by;
 		}
-		
+
 		public function getProduct_modified_on(){
 			return $this->product_modified_on;
 		}
