@@ -21,13 +21,14 @@
                 <a class='borderless item top-menu-items' href='<?php echo site_url()?>menu'>MENU</a>
                 <div class="ui hidden borderless item"></div>
                 <div class='right menu'>
-                    <a class='borderless item top-menu-items item' href='<?php echo site_url()?>tray' >
-                      <img class="ui mini image" src='<?php echo base_url("assets/images/tray1.png")?>'>
-                      &nbsp&nbspTRAY
+                    <a class='borderless item top-menu-items item' href='<?php echo site_url()?>tray'>
+                        <!-- <i class="shopping cart icon"></i> -->
+                        TRAY&nbsp&nbsp
+                        <img class="ui image" style="width: 48px !important; height: 48px !important;" src='<?php echo base_url("assets/images/tray1.png")?>'>
                       <?php if (isset($tray)) {
                         foreach ($tray as $t){}
                           if ($t->products != 0) { ?>
-                            <div class="ui red circular label"><?php echo $t->products; ?></div>
+                            <div class="floating ui yellow large circular label" style="color:black !important; margin-left: -36px !important; margin-top: 25px !important;"><?php echo $t->products; ?></div>
                           <?php } ?>
                       <?php } ?>
                     </a>
@@ -44,7 +45,15 @@
                 <a class='borderless item top-menu-items-tb' href='<?php echo site_url()?>menu'>MENU</a>
                 <div class="ui hidden borderless item"></div>
                 <div class='right menu'>
-                    <a class='borderless item top-menu-items-tb' href='<?php echo site_url()?>tray' ><img class="ui mini image" src='<?php echo base_url("assets/images/tray1.png")?>'>&nbsp&nbspTRAY</a>
+                    <a class='borderless item top-menu-items-tb' href='<?php echo site_url()?>tray' >
+                        TRAY&nbsp&nbsp
+                        <img class="ui image" style="width: 48px !important; height: 48px !important;" src='<?php echo base_url("assets/images/tray1.png")?>'>
+                        <?php if (isset($tray)) {
+                            foreach ($tray as $t){}
+                              if ($t->products != 0) { ?>
+                                <div class="floating ui yellow large circular label" style="color:black !important; margin-left: -36px !important; margin-top: 25px !important;"><?php echo $t->products; ?></div><?php } ?>
+                        <?php } ?>
+                    </a>
                 </div>
             </div>
         </div>
@@ -59,7 +68,16 @@
                 <a class='borderless item top-menu-items' href='<?php //echo site_url()?>home'>MENU</a>
                 <div class="ui hidden borderless item"></div> -->
                 <div class='right menu'>
-                    <a class='borderless item top-menu-items-mb' href='<?php echo site_url()?>tray' ><img class="ui mini image" src='<?php echo base_url("assets/images/tray1.png")?>'>&nbsp&nbspTRAY</a>
+                    <a class='item top-menu-items-mb' href='<?php echo site_url()?>tray' >
+                        TRAY&nbsp&nbsp
+                        <img class="ui image" style="width: 42px !important; height: 42px !important;" src='<?php echo base_url("assets/images/tray1.png")?>'>
+                        <?php if (isset($tray)) {
+                            foreach ($tray as $t){}
+                              if ($t->products != 0) { ?>
+                                <div class="floating ui yellow medium circular label" style="color:black !important; margin-left: -32px !important; margin-top: 22px !important;"><?php echo $t->products; ?></div><?php } ?>
+                        <?php } ?>
+                    </a>
+                    <div class="hidden borderless item"></div>
                 </div>
             </div>
         </div>
