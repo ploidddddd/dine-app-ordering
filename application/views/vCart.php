@@ -43,7 +43,7 @@
 								<!-- computer -->
 
 								<div class="five wide computer only middle aligned column">
-									<img class='ui centered medium image' src='<?php echo base_url($prod->product_image)?>'>
+									<img class='ui centered medium image' src='https://cashregister.dine-app.net/<?php echo $prod->product_image;  ?>'>
 								</div>
 								<div class="eleven wide computer only left aligned column">
 									<a class='confirmRemove' style='float: right; cursor: pointer;' data-id='<?php echo  $prod->order_item_id;?>' ><i class='large red remove icon'></i></a>
@@ -72,7 +72,7 @@
 								</div>
 								<!-- tablet -->
 								<div class="sixteen wide tablet only column">
-									<img class='ui centered small image' src='<?php echo base_url($prod->product_image)?>'>
+									<img class='ui centered small image' src='https://cashregister.dine-app.net/<?php echo $prod->product_image;  ?>'>
 								</div>
 								<div class="two wide tablet only column"></div>
 								<div class="twelve wide tablet only left aligned column">
@@ -104,7 +104,7 @@
 
 								<!-- mobile -->
 								<div class="sixteen wide mobile only column">
-									<img class='ui centered small image' src='<?php echo base_url($prod->product_image)?>'>
+									<img class='ui centered small image' src='https://cashregister.dine-app.net/<?php echo $prod->product_image;  ?>'>
 								</div>
 								<div class="two wide mobile only column"></div>
 								<div class="twelve wide mobile only left aligned column">
