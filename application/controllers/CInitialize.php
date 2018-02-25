@@ -14,6 +14,7 @@
 
 		public function index()
 		{
+			$data['tray'] = null;
 			if($this->session->userdata('orderingSession')){
 				$order_id =  $this->session->userdata['orderingSession']['ordered_id'];
 				$data['tray'] = $this->MProduct->getAllProductsInCart($order_id);
